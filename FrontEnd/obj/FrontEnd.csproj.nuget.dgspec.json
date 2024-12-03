@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VisualStudio\\WebNC\\WebTimViecLam\\WebTimViecLam\\FrontEnd\\FrontEnd.csproj": {}
+    "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj": {}
   },
   "projects": {
-    "D:\\VisualStudio\\WebNC\\WebTimViecLam\\WebTimViecLam\\FrontEnd\\FrontEnd.csproj": {
+    "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\WebTimViecLam\\FrontEnd\\FrontEnd.csproj",
+        "projectUniqueName": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
         "projectName": "FrontEnd",
-        "projectPath": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\WebTimViecLam\\FrontEnd\\FrontEnd.csproj",
+        "projectPath": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\WebTimViecLam\\FrontEnd\\obj\\",
+        "outputPath": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,8 +1,632 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@section title
+{
+    <title>TopCV - CV xịn việc làm chất - Tạo CV & Tìm việc miễn phí</title>
+}
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@section linkCss
+{
+    <link rel="stylesheet" href="../css/viecLam.css">
+}
+
+@section linkJs
+{
+    <script src="../js/viecLam.js"></script>
+
+}
+
+
+
+<section id="section-header">
+    <div class="container">
+        <div class="header-box">
+            <h4 class="title font-weight-6 text-center">Tìm việc làm nhanh 24h, việc làm mới nhất trên toàn quốc</h4>
+            <div class="description text-center">Tiếp cận <b>40,000+</b> tin tuyển dụng việc làm mỗi ngày từ hàng nghìn doanh nghiệp uy tín tại Việt Nam</div>
+        </div>
+        <div class="header-content">
+            <div class="header-content__search">
+                <form id="frm-search-job" method="GET">
+                    <div class="group-search d-flex">
+                        <div class="frm-box-category d-flex g-10 " onclick="handleClickListJob()">
+                            <i class="fa-solid fa-list d-flex align-items-center"></i>
+                            <div class="frm-box-category__text font-weight-6">Danh mục Nghề</div>
+                        </div>
+                        <div class="colum-divider"></div>
+                        <div class="item-search">
+                            <input class="form-controlui-autocomplete-input" name="" placeholder="Vị trí tuyển dụng, tên công ty">
+                        </div>
+                        <div class="colum-divider"></div>
+                        <div class="item-filter d-flex align-items-center ">
+                            <i class="bi bi-geo-alt"></i>
+                            <div class="select-container">
+                                <select name="city" id="city">
+                                    <option value="TatCaTinhThanhPho">Tất cả tỉnh/thành phố</option>
+                                    <option value="HoChiMinh">Hồ Chí Minh</option>
+                                    <option value="HaNoi">Hà Nội</option>
+                                    <option value="DaNang">Đà Nẵng</option>
+                                    <option value="QuangNinh">Quảng Ninh</option>
+                                    <option value="QuangBinh">Quảng Bình</option>
+
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="colum-divider"></div>
+                        <div class="btn-search align-items-center d-flex">
+                            <button class="d-flex align-items-center justify-content-center"><i class="bi bi-search"></i>Tìm kiếm </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- MENU-DROP -->
+            <div class="menu-drop select-group-job hidden">
+                <h5 class="menu-drop__title">Chọn Nhóm nghề, Nghề hoặc chuyên môn</h5>
+                <div class="input-search d-flex">
+                    <i class="bi bi-search"></i><input class="flex-1" name="keyword" placeholder="Nhập từ khóa tìm kiếm">
+                </div>
+                <div class="table-list-job d-flex ">
+                    <div class="group-job-list">
+                        <div class="table-list-job__title">Nhóm nghề</div>
+                        <hr>
+                        <div class="pt-2 container-group-job ">
+                            <div class="group-job-list__item d-flex g-10 align-items-center">
+                                <input type="checkbox" name="group-job" value="kinhDoanhBanHang">
+                                <span class="group-job-list__item__text d-flex">
+                                    <div>Kinh doanh bán hàng</div>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </div>
+                            <div class="group-job-list__item d-flex g-10 align-items-center">
+                                <input type="checkbox" name="group-job" value="kinhDoanhBanHang">
+                                <span class="group-job-list__item__text d-flex">
+                                    <div>Kinh doanh bán hàng</div>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </div>
+                            <div class="group-job-list__item d-flex g-10 align-items-center">
+                                <input type="checkbox" name="group-job" value="kinhDoanhBanHang">
+                                <span class="group-job-list__item__text d-flex">
+                                    <div>Kinh doanh bán hàng</div>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </div>
+                            <div class="group-job-list__item d-flex g-10 align-items-center">
+                                <input type="checkbox" name="group-job" value="kinhDoanhBanHang">
+                                <span class="group-job-list__item__text d-flex">
+                                    <div>Kinh doanh bán hàng</div>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colum-divider">
+                    </div>
+                    <div class="job-list">
+                        <div class="d-flex g-15">
+                            <div class="table-list-job__title flex-1">Nghề</div>
+                            <div class="table-list-job__title flex-2">Vị trí chuyên môn</div>
+                        </div>
+                        <hr>
+                        <div class="pt-2 container-job">
+                            <div class="job-item d-flex g-15">
+                                <div class="flex-1">
+                                    <input type="checkbox" name="job">
+                                    <span class="font-weight-6 job-item__text">Sales Xuất nhập khẩu/ Logistics</span>
+                                </div>
+                                <div class="speciality-list d-flex g-15 flex-2">
+                                    <span class="speciality-item">Sales Logistics</span>
+                                    <span class="speciality-item">Sales Xuất nhập khẩu khác</span>
+                                </div>
+                            </div>
+                            <div class="job-item d-flex g-15">
+                                <div class="flex-1">
+                                    <input type="checkbox" name="job">
+                                    <span class="font-weight-6 job-item__text">Sales Xuất nhập khẩu/ Logistics</span>
+                                </div>
+                                <div class="speciality-list d-flex g-10 flex-2">
+                                    <span class="speciality-item ">Sales Logistics</span>
+                                    <span class="speciality-item ">Sales Xuất nhập khẩu khác</span>
+                                </div>
+                            </div>
+                            <div class="job-item d-flex g-15">
+                                <div class="flex-1">
+                                    <input type="checkbox" name="job">
+                                    <span class="font-weight-6 job-item__text">Sales Xuất nhập khẩu/ Logistics</span>
+                                </div>
+                                <div class="speciality-list d-flex g-10 flex-2">
+                                    <span class="speciality-item ">Sales Logistics</span>
+                                    <span class="speciality-item ">Sales Xuất nhập khẩu khác</span>
+                                </div>
+                            </div>
+                            <div class="job-item d-flex g-15">
+                                <div class="flex-1">
+                                    <input type="checkbox" name="job">
+                                    <span class="font-weight-6 job-item__text">Sales Xuất nhập khẩu/ Logistics</span>
+                                </div>
+                                <div class="speciality-list d-flex g-10 flex-2">
+                                    <span class="speciality-item ">Sales Logistics</span>
+                                    <span class="speciality-item ">Sales Xuất nhập khẩu khác</span>
+                                    <span class="speciality-item ">Sales Logistics</span>
+                                    <span class="speciality-item ">Sales Xuất nhập khẩu khác</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="select-group-job__footer d-flex">
+                    <div>
+                        <div>Bạn gặp vấn đề với Danh mục nghề? <a class="text-green font-weight-6">Gửi góp ý</a></div>
+                    </div>
+                    <div class="group-btn d-flex g-10">
+                        <button class="group-btn--cancel-selected-all text-green font-weight-6">Bỏ chọn tất cả <span class="count">(84)</span></button>
+                        <button class="group-btn--cancel font-weight-6"> Hủy</button>
+                        <button class="group-btn--complete font-weight-6 "> Chọn</button>
+                    </div>
+                </div>
+            </div>
+            <!-- MUJC VA SLIDE O DUOI -->
+            <div class="d-flex header-content__category g-15">
+                <div class="pagination-container">
+                    <ul class="item-list">
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Kinh doanh/Bán hàng</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6"> Marketing/PR/Quảng cáo</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Dịch vụ khách hàng/Vận hành</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Nhân sự/Hành chính/Pháp chế</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Tài chính/Ngân hàng/Bảo hiểm</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Công nghệ Thông tin</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Kinh doanh/Bán hàng</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6"> Marketing/PR/Quảng cáo</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Dịch vụ khách hàng/Vận hành</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Nhân sự/Hành chính/Pháp chế</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Tài chính/Ngân hàng/Bảo hiểm</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Công nghệ Thông tin</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Tài chính/Ngân hàng/Bảo hiểm</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Công nghệ Thông tin</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <div class="text font-weight-6">Công nghệ Thông tin</div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                    </ul>
+                    <div class="pagination-controls">
+                        <button id="prev" class="btn-nav" disabled>◀</button>
+                        <span id="page-indicator">1/4</span>
+                        <button id="next" class="btn-nav">▶</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div id="carouselExampleIndicators" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../img/VUIHOC (2400x864)_2.webp" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../img/T1_Apollo (2).webp" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="header-content__detail-job flex-3 hidden">
+                    <div class="betseller">
+                        <div class="betseller__text">Được tìm kiếm nhiều</div>
+                        <div class="betseller-list-item ">
+                            <a class="tag red betseller__item ">Kỹ sư kết cấu</a>
+                            <a class="tag red betseller__item">Giám sát thi công</a>
+                            <a class="tag red betseller__item">Sales bất động sản</a>
+                        </div>
+                    </div>
+                    <div class="header-content__detail-job__main d-flex">
+                        <h2 class="flex-1">Quản lý dự án xây dựng</h2>
+                        <div class="tags flex-2">
+                            <a class="tag">Quản lý dự án thi công xây dựng</a>
+                            <a class="tag">Dự toán công trình</a>
+                            <a class="tag">Giám sát dự án/công trình/thi công</a>
+                            <a class="tag">Thư ký công trình</a>
+                            <a class="tag">Nhân viên hồ sơ xây dựng</a>
+                            <a class="tag">Nhân viên vật tư</a>
+                            <a class="tag">Nhân viên trắc đạc</a>
+                            <a class="tag">Kỹ sư an toàn lao động (HSE)</a>
+                            <a class="tag">Kỹ sư hiện trường</a>
+                            <a class="tag">Quản đốc công trình</a>
+                            <a class="tag">Quản lý chất lượng công trình</a>
+                            <a class="tag">Kỹ sư địa chất</a>
+                            <a class="tag">Giám sát thi công nội thất</a>
+                            <a class="tag">Giám đốc dự án bất động sản</a>
+                            <a class="tag">Quản lý dự án xây dựng khác</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MAIN -->
+<section id="list-feature-job">
+    <div class="container ">
+        <!-- HEADER -->
+        <div class="box-header d-flex justify-content-between">
+            <div class="box-header__title g-10 d-flex align-items-center">
+                <h4 class="text-green font-weight-6">Việc làm tốt nhất</h4>
+                <div class="box-lable">
+                    <img src="../img/label-toppy-ai.webp" alt="">
+                </div>
+            </div>
+            <div class="box-header__tool">
+                <button class="btn-feature-jobs-pre btn-slick-arrow">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="btn-feature-jobs-next btn-slick-arrow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- box-filter -->
+        <div class="box-filter d-flex align-items-center">
+            <div id="filter-feature-job-container" class="input d-flex g-10">
+                <div class="input-group-prepend">
+                    <i class="bi bi-filter"></i>
+                    Lọc theo:
+                </div>
+                <select name="" id="filter-feature-job">
+                    <option value="cities">Địa điểm</option>
+                    <option value="salary">Mức lương</option>
+                    <option value="experience">Kinh nghiệm</option>
+                    <option value="categoriesJob">Ngành nghề</option>
+                </select>
+            </div>
+            <div class="box-smart-filter">
+                <div class="box-smart-location align-items-center d-flex">
+                    <button class="prev-location btn-slick-arrow">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="box-smart-list-location d-flex align-items-center g-10">
+                        <div class="box-smart-item active">Ngẫu nhiên</div>
+                        <div class="box-smart-item ">Hà Nội</div>
+                        <div class="box-smart-item ">Thành phố Hồ Chí Minh</div>
+                        <div class="box-smart-item ">Miền Bắc</div>
+                        <div class="box-smart-item ">Miền Nam</div>
+                        <div class="box-smart-item ">Miền Nam</div>
+
+                        <div class="box-smart-item ">Miền Nam</div>
+                        <div class="box-smart-item ">Miền Nam</div>
+
+                        <div class="box-smart-item ">Miền Nam</div>
+
+                        <div class="box-smart-item ">Miền Nam</div>
+
+                        <div class="box-smart-item ">Miền Nam</div>
+
+                        <div class="box-smart-item ">Miền Nam</div>
+                        <div class="box-smart-item ">Miền Nam</div>
+
+                        <div class="box-smart-item ">Miền Nam</div>
+
+                    </div>
+                    <button class="next-location btn-slick-arrow">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- List job -->
+        <div class="wrapper-feature-jobs">
+            <div class="box-feature-job-container">
+
+                <div class="row row-cols-3 feature-job ">
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!--  item -->
+                    <div class="feature-job-item col">
+                        <div class="avatar-company">
+                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
+                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <div class="details">
+                                <span class="salary">Tới 1,100 USD</span>
+                                <span class="location">Hà Nội</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                </div>
+                <div class="feature-job-page d-flex align-items-center justify-content-center mt-8">
+                    <button class="btn-feature-jobs-pre btn-slick-arrow">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="feature-job-page__text d-flex">
+                    </div>
+                    <button class="btn-feature-jobs-next btn-slick-arrow">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

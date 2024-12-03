@@ -1,0 +1,181 @@
+#list-feature-job{
+    background-color: #f3f5f7;
+    padding: 20px 0;
+}
+
+#list-feature-job .box-header
+{
+    padding-bottom: 12px;
+}
+
+#list-feature-job .box-header__title {
+}
+
+#list-feature-job .box-header__title .box-lable{
+    border-left: 1px solid #bcc1c5;
+    padding-left: 16px;
+}
+
+#list-feature-job .box-header__title img{
+    width: 110px;
+}
+
+#list-feature-job  .btn-slick-arrow{
+    margin-right: 11px;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    border: 1px solid #00b14f;
+    border-radius: 50%;
+    color: #00b14f !important;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+#list-feature-job .box-filter{
+    justify-content: space-between;
+    gap: 70px;
+}
+
+
+
+#list-feature-job #filter-feature-job-container
+{
+    align-items: center;
+    background: #fff;
+    border: 1px solid #dee0e2;
+    border-radius: 6px;
+    display: grid;
+    font-size: 14px;
+    height: 40px;
+    line-height: 20px;
+    padding: 0 7px 0 10px;
+    color: #b4b4b4;
+}
+
+#list-feature-job #filter-feature-job{
+    border: none;
+    padding: 10px 0;
+}
+
+#list-feature-job .box-smart-filter{
+    width: 50%; 
+    flex: 2;
+}
+
+#list-feature-job .box-smart-location{
+}
+
+#list-feature-job .box-smart-list-location{
+    margin-right: 11px;
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: all .2s;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+
+#list-feature-job .box-smart-list-location .box-smart-item{
+    background: #e9eaec ;
+    border-radius: 20px;
+    color: #212f3f ;
+    font-weight: 500;
+    padding: 9px 12px ;
+}
+
+#list-feature-job .box-smart-list-location .box-smart-item.active{
+    background-color: var(--green);
+    color: #fff;
+}
+
+/* LIST JOB ITEM */
+
+#list-feature-job .feature-job{
+    padding: 0 10px;
+    margin-top: 20px;
+    gap: 25px;
+}
+
+
+#list-feature-job .wrapper-feature-jobs{
+    position: relative;
+    min-height: 815px
+}
+
+#list-feature-job .feature-job-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 400px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+#list-feature-job .feature-job-item:hover {
+    background-color: #ebebeb;
+    border: 1px solid #7c7c7c;
+}
+
+#list-feature-job .feature-job-item:hover .description .title{
+    color: var(--green); 
+}
+
+#list-feature-job .avatar-company img {
+    width: 50px;
+    height: 50px;
+  }
+
+#list-feature-job .description {
+    margin-left: 16px;
+    flex: 1;
+  }
+
+#list-feature-job .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;      
+    overflow: hidden;        
+    text-overflow: ellipsis;  
+    width: 300px;             
+  }
+  
+  #list-feature-job .title:hover{
+    text-decoration: underline;
+  }
+
+#list-feature-job .subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0;
+  }
+
+#list-feature-job .details {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+#list-feature-job .salary, .location {
+    font-size: 14px;
+    padding: 4px 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+  }
+  
+#list-feature-job .feature-job-page {
+    text-align: center;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#list-feature-job .btn-feature-jobs-next{
+    margin-left: 11px;
+}
