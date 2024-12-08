@@ -5571,11 +5571,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\FrontEnd.csproj",
+      "projectUniqueName": "D:\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
       "projectName": "FrontEnd",
-      "projectPath": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\FrontEnd.csproj",
+      "projectPath": "D:\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\obj\\",
+      "outputPath": "D:\\Web-Tim-viec-lam\\FrontEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5634,7 +5634,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

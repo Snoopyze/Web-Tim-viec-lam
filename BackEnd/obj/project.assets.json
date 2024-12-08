@@ -8211,11 +8211,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\BackEnd\\BackEnd.csproj",
+      "projectUniqueName": "D:\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj",
       "projectName": "BackEnd",
-      "projectPath": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\BackEnd\\BackEnd.csproj",
+      "projectPath": "D:\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\BackEnd\\obj\\",
+      "outputPath": "D:\\Web-Tim-viec-lam\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8302,7 +8302,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
