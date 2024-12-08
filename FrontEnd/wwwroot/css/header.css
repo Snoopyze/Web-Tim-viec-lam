@@ -1,11 +1,13 @@
-header{
+
+
+header {
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
     height: 72px;
     background: #fff;
-    z-index: 100;
+    z-index: 1000;
 }
 
 nav{
@@ -47,6 +49,7 @@ header .drop-menu li{
     min-width: 368px;
     position: relative;
 }
+
 
 header .drop-menu a{
     color: #212f3f;
@@ -130,7 +133,7 @@ header .list-noti__main{
     border-bottom: 1px solid #d9d9d9;
     max-height: 250px;
     overflow-y: auto;
-    overflow-x: auto;
+    overflow-x: hidden;
     
 }
 
@@ -210,11 +213,17 @@ header .click-icon{
     cursor: pointer;
 }
 
-footer {
-    padding-top: 15px;
-    background: url(../css/img/header-bg.webp);
-    color: white;
+.content{
+    /* position: absolute; */
+    height: 50px ;
 }
+
+
+footer {
+    padding: 30px 0 0;
+    background-color: #ffff;
+}
+
 
 footer .qr-code img{
     height: 136px;

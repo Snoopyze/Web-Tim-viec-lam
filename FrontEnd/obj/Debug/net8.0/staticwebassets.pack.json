@@ -5,8 +5,20 @@
       "PackagePath": "staticwebassets\\FrontEnd.bundle.scp.css"
     },
     {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\chiTietCongTy.css",
+      "PackagePath": "staticwebassets\\css\\chiTietCongTy.css"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\chiTietViecLam.css",
+      "PackagePath": "staticwebassets\\css\\chiTietViecLam.css"
+    },
+    {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\common.css",
       "PackagePath": "staticwebassets\\css\\common.css"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\danhSachCongTy.css",
+      "PackagePath": "staticwebassets\\css\\danhSachCongTy.css"
     },
     {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\header.css",
@@ -17,12 +29,32 @@
       "PackagePath": "staticwebassets\\css\\img\\header-bg.webp"
     },
     {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\quanLyCV.css",
+      "PackagePath": "staticwebassets\\css\\quanLyCV.css"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\taiCVLen.css",
+      "PackagePath": "staticwebassets\\css\\taiCVLen.css"
+    },
+    {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\test.css",
       "PackagePath": "staticwebassets\\css\\test.css"
     },
     {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\viecLam.css",
       "PackagePath": "staticwebassets\\css\\viecLam.css"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\viecLamDaLuu.css",
+      "PackagePath": "staticwebassets\\css\\viecLamDaLuu.css"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\viecLamDaUngTuyen.css",
+      "PackagePath": "staticwebassets\\css\\viecLamDaUngTuyen.css"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\css\\viecLamIT.css",
+      "PackagePath": "staticwebassets\\css\\viecLamIT.css"
     },
     {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\favicon.ico",
@@ -8629,16 +8661,48 @@
       "PackagePath": "staticwebassets\\icon\\briefcase-solid.svg"
     },
     {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\T1_Apollo (2).webp",
+      "PackagePath": "staticwebassets\\img\\T1_Apollo (2).webp"
+    },
+    {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\VUIHOC (2400x864)_2.webp",
       "PackagePath": "staticwebassets\\img\\VUIHOC (2400x864)_2.webp"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\arrow_desktop.png",
+      "PackagePath": "staticwebassets\\img\\arrow_desktop.png"
     },
     {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\avatar-default.jpg",
       "PackagePath": "staticwebassets\\img\\avatar-default.jpg"
     },
     {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\company-billBoard.webp",
+      "PackagePath": "staticwebassets\\img\\company-billBoard.webp"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\company_cover_1.webp",
+      "PackagePath": "staticwebassets\\img\\company_cover_1.webp"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\cong-ty-tnhh-glodival-121ca3da8aa8d312b77c04fd91e0bf73-660d0c2d12985.webp",
+      "PackagePath": "staticwebassets\\img\\cong-ty-tnhh-glodival-121ca3da8aa8d312b77c04fd91e0bf73-660d0c2d12985.webp"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\cong-ty-tnhh-glodival-95051c94e7df2a248382cb7034a90f9c-660d0c235a956.webp",
+      "PackagePath": "staticwebassets\\img\\cong-ty-tnhh-glodival-95051c94e7df2a248382cb7034a90f9c-660d0c235a956.webp"
+    },
+    {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp",
       "PackagePath": "staticwebassets\\img\\cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\cong-ty-tnhh-thuong-mai-dien-tu-gobuy-viet-nam-102d3ae352ccaf762941e1fd9a5cddea-66e1788f4e63b.webp",
+      "PackagePath": "staticwebassets\\img\\cong-ty-tnhh-thuong-mai-dien-tu-gobuy-viet-nam-102d3ae352ccaf762941e1fd9a5cddea-66e1788f4e63b.webp"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\default_cv.jpg",
+      "PackagePath": "staticwebassets\\img\\default_cv.jpg"
     },
     {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\favicon.ico",
@@ -8653,8 +8717,24 @@
       "PackagePath": "staticwebassets\\img\\qr_code.webp"
     },
     {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\img\\topcv-logo-6.webp",
+      "PackagePath": "staticwebassets\\img\\topcv-logo-6.webp"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\js\\chiTietViecLam.js",
+      "PackagePath": "staticwebassets\\js\\chiTietViecLam.js"
+    },
+    {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\js\\header.js",
       "PackagePath": "staticwebassets\\js\\header.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\js\\taiCVLen.js",
+      "PackagePath": "staticwebassets\\js\\taiCVLen.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\js\\test.js",
+      "PackagePath": "staticwebassets\\js\\test.js"
     },
     {
       "Id": "D:\\VisualStudio\\WebNC\\WebTimViecLam\\Web-Tim-viec-lam\\FrontEnd\\wwwroot\\js\\viecLam.js",

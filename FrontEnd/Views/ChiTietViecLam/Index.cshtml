@@ -1,0 +1,782 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@section title
+{
+    <title>TopCV - CV xịn việc làm chất - Tạo CV & Tìm việc miễn phí</title>
+}
+
+@section linkCss
+{
+    <link rel="stylesheet" href="../css/chiTietViecLam.css">
+}
+
+@section linkCss2
+{
+    <link rel="stylesheet" href="../css/viecLam.css">
+}
+
+@section linkJs
+{
+    <script src="../js/chiTietViecLam.js"></script>
+}
+<div id="main">
+    <!-- SEARCH JOB -->
+    <div class="search-job">
+        <div class="container">
+            <!-- search -->
+            <div class="header-content__search">
+                <form id="frm-search-job" method="GET">
+                    <div class="group-search d-flex">
+                        <div class="frm-box-category d-flex g-10 " onclick="handleClickListJob()">
+                            <i class="fa-solid fa-list d-flex align-items-center"></i>
+                            <div class="frm-box-category__text font-weight-6">Danh mục Nghề</div>
+                        </div>
+                        <div class="colum-divider"></div>
+                        <div class="item-search">
+                            <input class="form-controlui-autocomplete-input" name="" placeholder="Vị trí tuyển dụng, tên công ty">
+                        </div>
+                        <div class="colum-divider"></div>
+                        <div class="item-filter d-flex align-items-center ">
+                            <i class="bi bi-geo-alt"></i>
+                            <div class="select-container">
+                                <select name="city" id="city">
+                                    <option value="TatCaTinhThanhPho">Tất cả tỉnh/thành phố</option>
+                                    <option value="HoChiMinh">Hồ Chí Minh</option>
+                                    <option value="HaNoi">Hà Nội</option>
+                                    <option value="DaNang">Đà Nẵng</option>
+                                    <option value="QuangNinh">Quảng Ninh</option>
+                                    <option value="QuangBinh">Quảng Bình</option>
+
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="colum-divider"></div>
+                        <div class="btn-search align-items-center d-flex">
+                            <button class="d-flex align-items-center justify-content-center"><i class="bi bi-search"></i>Tìm kiếm </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- MENU-DROP -->
+            <div class="menu-drop select-group-job hidden">
+                <h5 class="menu-drop__title">Chọn Nhóm nghề, Nghề hoặc chuyên môn</h5>
+                <div class="input-search d-flex">
+                    <i class="bi bi-search"></i><input class="flex-1" name="keyword" placeholder="Nhập từ khóa tìm kiếm">
+                </div>
+                <div class="table-list-job d-flex ">
+                    <div class="group-job-list">
+                        <div class="table-list-job__title">Nhóm nghề</div>
+                        <hr>
+                        <div class="pt-2 container-group-job ">
+                            <div class="group-job-list__item d-flex g-10 align-items-center">
+                                <input type="checkbox" name="group-job" value="kinhDoanhBanHang">
+                                <span class="group-job-list__item__text d-flex">
+                                    <div>Kinh doanh bán hàng</div>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </div>
+                            <div class="group-job-list__item d-flex g-10 align-items-center">
+                                <input type="checkbox" name="group-job" value="kinhDoanhBanHang">
+                                <span class="group-job-list__item__text d-flex">
+                                    <div>Kinh doanh bán hàng</div>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </div>
+                            <div class="group-job-list__item d-flex g-10 align-items-center">
+                                <input type="checkbox" name="group-job" value="kinhDoanhBanHang">
+                                <span class="group-job-list__item__text d-flex">
+                                    <div>Kinh doanh bán hàng</div>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </div>
+                            <div class="group-job-list__item d-flex g-10 align-items-center">
+                                <input type="checkbox" name="group-job" value="kinhDoanhBanHang">
+                                <span class="group-job-list__item__text d-flex">
+                                    <div>Kinh doanh bán hàng</div>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colum-divider">
+                    </div>
+                    <div class="job-list">
+                        <div class="d-flex g-15">
+                            <div class="table-list-job__title flex-1">Nghề</div>
+                            <div class="table-list-job__title flex-2">Vị trí chuyên môn</div>
+                        </div>
+                        <hr>
+                        <div class="pt-2 container-job">
+                            <div class="job-item d-flex g-15">
+                                <div class="flex-1">
+                                    <input type="checkbox" name="job">
+                                    <span class="font-weight-6 job-item__text">Sales Xuất nhập khẩu/ Logistics</span>
+                                </div>
+                                <div class="speciality-list d-flex g-15 flex-2">
+                                    <span class="speciality-item">Sales Logistics</span>
+                                    <span class="speciality-item">Sales Xuất nhập khẩu khác</span>
+                                </div>
+                            </div>
+                            <div class="job-item d-flex g-15">
+                                <div class="flex-1">
+                                    <input type="checkbox" name="job">
+                                    <span class="font-weight-6 job-item__text">Sales Xuất nhập khẩu/ Logistics</span>
+                                </div>
+                                <div class="speciality-list d-flex g-10 flex-2">
+                                    <span class="speciality-item ">Sales Logistics</span>
+                                    <span class="speciality-item ">Sales Xuất nhập khẩu khác</span>
+                                </div>
+                            </div>
+                            <div class="job-item d-flex g-15">
+                                <div class="flex-1">
+                                    <input type="checkbox" name="job">
+                                    <span class="font-weight-6 job-item__text">Sales Xuất nhập khẩu/ Logistics</span>
+                                </div>
+                                <div class="speciality-list d-flex g-10 flex-2">
+                                    <span class="speciality-item ">Sales Logistics</span>
+                                    <span class="speciality-item ">Sales Xuất nhập khẩu khác</span>
+                                </div>
+                            </div>
+                            <div class="job-item d-flex g-15">
+                                <div class="flex-1">
+                                    <input type="checkbox" name="job">
+                                    <span class="font-weight-6 job-item__text">Sales Xuất nhập khẩu/ Logistics</span>
+                                </div>
+                                <div class="speciality-list d-flex g-10 flex-2">
+                                    <span class="speciality-item ">Sales Logistics</span>
+                                    <span class="speciality-item ">Sales Xuất nhập khẩu khác</span>
+                                    <span class="speciality-item ">Sales Logistics</span>
+                                    <span class="speciality-item ">Sales Xuất nhập khẩu khác</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="select-group-job__footer d-flex">
+                    <div>
+                        <div>Bạn gặp vấn đề với Danh mục nghề? <a class="text-green font-weight-6">Gửi góp ý</a></div>
+                    </div>
+                    <div class="group-btn d-flex g-10">
+                        <button class="group-btn--cancel-selected-all text-green font-weight-6">Bỏ chọn tất cả <span class="count">(84)</span></button>
+                        <button class="group-btn--cancel font-weight-6"> Hủy</button>
+                        <button class="group-btn--complete font-weight-6 "> Chọn</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JOB DETAIL -->
+    <div class="job-detail">
+        <div class="container">
+            <div class="job-detail__header mb-2 ">
+                <a href="" class="text-green font-weight-6"> Trang chủ</a>
+                <i class="bi bi-chevron-right"></i>
+                <a href="" class="text-green font-weight-6"> Tìm việc làm <span class="name-job">Kiểm toán viên</span></a>
+                <i class="bi bi-chevron-right"></i>
+                <span class="title-job d-block mt-1">Tuyển Kiểm Toán Viên Điều Hành / Trưởng Nhóm Kiểm Toán - Từ 3 Năm Kinh Nghiệm - Thu Nhập Đến 30tr - Quận 3, Thành Phố Hồ Chí Minh</span>
+            </div>
+            <div class="job-detail__body d-flex g-15">
+                <div class="job-detail__body-left">
+                    <div id="header-job-info" class="job-detail__box--left d-flex g-15 mb-4">
+                        <h5 class="job-detail__info--title font-weight-6">Tuyển Kiểm Toán Viên Điều Hành / Trưởng Nhóm Kiểm Toán - Từ 3 Năm Kinh Nghiệm - Thu Nhập Đến 30tr - Quận 3, Thành Phố Hồ Chí Minh</h5>
+                        <div class="d-flex">
+                            <div class="job-detail__info--sections flex-1 d-flex align-items-center g-15">
+                                <div class="job-detail__info--section-icon">
+                                    <i class="fa-solid fa-coins"></i>
+                                </div>
+                                <div class="job-detail__info--section-content">
+                                    <div class="job-detail__info--section-content-title">Mức lương</div>
+                                    <div class="job-detail__info--section-content-value font-weight-6"> 20 -30 triệu</div>
+                                </div>
+                            </div>
+                            <div class="job-detail__info--sections flex-1 d-flex align-items-center g-15">
+                                <div class="job-detail__info--section-icon">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </div>
+                                <div class="job-detail__info--section-content">
+                                    <div class="job-detail__info--section-content-title">Địa điểm</div>
+                                    <div class="job-detail__info--section-content-value font-weight-6"> Hồ Chí Minh</div>
+                                </div>
+                            </div>
+                            <div class="job-detail__info--sections flex-1 d-flex align-items-center g-15">
+                                <div class="job-detail__info--section-icon">
+                                    <i class="fa-solid fa-hourglass"></i>
+                                </div>
+                                <div class="job-detail__info--section-content">
+                                    <div class="job-detail__info--section-content-title">Kinh nghiệm</div>
+                                    <div class="job-detail__info--section-content-value font-weight-6"> 40 năm</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-detail__info--deadline">
+                            <div class="job-detail__info--deadline--icon d-flex g-10 ">
+                                <i class="fa-solid fa-clock d-flex align-items-center"></i>
+                                Hạn nộp hồ sơ: <div class="deadline-date">27/12/2024</div>
+                            </div>
+                        </div>
+                        <div class="box-apply-current d-flex g-15">
+                            <a href="" class="job-detail__info--actions-button btn-apply-job flex-3 d-flex justify-content-center font-weight-6">
+                                <i class="bi bi-send"></i>
+                                Ứng tuyển ngay
+                            </a>
+                            <div class=" job-detail__info--actions-button save-job flex-1 justify-content-center d-flex font-weight-6">
+                                <i class="bi bi-heart"></i>
+                                Lưu tin
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-detail__box--left d-flex ">
+                        <!-- CHI TIẾT TUYỂN DỤNG -->
+                        <div id="box-job-information-detail" class-="job-detail__information-detail">
+                            <h5 class="job-detail__information-detail--title font-weight-6 box-title">
+                                Chi tiết tuyển dụng
+                            </h5>
+                            <div class="job-tags">
+                                <span class="item">Chuyên môn: IT project Manager</span>
+                                <span class="item">IT - phần mềm</span>
+                            </div>
+                            <div class="job-detail__information-detail--content">
+                                <div class="job-description">
+                                    <!-- MÔ TẢ CÔNG VIỆC -->
+                                    <div class="job-description__item">
+                                        <h6 class="font-weight-6">
+                                            Mô tả công việc
+                                        </h6>
+                                        <div class="job-description__item--content">
+                                            <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                            <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                            <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                            <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                            <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                            <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                            <p>- Lập BCTC.</p>
+                                            <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                            <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                        </div>
+                                    </div>
+                                    <!-- YÊU CẦU ỨNG VIÊN -->
+                                    <div class="job-description__item">
+                                        <h6 class="font-weight-6">
+                                            Yêu cầu ứng viên
+                                        </h6>
+                                        <div class="job-description__item--content">
+                                            <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                            <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                            <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                            <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                            <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                            <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                            <p>- Lập BCTC.</p>
+                                            <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                            <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                        </div>
+                                    </div>
+                                    <!-- QUYỀN LỢI -->
+                                    <div class="job-description__item">
+                                        <h6 class="font-weight-6">
+                                            Quyền lợi
+                                        </h6>
+                                        <div class="job-description__item--content">
+                                            <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                            <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                            <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                            <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                            <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                            <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                            <p>- Lập BCTC.</p>
+                                            <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                            <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                        </div>
+                                    </div>
+                                    <!-- CÁCH THỨC ỨNG TUYỂN -->
+                                    <div class="job-description__item">
+                                        <h6 class="font-weight-6">
+                                            Địa điểm làm việc
+                                        </h6>
+                                        <div class="job-description__item--content">
+                                            Ứng viên nộp hồ sơ trực tuyến bằng cách bấm <b>Ứng tuyển</b> ngay dưới đây.
+                                        </div>
+                                    </div>
+                                    <!-- XỬ LÝ ACTION -->
+                                    <div class="job-detail__information-detail--actions mt-2">
+                                        <div class="job-detail__information-detail--actions-label">Hạn nộp hồ sơ: <span class="date-deadline">18/12/2024</span></div>
+                                        <div class="d-flex g-15 mt-2">
+                                            <a class="job-detail__information-detail--actions-button btn-apply-job d-flex font-weight-6">Ứng tuyển ngay</a>
+                                            <a class="job-detail__information-detail--actions-button save-job d-flex font-weight-6">Lưu tin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="box-job-information-detail" class-="job-detal__related-jobs mt-2">
+                            <!-- CÔNG VIỆC LIÊN QUAN -->
+                            <h5 class="job-detal__related-jobs--title font-weight-6 box-title">
+                                Công việc liên quan
+                            </h5>
+                            <div class="job-detail__related-jobs--content">
+                                <!-- START CONTAINER-JOB-ITEM -->
+                                <div class="container-job-item">
+                                    <div class="job-item d-flex g-15">
+                                        <div class="job-item__ava flex-1">
+                                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
+                                        </div>
+                                        <div class="job-item__body">
+                                            <div class="job-item__body__content">
+                                                <div class="title-block d-flex">
+                                                    <div class="title-left flex 2">
+                                                        <h6 class="font-weight-6 mb-1 ">Kế toán kho và Thanh toán - Đi làm ngay</h6>
+                                                        <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
+                                                    </div>
+                                                    <div class="title-right text-green font-weight-6 flex 1">9-11 triệu</div>
+                                                </div>
+                                                <div class="info d-flex justify-content-between">
+                                                    <div class="lable-content d-flex g-15">
+                                                        <div class="lable-content-item">Hà Nội</div>
+                                                        <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
+                                                        <div class="lable-content-item">Cập nhật 4 giờ trước</div>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
+                                                        <a href="" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- HOVER -->
+                                    <div class="hover-job-detail ">
+                                        <div class="scroll-js">
+                                            <div class="hover-job-detail__header d-flex g-15  pt-3 ">
+                                                <div class="ava-company">
+                                                    <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
+                                                </div>
+                                                <div class="title">
+                                                    <h6 class="font-weight-6">Nhân viên kế toán giá thành - Từ 2 năm kinh nghiệm</h6>
+                                                    <div class="company-name">công ty cổ phần nhựa tiến đức</div>
+                                                    <div class="text-green font-weight-6">20-40 triệu</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="title-scroll font-weight-6  pt-3 hidden">
+                                                Nhân viên kế toán giá thành - Từ 2 năm kinh nghiệm
+                                            </h4>
+                                            <div class="lable-content d-flex g-15 mt-3">
+                                                <div class="lable-content-item d-flex font-weight-6 "><i class="bi bi-geo-alt-fill"></i>Hà Nội</div>
+                                                <div class="lable-content-item d-flex font-weight-6"><i class="fa-solid fa-briefcase"></i> 2 năm</div>
+                                                <div class="lable-content-item d-flex font-weight-6"><i class="fa-solid fa-clock"></i> Còn 14 ngày</div>
+                                            </div>
+                                            <div class="hover-job-detail__description-job mt-3">
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-actions d-flex g-15">
+                                            <a class="btn-apply-jobs ">
+                                                Ứng tuyển
+                                            </a>
+                                            <a class="btn-see-more flex-1 ">
+                                                Xem chi tiết
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END CONTAINER-JOB-ITEM -->
+                                <!-- START CONTAINER-JOB-ITEM -->
+                                <div class="container-job-item">
+                                    <div class="job-item d-flex g-15">
+                                        <div class="job-item__ava flex-1">
+                                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
+                                        </div>
+                                        <div class="job-item__body">
+                                            <div class="job-item__body__content">
+                                                <div class="title-block d-flex">
+                                                    <div class="title-left flex 2">
+                                                        <h6 class="font-weight-6 mb-1 ">Kế toán kho và Thanh toán - Đi làm ngay</h6>
+                                                        <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
+                                                    </div>
+                                                    <div class="title-right text-green font-weight-6 flex 1">9-11 triệu</div>
+                                                </div>
+                                                <div class="info d-flex justify-content-between">
+                                                    <div class="lable-content d-flex g-15">
+                                                        <div class="lable-content-item">Hà Nội</div>
+                                                        <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
+                                                        <div class="lable-content-item">Cập nhật 4 giờ trước</div>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
+                                                        <a href="" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- HOVER -->
+                                    <div class="hover-job-detail ">
+                                        <div class="scroll-js">
+                                            <div class="hover-job-detail__header d-flex g-15  pt-3 ">
+                                                <div class="ava-company">
+                                                    <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
+                                                </div>
+                                                <div class="title">
+                                                    <h6 class="font-weight-6">Nhân viên kế toán giá thành - Từ 2 năm kinh nghiệm</h6>
+                                                    <div class="company-name">công ty cổ phần nhựa tiến đức</div>
+                                                    <div class="text-green font-weight-6">20-40 triệu</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="title-scroll font-weight-6  pt-3 hidden">
+                                                Nhân viên kế toán giá thành - Từ 2 năm kinh nghiệm
+                                            </h4>
+                                            <div class="lable-content d-flex g-15 mt-3">
+                                                <div class="lable-content-item d-flex font-weight-6 "><i class="bi bi-geo-alt-fill"></i>Hà Nội</div>
+                                                <div class="lable-content-item d-flex font-weight-6"><i class="fa-solid fa-briefcase"></i> 2 năm</div>
+                                                <div class="lable-content-item d-flex font-weight-6"><i class="fa-solid fa-clock"></i> Còn 14 ngày</div>
+                                            </div>
+                                            <div class="hover-job-detail__description-job mt-3">
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-actions d-flex g-15">
+                                            <a class="btn-apply-jobs ">
+                                                Ứng tuyển
+                                            </a>
+                                            <a class="btn-see-more flex-1 ">
+                                                Xem chi tiết
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END CONTAINER-JOB-ITEM -->
+                                <!-- START CONTAINER-JOB-ITEM -->
+                                <div class="container-job-item">
+                                    <div class="job-item d-flex g-15">
+                                        <div class="job-item__ava flex-1">
+                                            <img src="./img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
+                                        </div>
+                                        <div class="job-item__body">
+                                            <div class="job-item__body__content">
+                                                <div class="title-block d-flex">
+                                                    <div class="title-left flex 2">
+                                                        <h6 class="font-weight-6 mb-1 ">Kế toán kho và Thanh toán - Đi làm ngay</h6>
+                                                        <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
+                                                    </div>
+                                                    <div class="title-right text-green font-weight-6 flex 1">9-11 triệu</div>
+                                                </div>
+                                                <div class="info d-flex justify-content-between">
+                                                    <div class="lable-content d-flex g-15">
+                                                        <div class="lable-content-item">Hà Nội</div>
+                                                        <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
+                                                        <div class="lable-content-item">Cập nhật 4 giờ trước</div>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
+                                                        <a href="" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- HOVER -->
+                                    <div class="hover-job-detail ">
+                                        <div class="scroll-js">
+                                            <div class="hover-job-detail__header d-flex g-15  pt-3 ">
+                                                <div class="ava-company">
+                                                    <img src=".img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
+                                                </div>
+                                                <div class="title">
+                                                    <h6 class="font-weight-6">Nhân viên kế toán giá thành - Từ 2 năm kinh nghiệm</h6>
+                                                    <div class="company-name">công ty cổ phần nhựa tiến đức</div>
+                                                    <div class="text-green font-weight-6">20-40 triệu</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="title-scroll font-weight-6  pt-3 hidden">
+                                                Nhân viên kế toán giá thành - Từ 2 năm kinh nghiệm
+                                            </h4>
+                                            <div class="lable-content d-flex g-15 mt-3">
+                                                <div class="lable-content-item d-flex font-weight-6 "><i class="bi bi-geo-alt-fill"></i>Hà Nội</div>
+                                                <div class="lable-content-item d-flex font-weight-6"><i class="fa-solid fa-briefcase"></i> 2 năm</div>
+                                                <div class="lable-content-item d-flex font-weight-6"><i class="fa-solid fa-clock"></i> Còn 14 ngày</div>
+                                            </div>
+                                            <div class="hover-job-detail__description-job mt-3">
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                                <!-- MÔ TẢ CÔNG VIỆC -->
+                                                <div class="box-title">
+                                                    Mô tả công việc
+                                                </div>
+                                                <div class="job-description__item--content">
+                                                    <p>- Thực hiện nghiệp vụ kế toán phát sinh tại công ty.</p>
+                                                    <p>- Hạch toán hoá đơn chứng từ lên phần mềm misa; lưu trữ và sắp xếp hồ sơ, chứng từ.</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Theo dõi , kiểm soát xuất-nhập-tồn nguyên vật liệu</p>
+                                                    <p>- Thu chi nội bộ, cấp phát các hạn mức tài chính theo kế hoạch.</p>
+                                                    <p> - Kiểm soát và báo cáo doanh thu, công nợ.</p>
+                                                    <p>- Lập BCTC.</p>
+                                                    <p> - Lập tờ khai thuế, hồ sơ thuế theo quy định.</p>
+                                                    <p>- Thực hiện các công việc khác của trưởng bộ phận và lãnh đạo công ty giao phó nếu có.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-actions d-flex g-15">
+                                            <a class="btn-apply-jobs ">
+                                                Ứng tuyển
+                                            </a>
+                                            <a class="btn-see-more flex-1 ">
+                                                Xem chi tiết
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END CONTAINER-JOB-ITEM -->
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- start jjob detail right -->
+                <div class="job-detail__body-right">
+                    <div class="job-detail__box--right job-detail__company d-flex flex-column">
+                        <div class="job-detail__company--information-item company-name d-flex g-10 align-items-center mb-3">
+                            <img src="./img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="" class="logo-company">
+                            <h6 class="company-name font-weight-6">Công ty TNHH nội thất bảo long Global</h6>
+                        </div>
+                        <div class="job-detail__company--information-item g-15 company-scale d-flex ">
+                            <div class="company-title d-flex g-10"><i class=" fa-solid fa-user-group"></i> Quy mô</div>
+                            <div class="company-value font-weight-6">25-99 nhân viên</div>
+                        </div>
+                        <div class="job-detail__company--information-item g-15 company-field d-flex ">
+                            <div class="company-title d-flex g-10"><i class=" fa-solid fa-cube"></i> Lĩnh vực</div>
+                            <div class="company-value font-weight-6">Thiết kế/Kiến trúc</div>
+                        </div>
+                        <div class="job-detail__company--information-item g-15 company-address d-flex ">
+                            <div class="company-title d-flex g-10"><i class=" fa-solid fa-location-dot"></i>Địa điểm</div>
+                            <div class="company-value font-weight-6">Số 130 đường Hoàng Công Chất, Phường aaaaaaaaaaaa</div>
+                        </div>
+                        <div class="job-detail__company--link ">
+                            <a href="" class="text-green">Xem trang công ty<i class=" ms-2 fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="job-detail__box--right job-detail__body-right--box-general">
+                        <h5 class="font-weight-6">Thông tin chung</h5>
+                        <div class="box-general-content d-flex flex-column g-10">
+                            <div class="box-general-group d-flex g-15">
+                                <div class="box-general-icon"><i class="fa-solid fa-medal"></i></div>
+                                <div class="box-general-info">
+                                    <div class="box-general-info__title">Cấp bậc</div>
+                                    <div class="box-general-info__value">Nhân viên</div>
+                                </div>
+                            </div>
+                            <div class="box-general-group d-flex g-15">
+                                <div class="box-general-icon"><i class="fa-solid fa-hourglass"></i></i></div>
+                                <div class="box-general-info">
+                                    <div class="box-general-info__title">Kinh nghiệm</div>
+                                    <div class="box-general-info__value">2 năm</div>
+                                </div>
+                            </div>
+                            <div class="box-general-group d-flex g-15">
+                                <div class="box-general-icon"><i class="fa-solid fa-user-group"></i></div>
+                                <div class="box-general-info">
+                                    <div class="box-general-info__title">Số lượng tuyển</div>
+                                    <div class="box-general-info__value">1 người</div>
+                                </div>
+                            </div>
+                            <div class="box-general-group d-flex g-15">
+                                <div class="box-general-icon"><i class="fa-solid fa-briefcase"></i></div>
+                                <div class="box-general-info">
+                                    <div class="box-general-info__title">Hình thức làm việc</div>
+                                    <div class="box-general-info__value">Toàn thời gian</div>
+                                </div>
+                            </div>
+                            <div class="box-general-group d-flex g-15">
+                                <div class="box-general-icon"><i class="fa-solid fa-user"></i></div>
+                                <div class="box-general-info">
+                                    <div class="box-general-info__title">Giới tính</div>
+                                    <div class="box-general-info__value">Nữ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>

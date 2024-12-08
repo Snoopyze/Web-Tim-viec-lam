@@ -1,0 +1,273 @@
+#main {
+    background-color: #f1f2f6;
+    padding: 24px 0 10px 0;
+
+
+#manager-cv .banner-update-cv {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#manager-cv .banner-update-cv {
+    background: linear-gradient(180deg, #254348, #198c56 126.72%);
+    border-radius: 8px;
+    -moz-column-gap: 0;
+    column-gap: 0;
+    display: flex;
+    margin-bottom: 16px;
+    padding: 30px;
+    row-gap: 16px;
+}
+
+#manager-cv .banner-update-cv .block-left {
+    max-width: 348px;
+}
+
+#manager-cv .banner-update-cv .block-left .title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+
+#manager-cv .banner-update-cv .block-left p {
+    text-align: left;
+}
+
+#manager-cv .banner-update-cv .block-left .title .title-bold {
+    color: #19f37a;
+}
+
+#manager-cv .banner-update-cv .block-left .subtitle {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 16px;
+}
+
+#manager-cv .banner-update-cv .block-left .list-action {
+    justify-content: flex-start;
+}
+
+
+#manager-cv .banner-update-cv .block-left .list-action {
+    align-items: center;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    display: flex;
+}
+
+#manager-cv .banner-update-cv .block-left .btn.btn-action.btn-createcv {
+    background-color: #fff;
+}
+#manager-cv .banner-update-cv .block-left .btn.btn-action {
+    align-items: center;
+    border-radius: 6px;
+    -moz-column-gap: 8px;
+    column-gap: 8px;
+    display: flex;
+    height: 32px;
+    padding: 0 12px;
+}
+.btn {
+    font-weight: 700;
+}
+
+#manager-cv .banner-update-cv .block-left .btn.btn-action.btn-createcv span {
+    color: #07593b;
+}
+
+#manager-cv .banner-update-cv .block-left .btn.btn-action span {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+#manager-cv .banner-update-cv .block-left .btn.btn-action.btn-uploadcv {
+    background-color: #12b65b;
+}
+
+#manager-cv .banner-update-cv .block-right {
+    position: relative;
+}
+
+#manager-cv .banner-update-cv .block-right img {
+    height: 135px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    width: 270px;
+}
+
+#manager-cv .banner-update-cv .block-right img {
+    height: 135px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    width: 270px;
+}
+
+#manager-cv .banner-update-cv .block-right .block-percent span.block-percent-icon {
+    font-size: 17.42px;
+    line-height: 20.85px;
+}
+#manager-cv .banner-update-cv .block-right .block-percent span {
+    color: #02f26d;
+    font-size: 19.36px;
+    font-weight: 600;
+    line-height: 23.23px;
+}
+
+/* --- */
+#manager-cv .box-block {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: -1px 1px 6px rgba(0, 0, 0, .05);
+    margin-bottom: 16px;
+    margin-top: 16px;
+    padding: 24px 24px 8px;
+}
+
+#manager-cv .box-block .box-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+#manager-cv .box-block .box-header .title {
+    color: #000;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0;
+}
+
+#manager-cv #cv-list .btn-add-cv, #manager-cv #cv-upload-list .btn-add-cv {
+    background: #00b14f;
+    border-radius: 32px;
+    color: #fff;
+    line-height: 1;
+    padding: 11px 16px;
+}
+
+#manager-cv .box-no-cv {
+    text-align: center;
+}
+
+#manager-cv .box-no-cv p {
+    margin-top: 20px;
+}
+
+#manager-cv #cv-upload-list .btn-upload-cv {
+    background: #00b14f;
+    border-radius: 32px;
+    color: #fff;
+    line-height: 1;
+    padding: 11px 16px;
+}
+
+#manager-cv #cv-list .box-cv, #manager-cv #cv-upload-list .box-cv {
+    border-radius: 5px;
+    height: 310px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+#manager-cv #cv-list .box-cv img, #manager-cv #cv-upload-list .box-cv img {
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    transition: .3s;
+    width: 100%;
+    z-index: 1;
+}
+
+#manager-cv #cv-list .box-cv .box-bg, #manager-cv #cv-upload-list .box-cv .box-bg {
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), #212f3f);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+#manager-cv #cv-list .box-cv .cv-main, #manager-cv #cv-upload-list .box-cv .cv-main {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+#manager-cv #cv-list .box-cv .cv-main a, #manager-cv #cv-upload-list .box-cv .cv-main a {
+    background: #fff;
+    border-radius: 12px;
+    color: #212f3f;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    padding: 4px 8px;
+}
+
+#manager-cv #cv-list .box-cv .box-info, #manager-cv #cv-upload-list .box-cv .box-info {
+    bottom: 16px;
+    color: #fff;
+    left: 16px;
+    position: absolute;
+    right: 16px;
+    z-index: 3;
+}
+
+#manager-cv #cv-list .box-cv .box-info .title-cv, #manager-cv #cv-upload-list .box-cv .box-info .title-cv {
+    display: flex;
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+#manager-cv #cv-list .box-cv .box-info .title-cv a, #manager-cv #cv-upload-list .box-cv .box-info .title-cv a {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #fff;
+    display: -webkit-box;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-right: 8px;
+    overflow: hidden;
+}
+#manager-cv #cv-list .box-cv .box-info .update_at, #manager-cv #cv-upload-list .box-cv .box-info .update_at {
+    color: #fff;
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 16px;
+}
+
+#manager-cv #cv-list .box-cv .box-info .action, #manager-cv #cv-upload-list .box-cv .box-info .action {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+
+#manager-cv #cv-list .box-cv .box-info .action a, #manager-cv #cv-upload-list .box-cv .box-info .action a {
+    background: hsla(0, 0%, 100%, .2);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 8px;
+    padding: 4px 8px;
+}
