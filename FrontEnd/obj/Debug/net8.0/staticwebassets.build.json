@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GWMF4lHR9OEzGeDhRUnOcvZaywlfhfq9O4VqwlIHCXs=",
+  "Hash": "DLYVXZw7DD8G4Tz8GBAyu8bd/62yoj8VfGEwEiFWZC4=",
   "Source": "FrontEnd",
   "BasePath": "_content/FrontEnd",
   "Mode": "Default",
@@ -338,6 +338,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\header.css"
+    },
+    {
+      "Identity": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\css\\img\\BG.559c004.svg",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "css/img/BG.559c004.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\img\\BG.559c004.svg"
     },
     {
       "Identity": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\css\\img\\header-bg.webp",

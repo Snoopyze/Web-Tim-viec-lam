@@ -11,9 +11,11 @@
 .text-grey {
     color: #5e6368;
 }
+
 .text-red {
     color: #ee0000;
 }
+
 .text-white {
     color: #fff;
 }
@@ -80,7 +82,6 @@
 .page-content .general-info-form {
     width: 100%;
     font-size: 15px;
-    
 }
 
 .page-content .card-info .title {
@@ -88,6 +89,7 @@
     color: #5e6368;
     margin-bottom: 0;
 }
+
 .page-content .general-info-form .title-input form {
     position: relative;
 }
@@ -103,17 +105,16 @@
     font-size: 14px;
 }
 
-.page-content input:focus {
-    border-color: #00b14f;
-    background-color: #f5fff9;
-}
+    .page-content input:focus {
+        border-color: #00b14f;
+        background-color: #f5fff9;
+    }
 
 .page-content .general-info-form .noted {
     font-size: 12px;
-   
 }
 
-.page-content .general-info-form .knowledge-title i{
+.page-content .general-info-form .knowledge-title i {
     font-size: 13px;
     margin-left: 4px;
 }
@@ -146,37 +147,36 @@
     width: 75px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    
 }
 
 .different-info .quantity-form .quantity-input {
     width: 160px;
     display: flex;
     text-align: center;
-
-}
-.different-info .quantity-form .quantity-input button {
-    height: 32.6px;
-    margin-top: 4px;
-    padding: 0 12px;
-    border: 1px solid #00b14f;
 }
 
-.different-info .quantity-form .quantity-input input{
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-}
- 
-.different-info .quantity-form .quantity-input .btn-decrease {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
+    .different-info .quantity-form .quantity-input button {
+        height: 32.6px;
+        margin-top: 4px;
+        padding: 0 12px;
+        border: 1px solid #00b14f;
+    }
 
-.different-info .quantity-form .quantity-input .btn-increase {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
+    .different-info .quantity-form .quantity-input input {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .different-info .quantity-form .quantity-input .btn-decrease {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .different-info .quantity-form .quantity-input .btn-increase {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
 
 
 .different-info .work-area .work-area-content {
@@ -189,6 +189,7 @@
 .different-info .gender-content select {
     width: 50%;
 }
+
 .different-info .work-time-item select,
 .different-info .work-time-item input {
     width: 110px;
@@ -198,7 +199,7 @@
 
 .page-content .advertise-box__image {
     width: 100%;
-    background: url(/imgs/BG.559c004.svg);
+    background: url(img/BG.559c004.svg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,6 +207,7 @@
     border-radius: 6px;
     background-position: 50%;
 }
+
 .page-content .advertise-box__image img {
     width: 80%;
     margin: 20px;
@@ -235,4 +237,3 @@
     padding: 8px 32px;
     border-radius: 4px;
 }
-
