@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="./css/thongTinCT.css" />
+}
+<div class="page-container">
+    <div class="breadcrumb-box">
+        <div class="breadcrumb-text">
+            <h6 class="mb-0 fw-bolder">Cài đặt tài khoản</h6>
+        </div>
+
+    </div>
+
+    <div class="container-fluid page-content">
+        <div class="d-flex shadow-sm">
+            <div>
+                <div class="list-group rounded">
+                    <a href="@Url.Action("Index", "CaiDatTaiKhoan")" class="list-item border-0">
+                        <i class="fa fa-lock me-2"></i>
+                        Đổi mật khẩu
+                    </a>
+                    <a href="@Url.Action("Index", "ThongTinCaNhan")" class="list-item border-0">
+                        <i class="fa fa-user me-2"></i>
+                        Thông tin cá nhân
+                    </a>
+                    <a href="@Url.Action("Index", "ThongTinCongTy")" class="list-item border-0 active">
+                        <i class="fa fa-building me-2"></i>
+                        Thông tin công ty
+                    </a>
+                </div>
+            </div>
+            <div class="bg-white w-100 rounded">
+                <div>
+                    <div class="card-header bg-white font-weight-bold border-0 fw-bolder">
+                        Thông tin công ty
+                    </div>
+                    <div class="card-body setting-form">
+                        <div class="ekyc-noti">
+                            <div class="area-encourage-verify">
+                                <div class="d-flex justify-content-between" style="font-size: 14px;">
+                                    <div class="d-flex">
+                                        <div class="encourage-verify-img d-flex align-content-center">
+                                            <img alt="" src="~/img/encourage-verify-ekyc.b6e7a78.svg">
+                                        </div>
+                                        <div class="encourage-verify-account ps-3">
+                                            <span class="text-blue">
+                                                Xác thực tài khoản điện tử giúp bạn
+                                            </span> 
+                                            <ul class="ps-0 mb-0">
+                                                <li>Tăng mức độ uy tín thương hiệu tuyển dụng của công ty</li> 
+                                                <li>Bảo vệ thương hiệu tuyển dụng trước các đối tượng giả mạo</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="encourage-verify-button d-flex align-items-center ">
+                                        <button type="button" class="btn min-width btn btn-info ml-2 align-items-center"> 
+                                            <i class="fa-solid fa-shield menu-item-icon mr-3"></i>
+                                            Xác thực ngay
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="pt-1">
+                            <div class="updating-form">
+                                <div class="d-flex justify-content-between border mb-3 p-3">
+                                    <div>
+                                        <div class="fw-bolder">Yêu cầu cập nhật thông tin công ty</div> 
+                                        <div class="mt-1">Ngày yêu cầu gần nhất: --:-- --/--/--</div>
+                                    </div>
+                                    <div class="btn-create-request cursor-pointer">
+                                        Tạo yêu cầu
+                                    </div>
+                                </div> 
+                                <div class="border">
+                                    <div class="d-flex justify-content-between company-info-header mb-2 p-3">
+                                        <div class="d-flex">
+                                            <div class="me-3 avatar">
+                                                <img src="./img/user.png"/>
+                                            </div> 
+                                            <div>
+                                                <div class="company-name-wrapper">
+                                                    <p class="mb-1 fw-bolder">
+                                                        CÔNG TY CỔ PHẦN THẨM ĐỊNH GIÁ TÍN NGHĨA
+                                                    </p> 
+                                                </div>
+                                                <p class="mb-0 text-muted">
+                                                    Số 81 Cách Mạng Tháng Tám, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh, Việt Nam | 25-99 nhân viên
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="company-info-body px-3">
+                                        <div class="row mt-3">
+                                            <div class="col-md-6">
+                                                <div class="row mb-2">
+                                                    <div class="col-md-5 font-weight-bold text-muted">
+                                                        Mã số thuế:
+                                                    </div>
+                                                    <div class="col-md-7">0318512401</div>
+                                                </div> 
+                                                <div class="row mb-2">
+                                                    <div class="col-md-5 font-weight-bold text-muted">Lĩnh vực hoạt động:</div>
+                                                    <div class="col-md-7">Bất động sản, Tài chính, Tư vấn</div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-md-5 font-weight-bold text-muted">Email:</div>
+                                                    <div class="col-md-7">tdgtnap@gmail.com</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="row mb-2">
+                                                    <div class="col-md-5 font-weight-bold text-muted">Website:</div>
+                                                    <div class="col-md-7">
+                                                        <span class="text-primary">https://tnap.com.vn/</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-md-5 font-weight-bold text-muted">Quy mô:</div>
+                                                    <div class="col-md-7">25-99 nhân viên</div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-md-5 font-weight-bold text-muted">Số điện thoại</div>
+                                                    <div class="col-md-7">0934666695</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row mb-2">
+                                                    <div class="col-md-2 font-weight-bold text-muted" style="width: 20.8333%; flex: 0 0 20.8333%; max-width: 20.8333%;">
+                                                        Địa chỉ:
+                                                    </div> <div class="col-md-10" style="width: 79.1667%; flex: 0 0 79.1667%; max-width: 79.1667%;">
+                                                        Số 81 Cách Mạng Tháng Tám, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh, Việt Nam
+                                                    </div>
+                                                </div> <div class="row mb-2">
+                                                    <div class="col-md-2 font-weight-bold text-muted" style="width: 20.8333%; flex: 0 0 20.8333%; max-width: 20.8333%;">
+                                                        Mô tả công ty:
+                                                    </div> <div class="col-md-10" style="width: 79.1667%; flex: 0 0 79.1667%; max-width: 79.1667%;"><p>Giấy chứng nhận đăng ký kinh doanh số 0318512401 đăng ký lần đầu ngày 14 tháng 06 năm 2024 của Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh</p><p>Giấy chứng nhận đủ điều kiện hành nghề Thẩm định giá số: 477/TĐG của Bộ Tài chính cấp ngày 02 tháng 10 năm 2024.</p><p>Với Đội ngũ Thẩm định viên/ Chuyên viên đều là các chuyên gia trong ngành thẩm định giá/ định giá có nhiều năm kinh nghiệm, chuyên môn cao</p><p>TNAP luôn luôn cam kết với Khách hàng : <i><strong>Uy tín – Giá trị – Thành Công</strong></i></p></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

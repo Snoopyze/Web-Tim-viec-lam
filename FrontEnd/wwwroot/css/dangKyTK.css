@@ -1,0 +1,163 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.text-green {
+    color: #00b14f;
+}
+
+.text-red {
+    color: #ee0000;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding-left: 42px !important;
+}
+/* ------------- */
+body {
+    display: flex;
+    font-family: "Inter",sans-serif !important;
+}
+
+    body > div {
+        margin: 2% auto 0;
+        max-width: 800px;
+    }
+
+.tabs {
+    display: flex;
+    position: relative;
+}
+
+    .tabs .line {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 6px;
+        border-radius: 15px;
+        background-color: #00b14f;
+        transition: all 0.2s ease;
+    }
+
+.tab-item {
+    min-width: 80px;
+    padding: 16px 20px 11px 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #00b14f;
+    background-color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 5px solid transparent;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+    .tab-item:hover {
+        opacity: 1;
+        background-color: rgba(194, 53, 100, 0.05);
+        border-color: rgba(194, 53, 100, 0.1);
+    }
+
+    .tab-item.active {
+        opacity: 1;
+    }
+
+.tab-pane {
+    color: #333;
+    display: none;
+}
+
+    .tab-pane.active {
+        display: block;
+    }
+
+    .tab-pane h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+/* ---------tab-content--------- */
+
+.text-title {
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.register-form::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.col-form-input {
+    width: 100%;
+    float: left;
+}
+
+.left-inner-addon {
+    position: relative;
+}
+
+    .left-inner-addon i {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #00b14f;
+        font-weight: 400;
+    }
+
+.content-container .register-form .warning-email-text {
+    font-size: 12px;
+    color: #da4538;
+    font-weight: 300;
+}
+
+.col-form-input .gender {
+    gap: 16px;
+}
+
+.infor-company::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.company-location {
+    width: 100%;
+}
+
+.btn-register {
+    margin-top: 16px;
+    padding: 8px;
+    background-color: #00b14f;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.login-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+    .login-title a {
+        text-decoration: none;
+    }
+
+        .login-title a:hover {
+            color: #00652d;
+        }

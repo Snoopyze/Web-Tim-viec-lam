@@ -1,0 +1,100 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForUser.cshtml";
+}
+
+@section title
+{
+    <title>CÔNG TY TNHH THƯƠNG MẠI ĐIỆN TỬ GOBUY VIỆT NAM</title>
+
+}
+
+
+@section linkCss
+{
+    <link rel="stylesheet" href="../css/doiMatKhau.css">
+
+}
+
+
+@section linkJs
+{
+    <link rel="stylesheet" href="../js/caiDatThongTinCaNhan.js">
+
+}
+
+<div class="info_container">
+    <!-- Left Panel -->
+    <div class="left-panel-container">
+        <h3 class="Change_pass_title">
+            Thay đổi mật khẩu đăng nhập</h2>
+            <div class="left-panel">
+
+                <form>
+                    <label for="email">Email đăng nhập</label>
+                    <input type="email" id="email" value="baovip991@gmail.com" disabled>
+                    <label for="password">Mặt khẩu hiện tại</label>
+                    <input type="password" id="pass" placeholder="Mật khẩu hiện tại">
+                    <label for="password">Mật Khẩu mới</label>
+                    <input type="password" id="phone" placeholder="Nhập mật khẩu mới">
+                    <label for="password">Nhập lại mật khẩu mới <strong></strong></label>
+                    <input type="password" id="phone" placeholder="Nhập lại mật khẩu mới">
+                    <button type="submit" class="btn-save">Lưu</button>
+                </form>
+            </div>
+    </div>
+    <!-- Right Panel -->
+    <div class="right-panel_container">
+        <div class="right-panel">
+            <!-- Thông tin người dùng -->
+            <div class="user-info">
+                <div class="avatar"><img src="../img/default-avatar.fc9c40ba.png" alt=""></div>
+                <div class="user-details">
+                    <p>Chào bạn trở lại</p>
+                    <p><strong class="name">Ẩn Hồ</strong></p>
+                    <div class="action-buttons">
+                        <button class="btn-verify"><strong>Tài khoản đã xác thực</strong></button>
+                        <button class="btn-upgrade"><strong>Nâng cấp tài khoản</strong></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cài đặt tìm kiếm -->
+            <hr class="divider">
+            <div>
+                <div class="job-search">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="toggle-job-search">
+                        <span class="checkbox-box"></span>
+                        <strong class="checkbox_content" id="job-search-text">Đang Tắt tìm việc</strong>
+                    </label>
+                    <p class="text_under" id="text_jobSearchText" id="job-search-text">Bật tìm việc giúp hồ sơ của bạn nổi bật hơn và được chú ý nhiều hơn trong danh sách tìm kiếm của NTD.</p>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="toggle-allow-ntd">
+                        <span class="checkbox-box"></span>
+                        <strong class="checkbox_content" id="allow-ntd-text">Cho phép NTD tìm kiếm hồ sơ</strong>
+                    </label>
+                    <p class="text_under" id="text_allowNtdText">Khi bạn cho phép, các NTD uy tín có thể chủ động kết nối và gửi đến bạn những cơ hội việc làm hấp dẫn nhất, giúp nhân đôi hiệu quả tìm việc.</p>
+                </div>
+                <hr class="divider">
+                <div class="update-profile">
+                    <p class="info-text">
+                        <span class="icon-status">✔</span>
+                        Bạn cần hoàn thiện trên 70% TopCV Profile để bật đèn tiếp cận với nhà tuyển dụng
+                    </p>
+                    <button class="btn-update">Cập nhật TopCV Profile</button>
+                </div>
+            </div>
+            <hr class="divider">
+
+            <!-- Đánh giá CV -->
+
+        </div>
+        <div class="cv-review right-panel">
+            <p class="title">CV của bạn đã đủ tốt?</p>
+            <p class="subtitle">Bao nhiêu NTD đang quan tâm tới Hồ sơ của bạn?</p>
+            <p class="view-count">0 lượt</p>
+            <button class="btn-check">Khám phá ngay</button>
+        </div>
+    </div>
+
+</div>

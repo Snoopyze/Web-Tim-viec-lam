@@ -1,0 +1,276 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Bang tin";
+    <link rel="stylesheet" href="~/css/bangTin.css" />
+   
+}
+<div class="content">
+    <div class="content__announce d-flex">
+        <div class="content__announce-icon">
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+        <div class="content__announce-info">
+            <h3>Thông báo quan trọng</h3>
+            <div class="d-flex">
+                <p>Từ ngày&nbsp</p>
+                <strong>05/09/2024,&nbsp</strong>
+                <p>Top CV&nbsp</p>
+                <strong>ngừng hỗ trợ tin đăng cơ bản (standard) &nbsp</strong>
+                <p> đối với một số nhóm vị trí tuyển dụng nhất định (xem chi tiết <a href="#" class="text-green">tại đây</a>)</p>
+            </div>
+        </div>
+    </div>
+    <h1>Bảng tin</h1>
+    <div class="content__slider">
+        <div class="slider__wrapper d-flex">
+            <div class="slider__wrapper-inner col-6">
+                <a href="#">
+                    <img src="./img/slide1.jpg" />
+                </a>
+            </div>
+            <div class="slider__wrapper-inner col-6">
+                <a href="#">
+                    <img src="./img/slide2.jpg" />
+                </a>
+            </div>
+            <div class="slider__wrapper-inner col-6">
+                <a href="#">
+                    <img src="./img/slide3.jpg" />
+                </a>
+            </div>
+            <div class="slider__wrapper-inner col-6">
+                <a href="#">
+                    <img src="./img/slide4.jpg" />
+                </a>
+            </div>
+            <div class="slider__wrapper-inner col-6">
+                <a href="#">
+                    <img src="./img/slide5.jpg" />
+                </a>
+            </div>
+            <div class="slider__wrapper-inner col-6">
+                <a href="#">
+                    <img src="./img/slide6.jpg" />
+                </a>
+            </div>
+            <div class="slider__wrapper-inner col-6">
+                <a href="#">
+                    <img src="./img/slide7.jpg" />
+                </a>
+            </div>
+            <div class="slider__wrapper-inner col-6">
+                <a href="#">
+                    <img src="./img/slide8.jpg" />
+                </a>
+            </div>
+            <div class="slider__wrapper-inner col-6">
+                <a href="#">
+                    <img src="./img/slide9.jpg" />
+                </a>
+            </div>
+
+        </div>
+        <div class="slider__wrapper-control">
+            <button class="btn-control control--prev" aria-label="Previous page" type="button" data-bs-slide="prev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="btn-control control--next" aria-label="Previous page" type="button" data-bs-slide="next">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="card__container row mt-3">
+        <div class="card-container__column col-6 pe-0">
+            <div class="card-container__card card border-0 shadow-sm rounded">
+                <div class="card__header p-3 d-flex align-items-center">
+                    <h5 class="mb-0">Hiệu quả tuyển dụng</h5>
+                    <div class="ms-auto">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+                </div>
+                <div class="card__body px-3">
+                    <div class="statistic-row row pb-3 mr-0">
+                        <div class="statistic-row__item col-6 pr-0">
+                            <a href="#">
+                                <div class="statistic-box__content bg-blue d-flex statistic-box">
+                                    <div class="statistic-box__info text-info">
+                                        <h5 class="font-weight-bold text-blue">0</h5>
+                                        <span class="text-blue">Chiến dịch đang mở</span>
+                                    </div>
+                                    <div class="statistic-box__icon">
+                                        <i class="bi bi-megaphone text-blue"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="statistic-row__item col-6 pr-0">
+                            <a href="#">
+                                <div class="statistic-box__content bg-green d-flex statistic-box">
+                                    <div class="statistic-box__info text-info">
+                                        <h5 class="font-weight-bold text-green">0</h5>
+                                        <span class="text-green">CV tiếp nhận</span>
+                                    </div>
+                                    <div class="statistic-box__icon">
+                                        <i class="bi bi-filetype-pdf text-green"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="row pb-3 mr-0">
+                        <div class="statistic-row__item col-6 pr-0">
+                            <a href="#">
+                                <div class="statistic-box__content bg-yellow d-flex statistic-box">
+                                    <div class="statistic-box__info text-info">
+                                        <h5 class="font-weight-bold text-yellow">0</h5>
+                                        <span class="text-yellow">Tin tuyển dụng hiển thị</span>
+                                    </div>
+                                    <div class="statistic-box__icon">
+                                        <i class="bi bi-file-earmark-text text-yellow"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="statistic-row__item col-6 pr-0">
+                            <a href="#">
+                                <div class="statistic-box__content bg-red d-flex statistic-box">
+                                    <div class="statistic-box__info text-info">
+                                        <h5 class="font-weight-bold text-red">0</h5>
+                                        <span class="text-red">CV ứng tuyển mới</span>
+                                    </div>
+                                    <div class="statistic-box__icon">
+                                        <i class="bi bi-file-earmark-arrow-up text-red"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart--recruit">
+                    <img src="./img/recruitment-effective-empty.png" />
+                    <div class="chart--recruit-des">
+                        <span class="text-muted">Chưa đủ dữ liệu để hiển thị</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card-container__column col-6">
+            <div class="card__customer mb-3">
+                <div class="card__customer-header box-customer-info bg-white">
+                    <div class="card__customer-info d-flex">
+                        <div class="customer__info d-flex">
+                            <div class="customer__info-avatar">
+                                <img src="./img/user.png" />
+                            </div>
+                            <div class="customer__info-content">
+                                <h5 class="customer__info-title">Nguyen Hoang Anh</h5>
+                                <span class="customer__info-label">Mã NTD: 698651</span>
+                                <div class="customer__content-contact d-flex gap-2">
+                                    <div class="email d-flex gap-1">
+                                        <i class="bi bi-envelope mtop-2"></i>
+                                        <span class="customer__info-label">nguyendinh12735@gmail.com</span>
+                                    </div>
+                                    <div class="phone d-flex gap-1">
+                                        <i class="bi bi-telephone mtop-2"></i>
+                                        <span class="customer__info-label">0387219999</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="customer__medal mt-3">
+                            <a href="#">
+                                <img src="./img/member.png" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card__customer-subtract">
+                        <img src="./img/subtract.ba3a797.svg" />
+                    </div>
+                    <div class="card__customer-more">
+                        <div class="auth-verify d-flex">
+                            <div class="warning col-9">
+                                <span>Bạn cần đạt tối thiểu cấp độ xác thực 2 để sử dụng các quyền lợi tương ứng.</span>
+                                <div class="">
+                                    <a data-v-823ce444="" href="https://tuyendung.topcv.vn/help/huong-dan-su-dung/quy-dinh-chung-cua-chuong-trinh-topcv-rewards/" target="_blank">Tìm hiểu thêm</a>
+                                </div>
+                            </div>
+                            <div class="verify col-3">
+                                <button class="btn-verify text-green bg-green">Xác thực ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-100 mt-3">
+        <div class="card__cv card border-0 shadow-sm rounded">
+            <div class="card__cv-content p-3">
+                <h5 class="mb-0">Các vị trí đã được TopCV tối ưu kết quả tìm kiếm</h5>
+                <span class="text-grey">
+                    Chúng tôi sẽ liên tục cập nhật các vị trí mới và gia tăng nguồn ứng viên phù hợp dựa theo nhu cầu tìm kiếm của bạn.
+                </span>
+                <hr />
+                <div class="card__cv-item mt-2">
+                    <h5 class="w-6">Hành chính văn phòng</h5>
+                    <div class="row">
+                        <span class="col-md-4 col-xs-6 tag-item">
+                            Chuyên viên Nhân sự
+                            <span class="tag-count">(203,654)</span>
+                        </span>
+                        <span class="col-md-4 col-xs-6 tag-item">
+                            Chuyên viên Nhân sự
+                            <span class="tag-count">(203,654)</span>
+                        </span>
+                        <span class="col-md-4 col-xs-6 tag-item">
+                            Chuyên viên Nhân sự
+                            <span class="tag-count">(203,654)</span>
+                        </span>
+                        <span class="col-md-4 col-xs-6 tag-item">
+                            Chuyên viên Nhân sự
+                            <span class="tag-count">(203,654)</span>
+                        </span>
+                        <span class="col-md-4 col-xs-6 tag-item">
+                            Chuyên viên Nhân sự
+                            <span class="tag-count">(203,654)</span>
+                        </span>
+                        <span class="col-md-4 col-xs-6 tag-item">
+                            Chuyên viên Nhân sự
+                            <span class="tag-count">(203,654)</span>
+                        </span>
+                        <span class="col-md-4 col-xs-6 tag-item">
+                            Chuyên viên Nhân sự
+                            <span class="tag-count">(203,654)</span>
+                        </span>
+                        <span class="col-md-4 col-xs-6 tag-item">
+                            Chuyên viên Nhân sự
+                            <span class="tag-count">(203,654)</span>
+                        </span>
+                        <span class="col-md-4 col-xs-6 tag-item">
+                            Chuyên viên Nhân sự
+                            <span class="tag-count">(203,654)</span>
+                        </span>
+                        <span class="col-md-4 col-xs-6 tag-item">
+                            Chuyên viên Nhân sự
+                            <span class="tag-count">(203,654)</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="./js/bangTin.js"></script>
+
+

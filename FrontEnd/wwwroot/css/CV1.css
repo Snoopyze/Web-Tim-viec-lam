@@ -1,0 +1,205 @@
+﻿
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    margin-top: 150px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    text-align: center;
+}
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #ccc;
+    }
+
+.upload-btn-cv {
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.personal-details {
+    flex: 1;
+}
+
+    .personal-details h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .personal-details h2 {
+        font-size: 18px;
+        color: #555;
+        margin: 5px 0;
+    }
+
+.details .section-row,
+.extras .section-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.block {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid #ddd;
+    position: relative;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+    .block:hover {
+        border: 1px solid #42a745;
+        outline: none;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+.content_block {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid #ddd;
+    position: relative;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+    .content_block:hover {
+        border: 1px dashed #4caf50;
+        outline: none;
+        background-color: #f9f9f9;
+    }
+
+    .content_block:first-child {
+        border: 1px dashed #4caf50;
+        outline: none;
+        background-color: #f9f9f9;
+    }
+
+h3 {
+    font-size: 18px;
+    color: #333;
+    border-bottom: 2px solid #4caf50;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+[contenteditable]:hover {
+    border: 1px dashed #4caf50;
+    outline: none;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+[contenteditable]:focus {
+    border: 2px solid #4caf50;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+[contenteditable] {
+    border: 1px dashed transparent;
+    padding: 2px;
+    cursor: text;
+}
+
+
+
+.controls {
+    display: none;
+    position: absolute;
+    top: -30px; /* Đặt nút ngay phía trên của block */
+    left: 5px; /* Đặt nút ở phía bên trái của block */
+    z-index: 10;
+}
+
+.controls2 {
+    display: none;
+    position: absolute;
+    top: -30px; /* Đặt nút ngay phía trên của block */
+    left: 25px; /* Đặt nút ở phía bên trái của block */
+    z-index: 10;
+}
+/* Hiển thị các nút khi hover */
+.block:hover .controls {
+    display: block;
+}
+
+.content_block:hover .controls2 {
+    display: block;
+}
+/* Style cho nút xóa (hình vuông và màu xám nhạt) */
+button.delete-btn {
+    background-color: #ccc; /* Màu xám nhạt cho nút */
+    color: white;
+    border: none;
+    width: 30px; /* Đổi thành hình vuông */
+    height: 30px; /* Đổi thành hình vuông */
+    font-size: 16px; /* Kích thước chữ */
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 3px; /* Cạnh nút tròn nhẹ */
+}
+
+button.add-btn {
+    background-color: #ccc; /* Màu xám nhạt cho nút */
+    color: white;
+    border: none;
+    width: 30px; /* Đổi thành hình vuông */
+    height: 30px; /* Đổi thành hình vuông */
+    font-size: 16px; /* Kích thước chữ */
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 3px; /* Cạnh nút tròn nhẹ */
+}
+
+    button.add-btn:hover {
+        background-color: #bbb; /* Màu khi hover */
+    }
+
+/* Đổi màu khi hover */
+button.delete-btn:hover {
+    background-color: #bbb; /* Màu khi hover */
+}
+/*cv-------------------------------------cv*/
+

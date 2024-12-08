@@ -1,0 +1,377 @@
+﻿
+@{
+    ViewData["Title"] = "Đăng tin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="./css/dangTinTD.css" />
+    <script src="https://cdn.tiny.cloud/1/mh9fs76vs2l3ftbj6kotow1psnx2q6k1aa2tjbd3b34c16bl/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+   
+
+}
+<div class="page-container">
+    <div class="breadcrumb-container">
+        <div class="breadcrumb-box">
+            <div class="breadcrumb-text">
+                <h6 class="mb-0 fw-bolder">Đăng tin tuyển dụng</h6>
+            </div>
+            <div class="breadcrumb-button">
+                <button class="me-2 text-green bg-lightgreen">Lưu nháp</button>
+                <button class="text-white bg-green">Lưu & Đăng tin</button>
+            </div>
+        </div>
+     </div>
+    
+    <div class="container-fluid page-content">
+        <div class="card__container row mt-1">
+            <div class="card-container__column col-8">
+
+                @* -------------------------START Thông tin chung------------------------------ *@
+                <div class="col-6 general-info card-info">
+                    <div class="general-info-title">
+                        <h6 class="fw-bolder">Thông tin chung</h6>
+                    </div>
+
+                    <div class="general-info-form mt-3">
+                        <div class="title-input">
+                            <form>
+                                <label for="fname" class="title mb-1">Tiêu đề tin <span class="text-red">*</span></label><br>
+                                <span class="noted">Tiêu đề giới hạn <strong>50 ký tự</strong></span>
+                                <input type="text" id="fname" name="fname" maxlength="50" placeholder="Tiêu đề tin" oninput="updateCharCount()">
+                              
+                            </form>
+                        </div>
+                        
+                        <div class="specialization mt-4">
+                            <div class="specialization-title">
+                                <h6 class="title mb-0">Vị trí chuyên môn (Specialization) <span class="text-red">*</span></h6>
+                            </div>
+                            <div class="specialization-selected mt-1">
+                                <span class="noted">Chọn đúng <strong>"Vị trí chuyên môn" </strong> giúp phân loại Job, tiếp cận ứng viên chính xác hơn và nâng cao Chất lượng CV ứng tuyển.</span>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Chọn vị trí chuyên môn</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                      
+                        <div class="rank mt-4">
+                            <div class="rank-title">
+                                <h6 class="title">Kinh nghiệm <span class="text-red">*</span></h6>
+                            </div>
+                            <div class="rank-selected">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Chưa có kinh nghiệm</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @* -------------------------END Thông tin chung------------------------------ *@
+
+                @* -------------------------START Thông tin chi tiết------------------------------ *@
+
+                <div class="col-6 detail-info card-info mt-3">
+                    <div class="detail-info-title">
+                        <h6 class="fw-bolder">Thông tin chi tiết</h6>
+                    </div>
+                    <div class="detail-info-form mt-3">
+                        <div class="job-des">
+                            <div class="job-des-title">
+                                <h6 class="title mb-0">Mô tả công việc <span class="text-red">*</span></h6>
+                            </div>
+                            <div class="job-des-content mt-1">
+                                <textarea class="" style="width: 100%">
+                                   
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="job-des mt-4">
+                            <div class="job-des-title">
+                                <h6 class="title mb-0">Yêu cầu ứng viên <span class="text-red">*</span></h6>
+                            </div>
+                            <div class="job-des-content mt-1">
+                                <textarea>
+
+                                </textarea>
+                            </div>
+                        </div>
+                    
+                        <div class="job-des mt-4">
+                            <div class="job-des-title">
+                                <h6 class="title mb-0">Quyền lợi ứng viên <span class="text-red">*</span></h6>
+                            </div>
+                            <div class="job-des-content mt-1">
+                                <textarea>
+
+                                </textarea>
+                            </div>
+                        </div>
+                    </div> 
+                   
+                </div>
+
+                @* -------------------------END Thông tin chi tiết------------------------------ *@
+
+                @* -------------------------START Thông tin khác------------------------------ *@
+                <div class="col-6 different-info card-info mt-3">
+                    <div class="different-info-title">
+                        <h6 class="fw-bolder">Thông tin khác</h6>
+                    </div>
+                    <div class="row different-info-content mt-3">
+                        <div class="job-type-form col-6">
+                           
+                            <div class="job-type-title">
+                                <h6 class="title mb-0">Loại công việc <span class="text-red">*</span></h6>
+                            </div>
+                            <div class="job-type-content mt-1">
+                                <div class="job-type-selected">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Toàn thời gian</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <div class="salary-form col-6">
+                            <div class="salary">
+                                <div class="salary-title">
+                                    <h6 class="title mb-0">Mức lương <span class="text-red">*</span></h6>
+                                </div>
+                                <div class="salary-content mt-1">
+                                    <div class="salary-input">
+                                        <div class="salary-input-group input-group">
+                                            <input type="text" class="salary-min form-control mt-0 border-end-0" placeholder="0">
+                                            <span class="input-group-text">&#8722</span>
+                                            <input type="text" class="salary-min form-control mt-0 border-start-0" placeholder="0">
+                                        </div>
+                                        <div class="currency">
+                                            <select class="form-select mt-0" aria-label="Default select example">
+                                                <option selected>VND</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 detail-info-form">
+                            <div class="mt-3">
+                                <div class="job-des-title">
+                                    <h6 class="title mb-0">Hạn nhận hồ sơ <span class="text-red">*</span></h6>
+                                </div>
+                                <div class="job-des-content mt-1">
+                                     <div class="input-group flex-nowrap">
+                                        <input type="date" class="form-control">
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="col-6 quantity-form">
+                            <div class="mt-3">
+                                <div class="quantity-title">
+                                    <h6 class="title mb-0">Số lượng tuyển <span class="text-red">*</span></h6>
+                                </div>
+                                <div class="quantity-content mt-1">
+                                    <div class="quantity-input">
+                                        <button class="btn-decrease">-</button>
+                                        <input type="text" id="quantity" class="text-center" value="1" min="1">
+                                        <button class="btn-increase">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-area mt-4">
+                        <div class="work-area-title">
+                            <h6 class="title mb-0">Khu vực làm việc <span class="text-red">*</span></h6>
+                        </div>
+                        <div class="work-area-content mt-1">
+                            <div class="work-area-item">
+                                <div>
+                                    <i class="bi bi-geo-alt-fill text-green"></i>
+                                    <span>Khu vực 1:</span>
+                                </div>
+                                <div>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Chọn Tỉnh/ Thành</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <hr />
+                            </div>
+                            <div class="row">
+                                <div class="col-6 detail-info-form">
+                                    <div>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Chọn Quận/ Huyện</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-6 quantity-form">
+                                    <div class="input-group flex-nowrap">
+                                        <input type="text" class="form-control" placeholder="Nhập địa điểm làm việc cụ thể">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="gender mt-4">
+                            <div class="gender-title">
+                                <h6 class="title mb-0">Giới tính</h6>
+                            </div>
+                            <div class="gender-content mt-1">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Không yêu cầu</option>
+                                    <option value="1">Nam</option>
+                                    <option value="2">Nữ</option>
+                                    <option value="3">Khác</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="work-time mt-4">
+                            <div class="work-time-title">
+                                <h6 class="title mb-0">Thời gian làm việc</h6>
+                            </div>
+                            <div class="work-time-content mt-1">
+                                <div class="work-time-item d-flex">
+                                    <div class="d-flex me-4">
+                                        <div class="align-self-center me-2">
+                                            <span>Từ: </span>
+                                         </div>
+                                        <div class="date-selected">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Thứ 2</option>
+                                                <option value="1">Thứ 3</option>
+                                                <option value="2">Thứ 4</option>
+                                                <option value="3">Thứ 5</option>
+                                                <option value="4">Thứ 6</option>
+                                                <option value="5">Thứ 7</option>
+                                                <option value="6">Chủ nhật</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex">
+                                        <div class="align-self-center me-2">
+                                            <span>Đến: </span>
+                                        </div>
+                                        <div class="date-selected">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Thứ 2</option>
+                                                <option value="1">Thứ 3</option>
+                                                <option value="2">Thứ 4</option>
+                                                <option value="3">Thứ 5</option>
+                                                <option value="4">Thứ 6</option>
+                                                <option value="5">Thứ 7</option>
+                                                <option value="6">Chủ nhật</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                   
+                                 </div>
+                                <div class="work-time-item d-flex mt-2">
+                                    <div class="time-start d-flex me-4">
+                                        <span class="align-self-center me-2">Từ: </span>
+                                        <input type="time" id="appt" name="appt">
+                                    </div>
+                                    <div class="time-end d-flex me-2">
+                                        <span class="align-self-center me-2">Đến: </span>
+                                        <input type="time" id="appt" name="appt">
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @* -------------------------END Thông tin khác------------------------------ *@
+
+            @* -------------------------START Thông tin nhận hồ sơ------------------------------ *@
+                <div class="col-6 receive-info card-info mt-3">
+                    <div class="receive-info-title">
+                        <h6 class="fw-bolder">Thông tin nhận hồ sơ</h6>
+                    </div>
+
+                    <div class="receive-info-form mt-3">
+                        <div class="row">
+                            <div class="col-6 receive-info-form">
+                                <div class="receive-info-title">
+                                    <h6 class="title mb-0">Họ và tên người nhận <span class="text-red">*</span></h6>
+                                </div>
+                                <div>
+                                    <input type="text" class="form-control" placeholder="Nhập họ và tên người nhận">
+                                </div>
+                            </div>
+                            <div class="col-6 receive-info-form">
+                                <div class="receive-info-title">
+                                    <h6 class="title mb-0">Số điện thoại <span class="text-red">*</span></h6>
+                                </div>
+                                <div>
+                                    <input type="tel" class="form-control" placeholder="Nhập số điện thoại">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="receive-email mt-4">
+                            <div class="receive-email-title">
+                                <h6 class="title">Email nhận hồ sơ <span class="text-red">*</span></h6>
+                            </div>
+                            <div class="receive-email-input">
+                                <input type="email" class="form-control" placeholder="Nhập email">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            @* -------------------------END Thông tin nhận hồ sơ------------------------------ *@
+
+            @* -------------------------START col-4------------------------------ *@
+            <div class="card-container__column col-4">
+                <div class="advertise-box">
+                    <div class="advertise-box__image">
+                        <img src="./img/JV_hanh_chinh_nhan_su.png" />
+                    </div>
+                </div> 
+                
+                <div class="featured-box mt-3">
+                    <div class="featured-box-title">
+                        <h6 class="fw-bolder mb-0">Hình ảnh nổi bật</h6>
+                    </div>
+
+                    <div class="featured-box-content">
+                        <div class="featured-box-span">
+                            <span>Bổ sung hình ảnh sẽ giúp thông tin công ty được hiển thị chuyện nghiệp hơn.</span>
+                        </div>
+                        <div class="featured-box-button d-flex justify-content-center">
+                            <button class="text-white bg-green">
+                                <i class="bi bi-card-image"></i>
+                                Thêm ảnh
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+</div>
+<script src="./js/dangTinTD.js"></script>

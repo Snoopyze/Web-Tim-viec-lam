@@ -1,0 +1,132 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.text-green {
+    color: #00b14f;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.bg-green {
+    background-color: #00b14f;
+}
+
+.bg-lightgreen {
+    background-color: #f5fff9;
+}
+
+.bg-blue {
+    background-color: #f5f8fa;
+}
+
+.active {
+    color: #00b14f !important;
+    background: #fff;
+    font-weight: 700;
+}
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+}
+/*----------------------------------*/
+.page-container {
+    width: 100%;
+    background-color: #e8edf2;
+    font-size: 15px;
+}
+
+.page-container .breadcrumb-box {
+    position: sticky;
+    top: 64px;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e8edf2;
+    z-index: 999;
+}
+
+.page-container .breadcrumb-text {
+    display: flex;
+    align-self: center;
+}
+
+.page-content {
+    padding: 20px 20px 80px;
+}
+
+.page-content .list-group {
+    height: 100%;
+    background: #f5f8fa;
+    width: 260px;
+}
+
+.page-content .list-item {
+    text-decoration: none;
+    color: #000;
+    padding: 14px 16px;
+}
+.page-content .setting-form {
+    margin: 0 1.25rem 1.25rem;
+    border: 1px solid #e8edf2;
+}
+
+.page-content .verify-step-title {
+    color: #5e6368;
+    font-size: 14px;
+}
+
+.page-content .verify-content {
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.page-content .verify-content__progress .progress {
+    height: 6px;
+    margin: 12px 0;
+    background-color: #f5f8fa;
+    border-radius: 0;
+}
+
+.page-content .verify-content__progress .progress .progress-bar {
+    width:33%;
+    background-color: #00b14f;
+    height: 6px;
+    border-radius: 5px;
+}
+
+.page-content .verify-item {
+    padding: 10px 8px;
+    border-radius: 8px;
+    background: #fff;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+.page-content .verify-item .btn-to-verify {
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: #f5f8fa;
+    cursor: pointer;
+    color: #00b14f;
+    font-weight: 400;
+    width: 30px;
+    height: 30px;
+}
+
+.page-content .verify-item .btn-to-verify:hover {
+    background-color: #00b14f;
+   
+}
+
+.page-content .verify-item .btn-to-verify i:hover {
+    color: #fff;
+}

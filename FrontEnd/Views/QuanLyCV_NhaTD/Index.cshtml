@@ -1,0 +1,298 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/quanLyCV_NhaTD.css" />
+}
+<div class="page-container has-sub-breadcrumb">
+    <div class="breadcrumb-box">
+        <h6>Quản lý CV ứng viên</h6>
+    </div>
+    <div class="py-2 sub-breadcrumb-box">
+        <div class="filter-container w-100">
+            <div class="d-flex w-100">
+                <div class="box-search d-flex align-items-center d-flex">
+                    <form class="content form-search me-3">
+                        <input type="text" placeholder="Tìm kiếm tên, email, số điện thoại" class="form-control pe-4">
+                        <button type="submit" class="btn-search border-0 bg-transparent">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="select-campaign d-flex align-items-center justify-content-center d-flex">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Chọn chiến dịch tuyển dụng</option>
+                        <option value="1">Danh sách trống</option>
+                    </select>
+                </div>
+                <div class="select-campaign d-flex align-items-center justify-content-center d-flex">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Nhập trạng thái CV</option>
+                        <option value="2">Phù hợp</option>
+                        <option value="3">Hẹn phỏng vấn</option>
+                        <option value="4">Gửi đề nghị</option>
+                    </select>
+                </div>
+                <div class="select-campaign d-flex align-items-center justify-content-center d-flex">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Nhập nguồn CV</option>
+                        <option value="1">Ứng dụng</option>
+                        <option value="2">Tìm CV</option>
+                        <option value="3">Việc làm siêu tốc</option>
+                        <option value="4">CV độc quyền</option>
+                        <option value="5">CV đề xuất</option>
+                    </select>
+                </div>
+                <div class="select-campaign d-flex align-items-center justify-content-center d-flex">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Tất cả nhãn</option>
+                        <option value="1">Chưa gắn nhãn</option>
+                        <option value="2">Ưu tiên</option>
+                        <option value="3">Chưa gắn nhãn</option>
+
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container container-fluid">
+        <div class="d-flex banner-content mt-3">
+            <div class="d-flex align-items-center banner-shiring__content">
+                <a>
+                    <div class="d-flex align-items-center banner-shiring__content">
+                        <img src="./img/icon.png" />
+                        <span>
+                            Đồng bộ hồ sơ ứng viên từ các website tuyển dụng, gửi email tự động, đặt lịch phỏng vấn, lập báo cáo hiệu quả tuyển dụng với SHiring.ai
+                        </span>
+                    </div>
+
+                </a>
+            </div>
+            <div class="banner-shiring__action">
+                <a href="#" class="text-green">Đăng ký ngay</a>
+                <i class="fa-solid fa-chevron-right text-green"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid page-content">
+        <div class="page-list-cv bg-white rounded shadow-sm mb-3">
+            <div class="flex-sb align-items-center p-3 d-flex">
+                <div class="text-grey">
+                    <span>Tìm thấy</span>
+                    <span class="text-green" style="font-size:15px; font-weight: 700">0</span>
+                    <span>ứng viên</span>
+                </div>
+                <div class="d-flex ms-auto">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Hiển thị tất cả CV</option>
+                        <option value="1">Chỉ hiển thị CV chưa xem</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="list-cv">
+                <table class="w-100">
+                    <thead>
+                        <tr>
+                            <th>Ứng viên</th>
+                            <th>Mã CV</th>
+                            <th>Thông tin liên hệ</th>
+                            <th>Insights</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="info-cv">
+                                <div class="candidate-info d-flex">
+                                    <div class="avatar">
+                                        <img src="./img/c31bd153833aa2b6f4b71bb9b59899ad.jpg" />
+                                    </div>
+                                    <div class="info">
+                                        <h6>Byeon Woo Seok</h6>
+                                        <span class="text-grey">Đã xem</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="id-candidate ">
+                                    <span>#635160</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="contact-info">
+                                    <div class="email">
+                                        <i class="bi bi-envelope"></i>
+                                        <span>beonwookseok@gmail.com</span>
+                                    </div>
+                                    <div class="phone">
+                                        <i class="bi bi-telephone"></i>
+                                        <span>0111111111</span>
+                                    </div>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="insight">
+                                    <div class="comment">
+                                        <i class="bi bi-suitcase-lg"></i>
+                                        <span>CV đề xuất</span>
+                                    </div>
+                                    <div class="time">
+                                        <i class="bi bi-clock"></i>
+                                        <span>24/06/2023</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="condition d-flex">
+                                    <span class="m-auto">Phù hợp</span>
+                                </div>
+
+                            </td>
+                        </tr>
+                        @* 1 *@
+
+                        <tr>
+                            <td class="info-cv">
+                                <div class="candidate-info d-flex">
+                                    <div class="avatar">
+                                        <img src="./img/c31bd153833aa2b6f4b71bb9b59899ad.jpg" />
+                                    </div>
+                                    <div class="info">
+                                        <h6>Byeon Woo Seok</h6>
+                                        <span class="text-grey">Đã xem</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="id-candidate ">
+                                    <span>#635160</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="contact-info">
+                                    <div class="email">
+                                        <i class="bi bi-envelope"></i>
+                                        <span>beonwookseok@gmail.com</span>
+                                    </div>
+                                    <div class="phone">
+                                        <i class="bi bi-telephone"></i>
+                                        <span>0111111111</span>
+                                    </div>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="insight">
+                                    <div class="comment">
+                                        <i class="bi bi-suitcase-lg"></i>
+                                        <span>CV đề xuất</span>
+                                    </div>
+                                    <div class="time">
+                                        <i class="bi bi-clock"></i>
+                                        <span>24/06/2023</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="condition d-flex">
+                                    <span class="m-auto">Phù hợp</span>
+                                </div>
+
+                            </td>
+                        </tr>
+
+                        @* 2 *@
+
+                        <tr>
+                            <td class="info-cv">
+                                <div class="candidate-info d-flex">
+                                    <div class="avatar">
+                                        <img src="./img/c31bd153833aa2b6f4b71bb9b59899ad.jpg" />
+                                    </div>
+                                    <div class="info">
+                                        <h6>Byeon Woo Seok</h6>
+                                        <span class="text-grey">Đã xem</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="id-candidate ">
+                                    <span>#635160</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="contact-info">
+                                    <div class="email">
+                                        <i class="bi bi-envelope"></i>
+                                        <span>beonwookseok@gmail.com</span>
+                                    </div>
+                                    <div class="phone">
+                                        <i class="bi bi-telephone"></i>
+                                        <span>0111111111</span>
+                                    </div>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="insight">
+                                    <div class="comment">
+                                        <i class="bi bi-suitcase-lg"></i>
+                                        <span>CV đề xuất</span>
+                                    </div>
+                                    <div class="time">
+                                        <i class="bi bi-clock"></i>
+                                        <span>24/06/2023</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="condition d-flex">
+                                    <span class="m-auto">Phù hợp</span>
+                                </div>
+
+                            </td>
+                        </tr>
+
+                        @* 3 *@
+
+                        @* Nếu danh sách CV trống
+                        <tr>
+                        <td class="tbfullname">Lê Văn Hải</td>
+                        <td>Vui lòng không thay đổi</td>
+                        <td>
+                        <p>Email: vanhai89@gmail.com</p>
+                        <p>SĐT: 0986618303</p>
+                        </td>
+                        <td>21/04/2022</td>
+                        <td>Phù hợp</td>
+                        </tr> *@
+                    </tbody>
+                </table>
+            </div>
+
+
+            @*  <div class="flex-sb align-items-center p-3 d-flex">
+            <div class="text-grey">
+            <span>Tìm thấy</span>
+            <span class="text-green" style="font-size:15px; font-weight: 700">0</span>
+            <span>ứng viên</span>
+            </div>
+            <div class="d-flex ms-auto">
+            <select class="form-select" aria-label="Default select example">
+            <option selected>Hiển thị tất cả CV</option>
+            <option value="1">Chỉ hiển thị CV chưa xem</option>
+            </select>
+            </div>
+            </div>
+            <div class="list-cv text-center justify-content-center p-3 d-flex flex-column d-">
+            <img src="~/imgs/empty.png" />
+            <span>Bạn không có CV</span>
+            </div> *@
+        </div>
+
+    </div>
+</div>
+
+  
