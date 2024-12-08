@@ -1,0 +1,190 @@
+:root{
+    --green: #00b14f;
+    --red: #d95350;
+}
+
+#main .company .box-search-company {
+    background: transparent linear-gradient(6deg, #fff, #c4ffdd 100%, rgba(195, 255, 221, .702) 0) 0 0 no-repeat padding-box;
+    margin-bottom: 0;
+    min-height: 273px;
+    padding-top: 24px;
+}
+
+#main .company .box-search-company .box-search .header {
+    padding-bottom: 33px;
+}
+#main .company .nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+#main .company .nav-link {
+    display: block;
+    padding: 5px 1px; 
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+#main .box-search-company .nav-item{
+    margin-right: 24px;
+}
+
+#main .box-search-company .nav-item .nav-link {
+    border-bottom: 2px solid transparent;
+    color: #333;
+    font-size: 14px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#main .box-search-company  .nav-item .nav-link.active {
+    border-color: #333;
+    font-weight: 600;
+}
+
+.company .box-search-company .box-search .caption {
+    margin-bottom: 37px;
+}
+
+.company .box-search-company .box-search .form-search {
+    background: #fff 0 0 no-repeat padding-box;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    display: flex
+;
+    height: 50px;
+    overflow: hidden;
+    position: relative;}
+
+.company .box-search-company .box-search .form-search i {
+    left: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.company .box-search-company .box-search .form-search #keyword {
+    border-color: transparent;
+    box-shadow: none;
+    font-size: 14px;
+    height: 100%;
+    outline: none;
+    padding-left: 62px;
+    width: 100%;
+}
+
+.company .box-search-company .box-search .form-search .btn-search {
+    background: #00b14f;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.company .box-search-company .box-img {
+    margin-left: auto;
+    pointer-events: none;
+}
+
+
+.company .box-search-company .box-img img{
+    width: 272px !important;
+}
+
+.company .company-header {
+    padding: 24px 0;
+}
+
+.company .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x)* -.5);
+    margin-right: calc(var(--bs-gutter-x)* -.5);
+    margin-top: calc(var(--bs-gutter-y)* -1);
+}
+
+.company .row  .col-md-4{
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    width: 33%;
+}
+
+.company .box-company {
+    background: #fff 0 0 no-repeat padding-box;
+    border-radius: 5px;
+    box-shadow: -1px 1px 4px rgba(0, 0, 0, .051);
+    height: 400px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.company .box-company .company-banner {
+    height: 180px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+.company a {
+    /* color: #0d6efd; */
+    text-decoration: underline;
+}
+
+.company .box-company .company-banner .cover-wraper {
+    height: 150px;
+}
+.company .box-company .company-banner .cover-wraper img {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+}
+.company .img-fluid, .company .img-thumbnail {
+    height: auto;
+    max-width: 100%;
+}
+.company img, .company svg {
+    vertical-align: middle;
+}
+
+.company .box-company .company-banner .company-logo {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    bottom: 0;
+    height: 64px;
+    left: 16px;
+    position: absolute;
+    width: 64px;
+}
+
+.company .img-fluid, .company .img-thumbnail {
+    height: auto;
+    max-width: 100%;
+}
+
+.company .box-company .company-info {
+    padding: 0 16px;
+}
+
+.company .box-company .company-info .company-description {
+    color: #555;
+    font-size: 14px;
+    letter-spacing: 0;
+    padding-top: 16px;
+}
+
+.company .company-info a:hover{
+    color: var(--green);
+    text-decoration: underline !important;
+}

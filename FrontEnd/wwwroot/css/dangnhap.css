@@ -1,0 +1,194 @@
+/* Reset margin và padding mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Định dạng body và container */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.main
+{display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    padding: 40px;
+    width: 70%; 
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+  
+}
+
+label {
+    /* display: block; */
+
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.forgot-password {
+    float: right;
+    display: inline-block;
+    margin: 10px;
+    color: #28a745;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+.register, .support {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+
+.sidebar {
+    background-image: url('https://static.topcv.vn/v4/image/auth/auth_bg_desktop.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 500px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 20px;
+    color: #fff;
+    display: flex;
+}
+
+
+/* Icon trong sidebar */
+.icon {
+    position: relative; /* Đặt icon làm relative để chứa ảnh mũi tên */
+}
+
+.icon img {
+    display: block; /* Đảm bảo ảnh icon không có khoảng trống dưới */
+}
+
+.icon .arrow {
+    position: absolute;
+    bottom: -361px;
+    left: 178%;
+    transform: translateX(-50%);
+}
+
+/* Cấu hình h1 và phần văn bản trong sidebar */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar p {
+    max-width: 300px;
+}
+
+/* Định dạng radio button */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+    color: #333;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="radio"] {
+    appearance: none; /* Loại bỏ giao diện mặc định của trình duyệt */
+    -webkit-appearance: none; /* Hỗ trợ cho Webkit browsers */
+    -moz-appearance: none; /* Hỗ trợ cho Firefox */
+    margin: 0; /* Xóa khoảng cách mặc định */
+    padding: 0; /* Xóa khoảng cách trong */
+    border: none; /* Xóa viền mặc định */
+    background: none; /* Xóa nền mặc định */
+    width: 15px; /* Đặt kích thước tùy ý */
+    height: 15px;
+    cursor: pointer; /* Thêm con trỏ dạng tay chỉ */
+  }
+  
+  /* Tạo kiểu tùy chỉnh */
+  input[type="radio"] {
+    border: 1px solid #ccc;
+    border-radius: 50%; /* Làm tròn thành hình tròn */
+    background-color: white;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  /* Thay đổi màu khi được chọn */
+  input[type="radio"]:checked {
+    background-color: #218838;
+    border-color: #b8b8b8;
+  }
+  
+  .item{
+    display: flex;
+    align-items: center;
+  }

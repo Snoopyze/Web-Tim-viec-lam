@@ -1,47 +1,91 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FrontEnd
 build_property.RootNamespace = FrontEnd
-build_property.ProjectDir = H:\124HKI24_25\DOANLWNC\WebTimViecLam\WebTimViecLam\FrontEnd\
+build_property.ProjectDir = D:\VisualStudio\WebNC\WebTimViecLam\Web-Tim-viec-lam\FrontEnd\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = H:\124HKI24_25\DOANLWNC\WebTimViecLam\WebTimViecLam\FrontEnd
+build_property.MSBuildProjectDirectory = D:\VisualStudio\WebNC\WebTimViecLam\Web-Tim-viec-lam\FrontEnd
 build_property._RazorSourceGeneratorDebug = 
 
-[H:/124HKI24_25/DOANLWNC/WebTimViecLam/WebTimViecLam/FrontEnd/Views/Home/Index.cshtml]
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/ChiTietCongTy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpVGlldENvbmdUeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/ChiTietViecLam/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpVGlldFZpZWNMYW1cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/CongViecDaLuu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZ1ZpZWNEYUx1dVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/DangNhap/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuZ05oYXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/DanhSachCongTy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaFNhY2hDb25nVHlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/124HKI24_25/DOANLWNC/WebTimViecLam/WebTimViecLam/FrontEnd/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/QuanLyCV/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5Q1ZcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/124HKI24_25/DOANLWNC/WebTimViecLam/WebTimViecLam/FrontEnd/Views/Shared/Error.cshtml]
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/124HKI24_25/DOANLWNC/WebTimViecLam/WebTimViecLam/FrontEnd/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Shared/_LayoutForUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGb3JVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/124HKI24_25/DOANLWNC/WebTimViecLam/WebTimViecLam/FrontEnd/Views/_ViewImports.cshtml]
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/TaiCVLen/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFpQ1ZMZW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/ViecLamDaUngTuyen/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmllY0xhbURhVW5nVHV5ZW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/ViecLamIT/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmllY0xhbUlUXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/124HKI24_25/DOANLWNC/WebTimViecLam/WebTimViecLam/FrontEnd/Views/_ViewStart.cshtml]
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/124HKI24_25/DOANLWNC/WebTimViecLam/WebTimViecLam/FrontEnd/Views/Shared/_Layout.cshtml]
+[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-709v5g0hbe

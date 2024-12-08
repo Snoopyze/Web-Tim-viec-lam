@@ -1,0 +1,200 @@
+:root{
+    --green: #00b14f;
+    --red: #d95350;
+}
+
+.main{
+    background-color:#E9ECEE ;
+    padding: 24px 0 10px;
+}
+
+.main .container{
+    background-color: #fff;
+    padding: 0;
+}
+.main .banner{
+    background: linear-gradient(90deg, #263238, #00b14f 105.53%);
+    border-radius: 5px 5px 0 0;
+    min-height: 180px;
+    padding: 5px 0 0 32px;
+    position: relative;
+    color: #fff;
+}
+.main .banner .title{
+    margin-top: 26px;
+}
+
+
+.main .banner .label-remote{
+    background: #fff;
+    border-radius: 12px;
+    color: #27ae60;
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 14px;
+    padding: 4px 8px;
+}
+
+.main .banner .img{
+    position: absolute;
+    right: 220px;
+    top: 0;
+    z-index: 1;
+}
+
+
+.main .box-search{
+    padding: 16px 0;
+}
+
+.main .box-search #frm-search-job{
+    padding: 0 16px;
+    justify-content: space-between;
+}
+
+.main .box-search .form-group.input-data {
+    margin-right: 15px;
+    position: relative;
+    border: 1px solid #d3d2d2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 41px 10px 10px;
+}
+
+input, select{
+    border: none !important;
+}
+
+.main .box-search .border-hover:hover{
+    border: 1px solid var(--green);
+    
+}
+
+.main .box-search input::placeholder{
+    font-size: 12px;
+}
+
+.main .box-search .btn-search-job {
+    background: #00b14f;
+    border-color: #00b14f;
+    border-radius: 3px;
+    color: #fff;
+    height: 40px;
+    margin-left: 16px;
+    outline: none !important;
+    padding: 9px 16px;
+}
+
+.main .box-search select{
+    padding: 0 10px;
+}
+
+/* LIST CV */
+.main .job-detail__related-jobs--content {
+    padding-bottom: 10px;
+}
+
+.main .job-detail__related-jobs--content .job-item {
+        margin: 20px !important;
+}
+
+.main .job-detail__related-jobs--content .job-item__ava img{
+    width: 120px;
+    height: 100%;
+    border: 1px solid #e9eaec ;
+    border-radius:  10px;
+}
+
+.main .job-detail__related-jobs--content .company-name{
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.main .job-detail__related-jobs--content .job-item__body{
+    flex: 8;
+}
+
+.main .job-detail__related-jobs--content .job-item__body__content
+{
+    padding: 0 15px 0 0;
+}
+
+.main .job-detail__related-jobs--content  .job-item{
+    background: #f2fbf6;
+    border: 1px solid #f4f4f4;
+    border-radius: 5px;
+    cursor: pointer;
+    grid-template-columns: 1fr 5fr;
+    margin: auto auto 16px;
+    padding: 12px;
+    position: relative;
+    transition: all .1s;
+}
+
+.main .job-detail__related-jobs--content  .job-item:hover{
+    border-color: var(--green);
+}
+
+.main .job-detail__related-jobs--content  .job-item:hover .title-left h6{
+    color: var(--green);
+}
+
+.main .job-detail__related-jobs--content .lable-content{
+    font-size: 12px;
+}
+
+.main .job-detail__related-jobs--content .lable-content-item
+{    background: #e9eaec;
+    border-radius: 3px;
+    color: #212f3f;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 4px 8px;
+}
+
+.main .job-detail__related-jobs--content  .title-block{
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+
+.main .job-detail__related-jobs--content .bi::before, [class*=" bi-"]::before, [class^=bi-]::before{
+    font-weight: 600 !important;
+}
+
+.main .job-detail__information-detail--actions-button{
+    align-items: center;
+    border-radius: 6px;
+    height: 40px;
+    justify-content: center;
+    letter-spacing: .175px;
+    line-height: 22px;
+    padding: 8px 16px;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.main .job-detail__related-jobs--content .btn-apply-job{
+    background: var(--green);
+    color: #fff;
+}
+.main .job-detail__related-jobs--content .btn-save-job
+{
+    align-items: center;
+    background: #e5f7ed;
+    color: #00b14f;
+    display: inline-flex;
+    font-size: 15px;
+    height: 28px;
+    justify-content: center;
+    padding: 0 8px;
+    white-space: nowrap;
+    width: 28px;
+}
+
