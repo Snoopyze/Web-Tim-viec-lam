@@ -1,0 +1,238 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.text-green {
+    color: #00b14f;
+}
+
+.text-grey {
+    color: #5e6368;
+}
+.text-red {
+    color: #ee0000;
+}
+.text-white {
+    color: #fff;
+}
+
+.bg-green {
+    background-color: #00b14f;
+}
+
+.bg-lightgreen {
+    background-color: #f5fff9;
+}
+/*----------------------------------*/
+.page-container {
+    width: 100%;
+    background-color: #e8edf2;
+}
+
+
+.page-container .breadcrumb-container {
+    position: sticky;
+    top: 64px;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e8edf2;
+    z-index: 999;
+}
+
+.page-container .breadcrumb-box {
+    display: flex;
+    align-self: center;
+}
+
+.page-container .breadcrumb-button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: center;
+    font-size: 15px;
+}
+
+.page-container .breadcrumb-button button {
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+
+
+.page-content {
+    padding: 20px;
+}
+
+.page-content .card-info {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.page-content .general-info-form {
+    width: 100%;
+    font-size: 15px;
+    
+}
+
+.page-content .card-info .title {
+    font-size: 14px;
+    color: #5e6368;
+    margin-bottom: 0;
+}
+.page-content .general-info-form .title-input form {
+    position: relative;
+}
+
+.page-content input,
+.page-content select {
+    width: 100%;
+    position: relative;
+    margin-top: 4px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #00b14f;
+    font-size: 14px;
+}
+
+.page-content input:focus {
+    border-color: #00b14f;
+    background-color: #f5fff9;
+}
+
+.page-content .general-info-form .noted {
+    font-size: 12px;
+   
+}
+
+.page-content .general-info-form .knowledge-title i{
+    font-size: 13px;
+    margin-left: 4px;
+}
+
+
+
+/*---------------------different-info---------------------*/
+
+.different-info .salary-input {
+    display: flex;
+}
+
+.different-info .salary-input .salary-input-group input,
+.different-info .salary-input .salary-input-group span {
+    height: 32.6px;
+}
+
+.different-info .salary-input .salary-input-group span {
+    background-color: #fff;
+    border-top: 1px solid #00b14f;
+    border-bottom: 1px solid #00b14f;
+}
+
+.different-info .salary-input .salary-input-group input:last-child {
+    border-radius: 0;
+    border-right: none;
+}
+
+.different-info .salary-input .currency select {
+    width: 75px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    
+}
+
+.different-info .quantity-form .quantity-input {
+    width: 160px;
+    display: flex;
+    text-align: center;
+
+}
+.different-info .quantity-form .quantity-input button {
+    height: 32.6px;
+    margin-top: 4px;
+    padding: 0 12px;
+    border: 1px solid #00b14f;
+}
+
+.different-info .quantity-form .quantity-input input{
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+}
+ 
+.different-info .quantity-form .quantity-input .btn-decrease {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.different-info .quantity-form .quantity-input .btn-increase {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.different-info .work-area .work-area-content {
+    background-color: #e8edf2;
+    border-radius: 5px;
+    padding: 20px;
+    border: 1px solid #a9a9a9;
+}
+
+.different-info .gender-content select {
+    width: 50%;
+}
+.different-info .work-time-item select,
+.different-info .work-time-item input {
+    width: 110px;
+}
+
+/*---------------col-4---------------*/
+
+.page-content .advertise-box__image {
+    width: 100%;
+    background: url(/imgs/BG.559c004.svg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 6px;
+    background-position: 50%;
+}
+.page-content .advertise-box__image img {
+    width: 80%;
+    margin: 20px;
+}
+
+.page-content .featured-box {
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.page-content .featured-box .featured-box-title {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 16px;
+    border-radius: 6px;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.page-content .featured-box-content {
+    padding: 16px;
+    font-size: 14px;
+}
+
+.page-content .featured-box-button button {
+    margin-top: 12px;
+    border: none;
+    padding: 8px 32px;
+    border-radius: 4px;
+}
+

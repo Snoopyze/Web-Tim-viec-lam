@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="./css/thongTinCaNhan.css"/>
+}
+
+<div class="page-container">
+    <div class="breadcrumb-box">
+        <div class="breadcrumb-text">
+            <h6 class="mb-0 fw-bolder">Cài đặt tài khoản</h6>
+        </div>
+
+    </div>
+
+    <div class="container-fluid page-content">
+        <div class="d-flex shadow-sm">
+            <div>
+                <div class="list-group rounded">
+                    <a href="#" aria-current="page" class="list-item border-0">
+                        <i class="fa fa-lock me-2"></i>
+                        Đổi mật khẩu
+                    </a>
+                    <a href="#" class="list-item border-0 active">
+                        <i class="fa fa-user me-2"></i>
+                        Thông tin cá nhân
+                    </a>
+                    <a href="#" aria-current="page" class="list-item border-0">
+                        <i class="fa fa-building me-2"></i>
+                        Thông tin công ty
+                    </a>
+                </div>
+            </div>
+            <div class="bg-white w-100 rounded">
+                <div class="card-body setting-form mt-3 radius-4">
+                    <div>
+                        <div class="title px-3 pt-3">
+                            Tài khoản xác thực: 
+                            <span class="text-green">Cấp 1/3</span>
+                        </div> 
+                        <div class="p-3 border-bottom-modal">
+                            <div class="d-flex mb-3 align-items-center">
+                                <div class="me-3">
+                                    <img src="./imgs/star.png" width="40">
+                                </div>
+                                <div class="pl-0">
+                                    <div>
+                                        Nâng cấp tài khoản lên 
+                                        <span class="text-green fw-bold">cấp 2/3</span>
+                                        để nhận
+                                        <span class="text-green fw-bold">100 lượt xem CV ứng viên từ công cụ tìm kiếm CV</span>.
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="verify-step-title">Vui lòng thực hiện các bước xác thực dưới đây:</div>
+                            <div class="verify-content">
+                                <div class="verify-content__progress">
+                                    <div class="d-flex justify-content-between">
+                                        <span class="verify-content__progress__title">Xác thực thông tin</span> 
+                                        <span>
+                                            Hoàn thành
+                                            <span class="text-green verify-content__progress__percentage">33%</span>
+                                        </span>
+                                    </div> 
+                                    <div class="progress">
+                                        <div aria-valuenow="33" aria-valuemax="100" aria-valuemin="0" role="progressbar" class="progress-bar"></div>
+                                     </div>
+                                </div> 
+                                <div class="verify-item not-verified">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-circle"></i>
+                                        <div class="ms-2 font-weight-600 verify-item-title">
+                                            <span class="content">Xác thực số điện thoại</span> 
+                                        </div>
+                                     </div> 
+                                     <span class="btn-to-verify">
+                                        <i class="bi bi-chevron-right text-green"></i>
+                                     </span>
+                                </div>
+                                <div class="verify-item finished">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-circle"></i>
+                                        <div class="ms-2 font-weight-600 verify-item-title">
+                                            <span class="content">Cập nhật thông tin công ty</span> 
+                                        </div>
+                                    </div> 
+                                    <span class="text-primary btn-to-verify">
+                                        <i class="bi bi-chevron-right text-green"></i>
+                                    </span>
+                                </div>
+                                <div class="verify-item not-verified">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-circle"></i>
+                                        <div class="ms-2 font-weight-600 verify-item-title">
+                                            <span class="content">Xác thực Giấy đăng ký doanh nghiệp</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-primary btn-to-verify">
+                                        <i class="bi bi-chevron-right text-green"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex p-3 justify-content-end">
+                            <a class="btn btn-lg text-primary show-more-btn">
+                                Tìm hiểu thêm
+                            </a>
+                        </div>
+                    </div> 
+                    <div data-backdrop="static" role="dialog" class="modal">
+                        <div role="document" class="modal-dialog modal-company-email-update ">
+                            <div class="modal-content border-0">
+                                <div class="modal-header border-bottom-1 px-4"><h5 class="modal-title text-truncate overflow-hidden font-weight-600 text-nowrap"><!---->Thông báo</h5>  <button aria-label="Close" data-dismiss="modal" type="button" class="close"><span aria-hidden="true"><i class="fal fa-times"></i></span></button></div> <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p><i class="fas fa-exclamation-triangle text-danger mr-2"></i> <strong class="font-weight-bold">Tài khoản đang sử dụng là email cá nhân</strong></p> <p>Vui lòng liên hệ CSKH để đổi sang email tên miền công ty.</p> <div data-v-36dec27d="" class="d-flex justify-content-between">
+                                                <div data-v-36dec27d="" class="w-50">
+                                                    <span data-v-36dec27d="" class="text-tr-up">Chuyên viên tư vấn của bạn:</span> <div data-v-36dec27d="" class="d-flex align-items-center mt-2"><div data-v-2a31697a="" data-v-36dec27d="" class="border mr-2  avatar" style="width: 30px; height: 30px; flex: 0 0 30px; background-image: url(&quot;https://tuyendung.topcv.vn/images/letter-avatar/NL.png&quot;);"></div> <span data-v-36dec27d="">Nguyễn Ngọc Liên</span></div> <div data-v-36dec27d="" class="d-flex align-items-center mt-2">
+                                                        <button data-v-36dec27d="" class="btn rounded-circle transparent-1 py-1 px-2 btn-primary mr-2"><i data-v-36dec27d="" class="fas fa-phone-alt"></i></button> <a data-v-36dec27d="" href="tel:0383 804 031" target="_blank" class="link">
+                                                            0383 804 031
+                                                        </a>
+                                                    </div> <div data-v-36dec27d="" class="d-flex align-items-center mt-2">
+                                                        <button data-v-36dec27d="" class="btn rounded-circle transparent-1 py-1 px-2 btn-primary mr-2"><i data-v-36dec27d="" class="fas fa-envelope"></i></button> <a data-v-36dec27d="" href="mailto:liennn@topcv.vn" target="_blank" class="link">
+                                                            liennn@topcv.vn
+                                                        </a>
+                                                    </div>
+                                                </div> <div data-v-36dec27d="" class="w-50">
+                                                    <span data-v-36dec27d="" class="text-tr-up">Bộ phận hỗ trợ dịch vụ:</span> <div data-v-36dec27d="" class="d-flex align-items-center mt-2">
+                                                        <button data-v-36dec27d="" class="btn rounded-circle transparent-1 py-1 px-2 btn-primary mr-2"><i data-v-36dec27d="" class="fas fa-phone"></i></button> <a data-v-36dec27d="" href="tel:(024)71079799" target="_blank" class="link">
+                                                            (024)71079799
+                                                        </a>
+                                                    </div> <div data-v-36dec27d="" class="d-flex align-items-center mt-2">
+                                                        <button data-v-36dec27d="" class="btn rounded-circle transparent-1 py-1 px-2 btn-primary mr-2"><i data-v-36dec27d="" class="fas fa-phone"></i></button> <a data-v-36dec27d="" href="tel:0862691929" target="_blank" class="link">
+                                                            0862691929
+                                                        </a>
+                                                    </div> <div data-v-36dec27d="" class="d-flex align-items-center mt-2">
+                                                        <button data-v-36dec27d="" class="btn rounded-circle transparent-1 py-1 px-2 btn-primary mr-2"><i data-v-36dec27d="" class="fas fa-envelope"></i></button> <a data-v-36dec27d="" href="mailto:cskh@topcv.vn" class="link">
+                                                            cskh@topcv.vn
+                                                        </a>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div> 
+                                <div class="modal-footer border-top-0 pt-0 m-auto">
+                                    <button type="button" class="btn min-width btn btn-primary px-5 btn-lg">
+                                        Xác nhận
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

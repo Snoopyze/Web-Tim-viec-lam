@@ -1,0 +1,84 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.text-green {
+    color: #00b14f;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.bg-green {
+    background-color: #00b14f;
+}
+
+.bg-lightgreen {
+    background-color: #f5fff9;
+}
+.bg-blue {
+    background-color: #f5f8fa;
+}
+.active {
+    color: #00b14f !important;
+    background: #fff;
+    font-weight: 700;
+}
+
+/*----------------------------------*/
+.page-container {
+    width: 100%;
+    background-color: #e8edf2;
+    font-size: 15px;
+
+}
+
+.page-container .breadcrumb-box{
+    position: sticky;
+    top: 64px;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e8edf2;
+    z-index: 999;
+}
+
+.page-container .breadcrumb-text {
+    display: flex;
+    align-self: center;
+}
+
+.page-content {
+    padding: 20px 20px 80px;
+}
+
+.page-content .list-group {
+    height: 100%;
+    background: #f5f8fa;
+    width: 260px;
+}
+
+.page-content .list-item {
+    text-decoration: none;
+    color: #000;
+    padding: 14px 16px;
+}
+
+.page-content .setting-form {
+    margin: 0 20px 20px;
+    border: 1px solid #e8edf2;
+}
+
+.page-content .setting-form .btn {
+    width: 100px;
+    font-size: 14px
+}
+
+.page-content .setting-form .btn-cancel {
+    border: 1px solid #cdcdcd;
+}

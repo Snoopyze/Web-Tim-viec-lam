@@ -55,7 +55,7 @@
             <div class="nav-right d-flex align-items-center">
                 <div class="nav-right__item">
                     <div>Bạn là nhà tuyển dụng</div>
-                    <a href="#" class="font-weight-6">Đăng tuyển ngay <i class="fa-solid fa-angles-right"></i></i></a>
+                    <a href="@Url.ActionLink("Index", "DangTin")" class="font-weight-6">Đăng tuyển ngay <i class="fa-solid fa-angles-right"></i></i></a>
                 </div>
                 <div class="colum-divider"></div>
                 <div class="group-icon d-flex g-10 click-icon">
@@ -106,9 +106,9 @@
                                         <div class="mail">daohoangminhhang24@gmail.com</div>
                                     </div>
                                 </div>
-                                <li><a href=""><i class="bi bi-pencil-square"></i>Cài đặt thông tin cá nhân</a></li>
-                                <li><a href=""><i class="bi bi-lock"></i>Cài đặt bảo mật</a></li>
-                                <li><a href="" class="text-red"><i class="bi bi-arrow-bar-right "></i>Đăng xuất</a></li>
+                                <li><a href="@Url.ActionLink("Index", "CaiDatThongTinCaNhan")"><i class="bi bi-pencil-square"></i>Cài đặt thông tin cá nhân</a></li>
+                                <li><a href="@Url.ActionLink("Index", "DoiMatKhau")"><i class="bi bi-lock"></i>Đổi mật khẩu</a></li>
+                                <li><a href="@Url.ActionLink("Index", "DangNhap")" class="text-red"><i class="bi bi-arrow-bar-right "></i>Đăng xuất</a></li>
                             </ul>
 
                         </div>

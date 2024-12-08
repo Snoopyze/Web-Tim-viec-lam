@@ -1,0 +1,298 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForUser.cshtml";
+}
+@section title
+{
+    <title>CÔNG TY TNHH THƯƠNG MẠI ĐIỆN TỬ GOBUY VIỆT NAM</title>
+
+}
+
+@section linkCss
+{
+    <link rel="stylesheet" href="../css/CV1.css">
+
+}
+
+@section linkCss2
+{
+    <link rel="stylesheet" href="../css/CV2.css">
+
+}
+@section linkJs
+{
+    <link rel="stylesheet" href="../js/mauCV.js">
+
+}
+
+<div class="sidebar">
+    <button class="btn btn_style_CV" id="change-style-btn"><svg src="../img/file-solid.svg" class="btn-icon"></svg> Đổi mẫu CV</button>
+    <button class="btn">Thêm mục</button>
+    <button class="btn">Thư viện CV</button>
+    <button class="btn">Hướng dẫn viết CV</button>
+    <button class="btn">Việc làm phù hợp</button>
+</div>
+<div class="cv-container" id="cv-container" style="display: none;">
+    <div class="style_header">
+        <h2>Đổi mẫu CV</h2>
+        <button class="close-btn" id="close-btn">×</button>
+    </div>
+    <div class="cv-list">
+        <div class="cv-item">
+            <img src="../img/cv1.jpg" alt="CV 1">
+            <p>Thành đạt</p>
+        </div>
+        <div class="cv-item">
+            <img src="../img/cv2.jpg" alt="CV 2">
+            <p>Tham vọng</p>
+        </div>
+
+    </div>
+</div>
+<div class="cv-header">
+    <!-- Phần trên: CV Title và Actions -->
+    <div class="cv-header-top">
+        <div class="cv-title">
+            <input type="text" class="cv-name" placeholder="CV chưa đặt tên" />
+        </div>
+        <div class="cv-actions">
+            <button class="preview-btn">👁️ Xem trước</button>
+            <button class="download-btn">📥 Lưu và tải xuống</button>
+            <button class="save-btn">💾 Lưu lại</button>
+        </div>
+    </div>
+
+    <!-- Phần dưới: Các tùy chọn còn lại -->
+    <div class="cv-header-bottom">
+        <!-- Language selection -->
+        <div class="cv-lang">
+            <img src="../img/download.png" alt="Vietnam" class="lang-icon active" />
+            <img src="../img/download (1).png" alt="English" class="lang-icon" />
+            <img src="../img/download (2).png" alt="Japanese" class="lang-icon" />
+        </div>
+
+        <!-- Font selection -->
+        <select class="font-select">
+            <option value="Arial" selected>Arial</option>
+            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+            <option value="Verdana, Geneva, sans-serif">Verdana</option>
+            <option value="'Courier New', Courier, monospace">Courier New</option>
+            <option value="'Lucida Console', Monaco, monospace">Lucida Console</option>
+        </select>
+
+        <!-- Theme color -->
+        <!-- Line spacing -->
+        <select class="line-spacing">
+            <option value="1.0">Khoảng cách dòng 1.0</option>
+            <option value="1.2" selected>Khoảng cách dòng 1.2</option>
+            <option value="1.5">Khoảng cách dòng 1.5</option>
+        </select>
+
+        <!-- Background -->
+
+    </div>
+</div>
+<div class="container">
+    <!-- Phần ảnh đại diện và thông tin cá nhân -->
+    <section class="header">
+        <div class="profile-image block">
+            <img src="../img/default-avatar.fc9c40ba.png" alt="Ảnh đại diện" />
+            <button class="upload-btn-cv">+ Sửa ảnh</button>
+        </div>
+        <div class="personal-details block">
+            <h1 contenteditable="true">Ân H</h1>
+            <h2 contenteditable="true">Vị trí ứng tuyển</h2>
+            <div contenteditable="true">Mục tiêu nghề nghiệp của bạn, bao gồm mục tiêu ngắn hạn và dài hạn</div>
+        </div>
+    </section>
+
+    <!-- Phần thông tin chi tiết -->
+    <section class="details">
+        <div class="section-row">
+            <div class="block">
+                <h3>Thông tin cá nhân</h3>
+                <div class="content_block" id="info">
+                    <div contenteditable="true">📧 baovip991@gmail.com</div>
+                    <div contenteditable="true">📞 0123 456 789</div>
+                    <div contenteditable="true">🔗 facebook.com/TopCV.vn</div>
+                    <div contenteditable="true">📍 Quận A, thành phố Hà Nội</div>
+                    <div class="controls2">
+                        <button class="delete-btn">x</button>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="delete-btn">x</button>
+                </div>
+            </div>
+
+            <div class="block">
+                <h3>Học vấn</h3>
+                <div class="content_block" id="edu_lv">
+                    <div contenteditable="true">Tên trường học</div>
+                    <div contenteditable="true">Ngành học / Môn học</div>
+                    <div contenteditable="true">Bắt đầu - Kết thúc</div>
+                    <div class="controls2">
+                        <button class="delete-btn">x</button>
+                        <button class="add-btn">+</button>
+                    </div>
+
+                </div>
+                <div class="controls">
+                    <button class="delete-btn">x</button>
+                </div>
+            </div>
+            <div class="block">
+                <h3>Các kỹ năng</h3>
+                <div class="content_block" id="skill">
+                    <div contenteditable="true">Tên kỹ năng</div>
+                    <div contenteditable="true">Mô tả kỹ năng</div>
+                    <div class="controls2">
+                        <button class="delete-btn">x</button>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="delete-btn">x</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần kinh nghiệm và dự án -->
+    <section class="experience block">
+        <h3>Kinh nghiệm làm việc</h3>
+        <div class="content_block" id="exp">
+            <div contenteditable="true">Bắt đầu - Kết thúc</div>
+            <div contenteditable="true">Tên công ty</div>
+            <div contenteditable="true">Mô tả kinh nghiệm làm việc của bạn</div>
+            <div class="controls2">
+                <button class="delete-btn">x</button>
+                <button class="add-btn">+</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="delete-btn">x</button>
+        </div>
+    </section>
+
+    <section class="projects block">
+        <h3>Dự án</h3>
+        <div class="content_block" id="project">
+            <div contenteditable="true">Bắt đầu - Kết thúc</div>
+            <div contenteditable="true">Tên dự án</div>
+            <div contenteditable="true">Khách hàng: Tên khách hàng</div>
+            <div contenteditable="true">Số lượng người tham gia: ...</div>
+            <div contenteditable="true">Vị trí: Vị trí của bạn</div>
+            <div contenteditable="true">Công nghệ sử dụng: Mô tả công nghệ bạn đã sử dụng</div>
+            <div class="controls2">
+                <button class="delete-btn">x</button>
+                <button class="add-btn">+</button>
+            </div>
+
+        </div>
+        <div class="controls">
+            <button class="delete-btn">x</button>
+        </div>
+    </section>
+
+    <!-- Các mục khác -->
+    <section class="extras">
+        <div class="section-row">
+            <div class="block">
+                <h3>Chứng chỉ</h3>
+                <div class="content_block" id="certificate">
+                    <div contenteditable="true">Thời gian</div>
+                    <div contenteditable="true">Tên chứng chỉ</div>
+                    <div class="controls2">
+                        <button class="delete-btn">x</button>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="delete-btn">x</button>
+                </div>
+            </div>
+
+            <div class="block">
+                <h3>Hoạt động</h3>
+                <div class="content_block" id="activity">
+                    <div contenteditable="true">Bắt đầu - Kết thúc</div>
+                    <div contenteditable="true">Tên tổ chức</div>
+                    <div contenteditable="true">Vị trí của bạn</div>
+                    <div contenteditable="true">Mô tả hoạt động</div>
+                    <div class="controls2">
+                        <button class="delete-btn">x</button>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="delete-btn">x</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="block">
+                <h3>Danh hiệu và giải thưởng</h3>
+                <div class="content_block" id="prize">
+                    <div contenteditable="true">Thời gian</div>
+                    <div contenteditable="true">Tên giải thưởng</div>
+                    <div class="controls2">
+                        <button class="delete-btn">x</button>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="delete-btn">x</button>
+                </div>
+            </div>
+
+            <div class="block">
+                <h3>Sở thích</h3>
+                <div class="content_block" id="hobby">
+                    <div contenteditable="true">Điền các sở thích của bạn</div>
+                    <div class="controls2">
+                        <button class="delete-btn">x</button>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="delete-btn">x</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="block">
+                <h3>Thông tin thêm</h3>
+                <div class="content_block" id="moreinfo">
+                    <div contenteditable="true">Điền thông tin thêm nếu có</div>
+                    <div class="controls2">
+                        <button class="delete-btn">x</button>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="delete-btn">x</button>
+                </div>
+            </div>
+
+            <div class="block">
+                <h3>Người giới thiệu</h3>
+                <div class="content_block" id="intro_person">
+                    <div contenteditable="true">Tên người giới thiệu</div>
+                    <div contenteditable="true">Chức vụ</div>
+                    <div contenteditable="true">Thông tin liên hệ</div>
+                    <div class="controls2">
+                        <button class="delete-btn">x</button>
+                        <button class="add-btn">+</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="delete-btn">x</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

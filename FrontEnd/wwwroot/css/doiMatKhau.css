@@ -1,0 +1,369 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  
+  .info_container {
+    display: flex;
+    gap: 30px; /* Khoảng cách 20px giữa Left Panel và Right Panel */
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #f8f8f8;
+    justify-content: center;
+  }
+  
+  /* Left Panel */
+  .left-panel {
+    width: 95%; /* Chiếm 60% chiều rộng */
+    padding: 20px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+  }
+.left-panel-container{
+    width: 60%;
+}
+  .left-panel h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .required {
+    color: #d9534f;
+    font-size: 12px;
+  }
+.Change_pass_title{
+    display: block;
+    color: #747474;
+}
+  
+  form label {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    width: 200px;
+    margin-right: 40px;
+    text-align: end;
+    font-weight: 700;
+    color:#747474;
+  }
+  
+  form input {
+    width: 50%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block ;
+  }
+  
+  .btn-save {
+    width: 15%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 245px;
+  }
+  
+  .btn-save:hover {
+    background-color: #218838;
+  }
+
+  /* Right Panel */
+  /* Right Panel */
+  .right-panel {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    
+  }
+  .right-panel_container{
+    width: 25%;
+  }
+  
+  /* Thông tin người dùng */
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .user-details {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  }
+  
+  .user-details p {
+    font-size: 14px;
+    margin: 0 0 10px; /* Khoảng cách dưới dòng "Ẩn Hồ" */
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các nút theo chiều dọc */
+    gap: 5px; /* Khoảng cách giữa các nút */
+  }
+  
+  .btn-verify,
+  .btn-upgrade {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 12px;
+    border: none;
+  
+    cursor: pointer;
+  }
+  
+  .btn-verify {
+    background-color: #747474;
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  .btn-upgrade {
+    background-color: #cccccc;
+    color: #fff;
+    border-radius: 20px;
+    color: black;
+  }
+  
+  .divider {
+    border: none;          /* Xóa viền mặc định */
+    border-top: 1px solid #ccc; /* Đường thẳng màu xám */
+    margin: 20px 0;        /* Khoảng cách trên dưới */
+    width: 100%;           /* Chiều rộng full */
+  }
+  /* Cài đặt tìm kiếm */
+  /* checkbox */
+  input[type="checkbox"] {
+    display: none; /* Ẩn checkbox mặc định */
+  }
+  
+  /* Custom Checkbox Container */
+  .custom-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none; /* Không cho phép chọn text khi nhấn vào */
+  }
+  
+  /* Checkbox Box */
+  .checkbox-box {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #218838;
+    border-radius: 4px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  /* Checkmark */
+  .checkbox-box::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #218838;
+    border-radius: 2px;
+    transform: scale(0); /* Ẩn checkmark */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* Checked State */
+  input[type="checkbox"]:checked + .checkbox-box {
+    background-color: #218838;
+    border-color: #218838;
+  }
+  
+  input[type="checkbox"]:checked + .checkbox-box::after {
+    transform: scale(1); /* Hiển thị checkmark */
+  }
+  
+  /* Hover Effect */
+  .custom-checkbox:hover .checkbox-box {
+    border-color: #218838;
+  }
+  
+  #job-search-text {
+    transition: color 0.2s ease;
+  }
+  .job-search{
+    height: 250px;
+  }
+  input[type="checkbox"]:checked + .checkbox-box + #job-search-text {
+    color: #218838; /* Màu xanh lá khi bật */
+  }
+  
+  input[type="checkbox"]:not(:checked) + .checkbox-box + #job-search-text {
+    color: #a1a1a1; /* Màu đỏ khi tắt */
+  }
+  
+  #allow-ntd-text {
+    transition: color 0.2s ease;
+  }
+  
+  input[type="checkbox"]:checked + .checkbox-box + #allow-ntd-text {
+    color: #218838  ; /* Màu xanh lá khi bật */
+  }
+  
+  input[type="checkbox"]:not(:checked) + .checkbox-box + #allow-ntd-text {
+    color: #a1a1a1; /* Màu đỏ khi tắt */
+  }
+  
+  .text_under{
+    color: #a1a1a1;
+  }
+  
+  /* checkbox */
+  .toggle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .toggle input {
+    margin-right: 10px;
+  }
+  
+  .info-text {
+    font-size: 12px;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .contact-options {
+    padding-left: 20px;
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .contact-options li {
+    margin-bottom: 5px;
+  }
+  
+  /* Tải ứng dụng */
+  .download-app {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .download-app .highlight {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+  }
+  
+  .qr-code {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+  }
+  
+  /* Đánh giá CV */
+  .cv-review {
+    margin-top: 20px;
+  }
+  
+  .cv-review .title {
+    font-weight: bold;
+    font-size: 14px;
+    color: #28a745;
+    margin-bottom: 5px;
+  }
+  
+  .cv-review .subtitle {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .view-count {
+    font-size: 20px;
+    color: #28a745;
+    margin: 10px 0;
+  }
+  
+  .btn-check {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .name{
+    font-size: 25px;
+  }
+  .btn-check:hover {
+    background-color: #1f8036;
+  }
+  /* Phần dưới */
+  .update-profile {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  .info-text {
+    font-size: 12px;
+    color: #b5b6b5;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-status {
+    font-size: 14px;
+    color: #b5b6b5; /* Màu xanh biểu tượng */
+    margin-right: 5px;
+  }
+  
+  .btn-update {
+    width: 100%;
+    padding: 10px;
+    color: #28a745;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    border: 2px solid #28a745;
+    
+  }
+  
+  

@@ -17,47 +17,123 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FrontEnd
 build_property.RootNamespace = FrontEnd
-build_property.ProjectDir = D:\VisualStudio\WebNC\WebTimViecLam\Web-Tim-viec-lam\FrontEnd\
+build_property.ProjectDir = D:\Kì 124-224 (Năm 3)\Web Nang Cao\WebsiteTimViecLam\FrontEnd\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\VisualStudio\WebNC\WebTimViecLam\Web-Tim-viec-lam\FrontEnd
+build_property.MSBuildProjectDirectory = D:\Kì 124-224 (Năm 3)\Web Nang Cao\WebsiteTimViecLam\FrontEnd
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/HomeController1/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZUNvbnRyb2xsZXIxXEluZGV4LmNzaHRtbA==
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/BangTin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFuZ1RpblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Home/Index.cshtml]
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/CaiDatTaiKhoan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FpRGF0VGFpS2hvYW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/CaiDatThongTinCaNhan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FpRGF0VGhvbmdUaW5DYU5oYW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/ChiTietCongTy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpVGlldENvbmdUeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/ChiTietViecLam/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpVGlldFZpZWNMYW1cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/CongViecDaLuu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZ1ZpZWNEYUx1dVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/DangKyTaiKhoan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuZ0t5VGFpS2hvYW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/DangKyTK/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuZ0t5VEtcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/DangNhap/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuZ05oYXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/DangTinTuyenDung/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuZ1RpblR1eWVuRHVuZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/DangTin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuZ1RpblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/DanhSachCongTy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaFNhY2hDb25nVHlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/DoiMatKhau/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9pTWF0S2hhdVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/MauCV/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF1Q1ZcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Shared/Error.cshtml]
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/QuanLyCV/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5Q1ZcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/QuanLyCV_NhaTD/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5Q1ZfTmhhVERcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Shared/_LayoutForUser.cshtml]
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/Shared/_LayoutForUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGb3JVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/_ViewImports.cshtml]
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/TaiCVLen/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFpQ1ZMZW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/ThongTinCaNhan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhvbmdUaW5DYU5oYW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/ThongTinCongTy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhvbmdUaW5Db25nVHlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/ViecLamDaUngTuyen/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmllY0xhbURhVW5nVHV5ZW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/ViecLamIT/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmllY0xhbUlUXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/_ViewStart.cshtml]
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VisualStudio/WebNC/WebTimViecLam/Web-Tim-viec-lam/FrontEnd/Views/Shared/_Layout.cshtml]
+[D:/Kì 124-224 (Năm 3)/Web Nang Cao/WebsiteTimViecLam/FrontEnd/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-709v5g0hbe
