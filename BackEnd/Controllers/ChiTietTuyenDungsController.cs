@@ -31,6 +31,8 @@ namespace BackEnd.Controllers
                                         TieuDeTin = ct.TieuDeTin,
                                         TenCongTy = c.TenCongTy,
                                         LogoUrl = c.LogoUrl,
+                                        HanUngTuyen = (ct.HanNopHoSo.ToDateTime(TimeOnly.MinValue) - DateTime.Now.Date).Days,
+                                        mucLuongTu = ct.MucLuongTu,
                                         MucLuongToi = ct.MucLuongToi,
                                         DiaDiemLamViecCuThe = ct.DiaDiemLamViecCuThe
                                     }).ToListAsync();

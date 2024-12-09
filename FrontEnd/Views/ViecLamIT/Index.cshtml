@@ -74,99 +74,45 @@
                 </div>
             </form>
         </div>
-        <div class="job-detail__related-jobs--content ">
-            <!-- START CONTAINER-JOB-ITEM -->
-            <div class="job-item d-flex g-15">
-                <div class="job-item__ava flex-1">
-                    <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
-                </div>
-                <div class="job-item__body">
-                    <div class="job-item__body__content">
-                        <div class="title-block d-flex">
-                            <div class="title-left flex 2">
-                                <h6 class="font-weight-6 mb-1 ">Kế toán kho và Thanh toán - Đi làm ngay</h6>
-                                <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
-                            </div>
-                            <div class="title-right text-green font-weight-6 flex 1">9-11 triệu</div>
+        <div class="job-detail__related-jobs--content">
+            @if (ViewBag.Jobs != null)
+            {
+                var jobs = (List<Dictionary<string, object>>)ViewBag.Jobs; // Chuyển ViewBag.Jobs sang kiểu danh sách Dictionary
+                foreach (var job in jobs)
+                {
+                    <div class="job-item d-flex g-15">
+                        <div class="job-item__ava flex-1">
+                            <img src="../img/@job["logoUrl"]" alt="Company Logo" style="max-width: 100%; height: auto;">
                         </div>
-                        <div class="info d-flex justify-content-between">
-                            <div class="lable-content d-flex g-15">
-                                <div class="lable-content-item">Hà Nội</div>
-                                <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
-                                <div class="lable-content-item">Cập nhật 4 giờ trước</div>
-                            </div>
-                            <div class="icon">
-                                <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
-                                <a href="" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- END CONTAINER-JOB-ITEM -->
-            <!-- START CONTAINER-JOB-ITEM -->
-            <div class="job-item d-flex g-15">
-                <div class="job-item__ava flex-1">
-                    <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
-                </div>
-                <div class="job-item__body">
-                    <div class="job-item__body__content">
-                        <div class="title-block d-flex">
-                            <div class="title-left flex 2">
-                                <h6 class="font-weight-6 mb-1 ">Kế toán kho và Thanh toán - Đi làm ngay</h6>
-                                <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
-                            </div>
-                            <div class="title-right text-green font-weight-6 flex 1">9-11 triệu</div>
-                        </div>
-                        <div class="info d-flex justify-content-between">
-                            <div class="lable-content d-flex g-15">
-                                <div class="lable-content-item">Hà Nội</div>
-                                <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
-                                <div class="lable-content-item">Cập nhật 4 giờ trước</div>
-                            </div>
-                            <div class="icon">
-                                <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
-                                <a href="" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- END CONTAINER-JOB-ITEM -->
-            <!-- START CONTAINER-JOB-ITEM -->
-            <div class="job-item d-flex g-15">
-                <div class="job-item__ava flex-1">
-                    <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
-                </div>
-                <div class="job-item__body">
-                    <div class="job-item__body__content">
-                        <div class="title-block d-flex">
-                            <div class="title-left flex 2">
-                                <h6 class="font-weight-6 mb-1 ">Kế toán kho và Thanh toán - Đi làm ngay</h6>
-                                <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
-                            </div>
-                            <div class="title-right text-green font-weight-6 flex 1">9-11 triệu</div>
-                        </div>
-                        <div class="info d-flex justify-content-between">
-                            <div class="lable-content d-flex g-15">
-                                <div class="lable-content-item">Hà Nội</div>
-                                <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
-                                <div class="lable-content-item">Cập nhật 4 giờ trước</div>
-                            </div>
-                            <div class="icon">
-                                <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
-                                <a href="" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
+                        <div class="job-item__body">
+                            <div class="job-item__body__content">
+                                <div class="title-block d-flex">
+                                    <div class="title-left flex-2">
+                                        <h6 class="font-weight-6 mb-1">@job["tieuDeTin"]</h6>
+                                        <div class="company-name">@job["tenCongTy"]</div>
+                                    </div>
+                                    <div class="title-right text-green font-weight-6 flex-1">@job["mucLuongTu"] - @job["mucLuongToi"] </div>
+                                </div>
+                                <div class="info d-flex justify-content-between">
+                                    <div class="lable-content d-flex g-15">
+                                        <div class="lable-content-item">@job["diaDiemLamViecCuThe"]</div>
+                                        <div class="lable-content-item">Còn <b>@job["hanUngTuyen"]</b> ngày để ứng tuyển</div>
+                                    </div>
+                                    <div class="icon">
+                                        <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
+                                        <a href="#" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- END CONTAINER-JOB-ITEM -->
-
+                }
+            }
+            else
+            {
+                <p>Không có dữ liệu để hiển thị.</p>
+            }
+        </div>
         </div>
 
     </div>
