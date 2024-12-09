@@ -19,13 +19,26 @@ namespace BackEnd.Controllers
         {
             _context = context;
         }
-
-        // GET: api/ChiTietTuyenDungs
+        
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ChiTietTuyenDung>>> GetChiTietTuyenDungs()
+        public async Task<ActionResult<IEnumerable<object>>> GetChiTietTuyenDungs()
         {
-            return await _context.ChiTietTuyenDungs.ToListAsync();
+            var tuyenDungs = await (from ct in _context.ChiTietTuyenDungs
+                                    join nt in _context.NhaTuyenDungs on ct.IdNhaTuyenDung equals nt.IdNhaTuyenDung
+                                    join c in _context.CongTies on nt.IdCongTy equals c.IdCongTy
+                                    select new
+                                    {
+                                        TieuDeTin = ct.TieuDeTin,
+                                        TenCongTy = c.TenCongTy,
+                                        LogoUrl = c.LogoUrl,
+                                        MucLuongToi = ct.MucLuongToi,
+                                        DiaDiemLamViecCuThe = ct.DiaDiemLamViecCuThe
+                                    }).ToListAsync();
+
+            return Ok(tuyenDungs);
         }
+
+        
 
         // GET: api/ChiTietTuyenDungs/5
         [HttpGet("{id}")]

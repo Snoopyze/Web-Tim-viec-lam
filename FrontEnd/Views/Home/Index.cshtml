@@ -17,6 +17,7 @@
 
 }
 
+
 <section id="section-header">
     <div class="container">
         <div class="header-box">
@@ -36,21 +37,29 @@
                             <input class="form-controlui-autocomplete-input" name="" placeholder="Vị trí tuyển dụng, tên công ty">
                         </div>
                         <div class="colum-divider"></div>
-                        <div class="item-filter d-flex align-items-center ">
+                        <div class="item-filter d-flex align-items-center">
                             <i class="bi bi-geo-alt"></i>
                             <div class="select-container">
                                 <select name="city" id="city">
                                     <option value="TatCaTinhThanhPho">Tất cả tỉnh/thành phố</option>
-                                    <option value="HoChiMinh">Hồ Chí Minh</option>
-                                    <option value="HaNoi">Hà Nội</option>
-                                    <option value="DaNang">Đà Nẵng</option>
-                                    <option value="QuangNinh">Quảng Ninh</option>
-                                    <option value="QuangBinh">Quảng Bình</option>
-
-
+            
+                                    @if (ViewBag.CiTies != null)
+                                    {
+                                        @foreach (var city in ViewBag.CiTies as List<Dictionary<string, object>>)
+                                        {
+                                            var cityName = city.ContainsKey("tenThanhPho") ? city["tenThanhPho"].ToString() : "Không tên";
+                                            var cityId = city.ContainsKey("idThanhPho") ? city["idThanhPho"].ToString() : "0";
+                                            <option value="@cityId">@cityName</option>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option disabled>Không có dữ liệu thành phố</option>
+                                    }
                                 </select>
                             </div>
                         </div>
+
                         <div class="colum-divider"></div>
                         <div class="btn-search align-items-center d-flex">
                             <button class="d-flex align-items-center justify-content-center"><i class="bi bi-search"></i>Tìm kiếm </button>
@@ -371,22 +380,32 @@
         <div class="wrapper-feature-jobs">
             <div class="box-feature-job-container">
 
-                <div class="row row-cols-3 feature-job ">
-                    <!--  item -->
-                    <a href="@Url.ActionLink("Index", "ChiTietViecLam")"  class="feature-job-item col">
+                <div class="row row-cols-3 feature-job">
+                    @if (ViewBag.Jobs != null)
+                    {
+                        var jobs = (List<Dictionary<string, object>>)ViewBag.Jobs; // Chuyển ViewBag.Jobs sang kiểu danh sách Dictionary
+                        foreach (var job in jobs)
+                        {
+                    <a href="@Url.Action("Index", "ChiTietViecLam")" class="feature-job-item col">
                         <div class="avatar-company">
-                            <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="Logo">
+                            <img src="../img/@(job.ContainsKey("logoUrl") ? job["logoUrl"] : "default-logo.png")" alt="Logo">
                         </div>
                         <div class="description">
-                            <h3 class="title">Cán Bộ IT Bảo Mật Hệ Thống Công Nghệ Thông Tin</h3>
-                            <p class="subtitle">Tổ chức tài chính vi mô TNHH MTV Tình Thương</p>
+                            <h3 class="title">@job["tieuDeTin"]</h3>
+                            <p class="subtitle">@job["tenCongTy"]</p>
                             <div class="details">
-                                <span class="salary">Tới 1,100 USD</span>
-                                <span class="location">Hà Nội</span>
+                                <span class="salary">@job["mucLuongToi"]</span>
+                                <span class="location">@job["diaDiemLamViecCuThe"]</span>
                             </div>
                         </div>
                     </a>
-                    <!-- END -->
+                        }
+                    }
+                    else
+                    {
+            <p>Không có dữ liệu công việc.</p>
+                    }
+</div>
                 
                 <div class="feature-job-page d-flex align-items-center justify-content-center mt-8">
                     <button class="btn-feature-jobs-pre btn-slick-arrow">

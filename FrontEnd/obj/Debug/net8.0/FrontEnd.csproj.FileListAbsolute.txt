@@ -490,7 +490,6 @@ D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGen
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\Mono.TextTemplating.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\NuGet.Common.dll
@@ -509,11 +508,8 @@ D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Composition.Hosting.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Composition.Runtime.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Composition.TypedParts.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Drawing.Common.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Windows.Extensions.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\af\Humanizer.resources.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\ar\Humanizer.resources.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\az\Humanizer.resources.dll
@@ -653,10 +649,6 @@ D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspac
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
-D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
-D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
-D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\Web-Tim-viec-lam\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.AssemblyReference.cache
 D:\Web-Tim-viec-lam\FrontEnd\obj\Debug\net8.0\FrontEnd.GeneratedMSBuildEditorConfig.editorconfig
 D:\Web-Tim-viec-lam\FrontEnd\obj\Debug\net8.0\FrontEnd.AssemblyInfoInputs.cache
@@ -682,3 +674,8 @@ D:\Web-Tim-viec-lam\FrontEnd\obj\Debug\net8.0\refint\FrontEnd.dll
 D:\Web-Tim-viec-lam\FrontEnd\obj\Debug\net8.0\FrontEnd.pdb
 D:\Web-Tim-viec-lam\FrontEnd\obj\Debug\net8.0\FrontEnd.genruntimeconfig.cache
 D:\Web-Tim-viec-lam\FrontEnd\obj\Debug\net8.0\ref\FrontEnd.dll
+D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Formats.Asn1.dll
+D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.IO.Pipelines.dll
+D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\System.Text.Json.dll
+D:\Web-Tim-viec-lam\FrontEnd\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

@@ -72,8 +72,15 @@ public partial class DbQlcvContext : DbContext
     public virtual DbSet<ViTriChuyenMon> ViTriChuyenMons { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-D6HVN2B;Initial Catalog=dbQLCV;Integrated Security=True;Trust Server Certificate=True");
+    {
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory()) // Đặt thư mục cơ sở là thư mục hiện tại
+            .AddJsonFile("appsettings.json") // Thêm tệp cấu hình
+            .Build();
+
+        optionsBuilder.UseSqlServer(configuration.GetConnectionString("dbQLCV"));
+    }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
