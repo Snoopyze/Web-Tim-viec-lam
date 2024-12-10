@@ -29,18 +29,16 @@ namespace BackEnd.Controllers
 
         // GET: api/ChiTietTuyenDungs/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<ChiTietTuyenDung>>> GetChiTietTuyenDungs(int id)
+        public async Task<ActionResult<ChiTietTuyenDung>> GetChiTietTuyenDung(int id)
         {
-            var chiTietTuyenDungs = await _context.ChiTietTuyenDungs
-                                                   .Where(c => c.IdNhaTuyenDung == id) // Lọc theo id nhà tuyển dụng
-                                                   .ToListAsync();
+            var chiTietTuyenDung = await _context.ChiTietTuyenDungs.FindAsync(id);
 
-            if (chiTietTuyenDungs == null || chiTietTuyenDungs.Count == 0)
+            if (chiTietTuyenDung == null)
             {
-                return NotFound("Không tìm thấy chi tiết tuyển dụng cho nhà tuyển dụng này.");
+                return NotFound();
             }
 
-            return Ok(chiTietTuyenDungs);
+            return chiTietTuyenDung;
         }
 
         // PUT: api/ChiTietTuyenDungs/5

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code__\\LTWNC\\CuoiKi2\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj": {}
+    "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\FrontEnd.csproj": {}
   },
   "projects": {
-    "C:\\Code__\\LTWNC\\CuoiKi2\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj": {
+    "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\FrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code__\\LTWNC\\CuoiKi2\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
+        "projectUniqueName": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\FrontEnd.csproj",
         "projectName": "FrontEnd",
-        "projectPath": "C:\\Code__\\LTWNC\\CuoiKi2\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
-        "packagesPath": "C:\\Users\\Anh\\.nuget\\packages\\",
-        "outputPath": "C:\\Code__\\LTWNC\\CuoiKi2\\Web-Tim-viec-lam\\FrontEnd\\obj\\",
+        "projectPath": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\FrontEnd.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Anh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

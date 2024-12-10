@@ -71,61 +71,7 @@ namespace BackEnd.Controllers
 
             return NoContent();
         }
-        [HttpPut("UpdateUserInfo/{id}")]
-        public async Task<IActionResult> UpdateRequest(int id, [FromBody] UpdateUserInfoRequest updateRequest)
-        {
-            // Tìm người dùng theo id
-            var ungVien = await _context.UngViens.FindAsync(id);
 
-            // Nếu không cần kiểm tra người dùng có tồn tại, bạn có thể bỏ qua phần này
-            if (ungVien == null)
-            {
-                return NotFound("Người dùng không tồn tại.");
-            }
-
-            // Cập nhật các trường cần thiết
-            ungVien.HoTen = updateRequest.HoTen ?? ungVien.HoTen; // Cập nhật tên nếu có
-            ungVien.SoDienThoai = updateRequest.SoDienThoai ?? ungVien.SoDienThoai; // Cập nhật số điện thoại nếu có
-
-            // Đánh dấu đối tượng là đã sửa đổi để Entity Framework biết
-            _context.Entry(ungVien).State = EntityState.Modified;
-
-            try
-            {
-                // Lưu thay đổi vào cơ sở dữ liệu
-                await _context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                // Bắt lỗi và trả về thông báo lỗi nếu có vấn đề khi lưu
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-
-            // Trả về phản hồi thành công
-            return NoContent();
-        }
-        [HttpPut("ChangePassword/{id}")]
-        public IActionResult ChangePassword(int id, [FromBody] ChangePasswordRequest request)
-        {
-            // Tìm ứng viên theo ID
-            var ungVien = _context.UngViens.FirstOrDefault(u => u.IdUngVien == id);
-            if (ungVien == null)
-            {
-                return NotFound("Ứng viên không tồn tại.");
-            }
-
-            // Kiểm tra mật khẩu hiện tại
-            if (ungVien.MatKhau != request.CurrentPassword)
-            {
-                return BadRequest("Mật khẩu hiện tại không đúng.");
-            }
-
-            // Cập nhật mật khẩu mới
-            ungVien.MatKhau = request.NewPassword;
-            _context.SaveChanges();
-
-            return Ok("Đổi mật khẩu thành công.");
-        }
         // POST: api/UngViens
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
