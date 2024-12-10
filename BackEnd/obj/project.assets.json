@@ -8211,11 +8211,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\124HKI24_25\\DOANLWNC\\WebTimViecLam\\WebTimViecLam\\BackEnd\\BackEnd.csproj",
+      "projectUniqueName": "H:\\124HKI24_25\\DOANLWNC\\LWNC03\\BackEnd\\BackEnd.csproj",
       "projectName": "BackEnd",
-      "projectPath": "H:\\124HKI24_25\\DOANLWNC\\WebTimViecLam\\WebTimViecLam\\BackEnd\\BackEnd.csproj",
+      "projectPath": "H:\\124HKI24_25\\DOANLWNC\\LWNC03\\BackEnd\\BackEnd.csproj",
       "packagesPath": "C:\\Users\\Anh Minh\\.nuget\\packages\\",
-      "outputPath": "H:\\124HKI24_25\\DOANLWNC\\WebTimViecLam\\WebTimViecLam\\BackEnd\\obj\\",
+      "outputPath": "H:\\124HKI24_25\\DOANLWNC\\LWNC03\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Anh Minh\\AppData\\Roaming\\NuGet\\NuGet.Config",
