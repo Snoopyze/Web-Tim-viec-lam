@@ -780,3 +780,87 @@
 
 
     </div>
+    @* ------------------MODAL----------------- *@
+    <div class="modal-container">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        Ứng tuyển
+                        <span>Sales Logistics - Basic Salary (20-35 Million) + % Bonus - Đi Làm Ngay</span>
+                    </h4>
+                    <button type="button" class="close js-close" data-dismiss="modal" aria-label="Close">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="apply-content">
+                        <div class="apply-content_tab-title">
+                            <i class="fa-solid fa-folder"></i>
+                            <span>Chọn CV ứng tuyển</span>
+                        </div>
+                      <div class="box-body">
+                            <div class="box-upload ">
+                                <div class="box-upload_title">
+                                    <img src="https://www.topcv.vn/v4/image/upload-cv/upload-cloud.png" alt="">
+                                    <span>
+                                        Tải lên CV từ máy tính, chọn hoặc kéo thả
+                                    </span>
+                                </div>
+                                <div class="not-cv">
+                                    <p>Hỗ trợ định dạng .doc, .docx, pdf có kích thước dưới 5MB</p>
+                                    <button>
+                                        Chọn CV
+                                    </button>
+                                </div>
+                                <div class="is-cv">
+                                    <p class="name-file"></p>
+                                    <p>chọn tệp khác</p>
+                                </div>
+
+                                <form id="formUploadCv" action="https://www.topcv.vn/upload-cv" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="_token" value="Az71OQhuQwgUzJFqMEXf0eq3TEtjlZmCFuvfILjX">                            <input type="hidden" name="ta_source" value="UploadCVInMenu">
+                                    <input type="file" name="file_upload_cv" class="file-upload-cv" id="file-upload-cv">
+                                    <div class="file-info" style="display: none;">
+                                        <p class="file-name text-green"></p>
+                                        <button class="change-file text-green">Chọn tệp khác</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="box-btn-upload">
+                                <!-- Kiểm tra định dạng, rồi tải cv lên -> quay lại trang qly cv -->
+                                <button class="btn btn-primary-hover  btn-upload ">
+                                    Tải CV lên
+                                </button>
+                                <p class="text-highlight upload-process">
+                                    Hệ thống đang xử lý CV của bạn thông thường mất từ 10
+                                    đến 15 giây, xin vui lòng đợi !!!
+                                </p>
+                            </div>
+                      </div>
+                        <div class="text-left" id="box-note-modal-apply">
+                            <h4 class="note-title">
+                                <i class="fa-solid fa-triangle-exclamation"></i> Lưu ý:
+                            </h4>
+
+                            <div class="note-content">
+
+                                <p class="note-content__list">
+                                    <span>
+                                        TopCV khuyên tất cả các bạn hãy luôn cẩn trọng trong quá trình tìm việc và chủ động nghiên cứu về thông
+                                        tin
+                                        công ty, vị trí việc làm trước khi ứng tuyển. <br>Ứng viên cần có trách nhiệm với hành vi ứng tuyển của
+                                        mình. Nếu bạn gặp
+                                        phải tin tuyển dụng hoặc nhận được liên lạc đáng ngờ của nhà tuyển dụng, hãy báo cáo ngay cho TopCV qua
+                                        email
+                                        <a class="color-green" target="_top" href="mailto:hotro@topcv.vn">hotro@topcv.vn</a> để được hỗ trợ kịp thời.
+                                    </span>
+                                </p>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

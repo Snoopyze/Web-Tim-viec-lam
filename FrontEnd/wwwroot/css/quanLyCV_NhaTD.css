@@ -173,8 +173,46 @@
 }
 
 .page-list-cv .list-cv table tbody .condition {
-    padding: 6px 22px;
-    color: #F9BB00;
-    background-color: #FFFBDF;
+    padding: 4px 22px;
+/*    color: #F9BB00;
+    background-color: #FFFBDF;*/
     border-radius: 8px;
+}
+
+.page-list-cv .list-cv table tbody .btn-approve {
+    color: #28a745;
+    background-color: #f5fff9;
+    border: 1px solid #28a745; 
+}
+
+.page-list-cv .list-cv table tbody .btn-approve:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.page-list-cv .list-cv table tbody .btn-refuse {
+    color: #da4538;
+    background-color: #fff3f2;
+    border: 1px solid #da4538; 
+}
+
+.page-list-cv .list-cv table tbody .btn-refuse:hover {
+    background-color: #da4538;
+    color: #fff;
+}
+.page-list-cv .list-cv table tbody .btn-approved {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.page-list-cv .list-cv table tbody .btn-refused {
+    background-color: #da4538;
+    color: #fff;
+}
+
+/*modal*/
+.modal {
+    display: flex!important;
+    margin: auto;
+    margin-top: 32px;
 }

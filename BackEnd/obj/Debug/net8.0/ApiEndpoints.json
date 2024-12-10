@@ -1308,6 +1308,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackEnd.Controllers.HoSoCvsController",
+    "Method": "GetDSHoSoDaNop",
+    "RelativePath": "api/HoSoCvs/GetDSHoSoDaNop",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.HoSoCvsController",
+    "Method": "GetHoSoChiTiet",
+    "RelativePath": "api/HoSoCvs/GetHoSoChiTiet",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BackEnd.Controllers.HoSoDaNopsController",
     "Method": "GetHoSoDaNops",
     "RelativePath": "api/HoSoDaNops",
@@ -1412,6 +1432,47 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.HoSoDaNopsController",
+    "Method": "GetApprovedCVCount",
+    "RelativePath": "api/HoSoDaNops/DemCVDaTiepNhan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.HoSoDaNopsController",
+    "Method": "GetPendingCVCount",
+    "RelativePath": "api/HoSoDaNops/DemCVUngTuyenMoi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.HoSoDaNopsController",
+    "Method": "UpdateTrangThai",
+    "RelativePath": "api/HoSoDaNops/UpdateTrangThai",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idHoSo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "trangThai",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

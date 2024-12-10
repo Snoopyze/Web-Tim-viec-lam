@@ -121,6 +121,14 @@
       "PackagePath": "staticwebassets\\css\\viecLamIT.css"
     },
     {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\cv\\BaoCaoCuoiKi_ChuyenDeDoHoa.pdf",
+      "PackagePath": "staticwebassets\\cv\\BaoCaoCuoiKi_ChuyenDeDoHoa.pdf"
+    },
+    {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\cv\\tester_dothiquynhnhung-TopCV.vn.pdf",
+      "PackagePath": "staticwebassets\\cv\\tester_dothiquynhnhung-TopCV.vn.pdf"
+    },
+    {
       "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -8729,10 +8737,6 @@
       "PackagePath": "staticwebassets\\img\\60c14a43fb4745795b3b358868517e79.png"
     },
     {
-      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\9e638d6c84f0de74b01f2c0cee9c1b7f.jpg",
-      "PackagePath": "staticwebassets\\img\\9e638d6c84f0de74b01f2c0cee9c1b7f.jpg"
-    },
-    {
       "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\BG.559c004.svg",
       "PackagePath": "staticwebassets\\img\\BG.559c004.svg"
     },
@@ -8757,6 +8761,10 @@
       "PackagePath": "staticwebassets\\img\\VUIHOC (2400x864)_2.webp"
     },
     {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\abc.jpg",
+      "PackagePath": "staticwebassets\\img\\abc.jpg"
+    },
+    {
       "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\arrow_desktop.png",
       "PackagePath": "staticwebassets\\img\\arrow_desktop.png"
     },
@@ -8765,8 +8773,8 @@
       "PackagePath": "staticwebassets\\img\\avatar-default.jpg"
     },
     {
-      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\c31bd153833aa2b6f4b71bb9b59899ad.jpg",
-      "PackagePath": "staticwebassets\\img\\c31bd153833aa2b6f4b71bb9b59899ad.jpg"
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\bey.jpg",
+      "PackagePath": "staticwebassets\\img\\bey.jpg"
     },
     {
       "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\company-billBoard.webp",
@@ -8841,8 +8849,32 @@
       "PackagePath": "staticwebassets\\img\\image.png"
     },
     {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\jennie.png",
+      "PackagePath": "staticwebassets\\img\\jennie.png"
+    },
+    {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\kimjiwon.jpg",
+      "PackagePath": "staticwebassets\\img\\kimjiwon.jpg"
+    },
+    {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\kimjiwonnn.png",
+      "PackagePath": "staticwebassets\\img\\kimjiwonnn.png"
+    },
+    {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\kimyoojung.jpg",
+      "PackagePath": "staticwebassets\\img\\kimyoojung.jpg"
+    },
+    {
       "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\label-toppy-ai.webp",
       "PackagePath": "staticwebassets\\img\\label-toppy-ai.webp"
+    },
+    {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\lisa.jpg",
+      "PackagePath": "staticwebassets\\img\\lisa.jpg"
+    },
+    {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\lisa_b.jpg",
+      "PackagePath": "staticwebassets\\img\\lisa_b.jpg"
     },
     {
       "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\logo_topcv_dark.png",
@@ -8921,6 +8953,10 @@
       "PackagePath": "staticwebassets\\img\\user.png"
     },
     {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\img\\wookseok.jpg",
+      "PackagePath": "staticwebassets\\img\\wookseok.jpg"
+    },
+    {
       "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\js\\CvStylePopUp.js",
       "PackagePath": "staticwebassets\\js\\CvStylePopUp.js"
     },
@@ -8951,6 +8987,10 @@
     {
       "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\js\\mauCV.js",
       "PackagePath": "staticwebassets\\js\\mauCV.js"
+    },
+    {
+      "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\js\\quanLyCV_NhaTD.js",
+      "PackagePath": "staticwebassets\\js\\quanLyCV_NhaTD.js"
     },
     {
       "Id": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\FrontEnd\\wwwroot\\js\\taiCVLen.js",

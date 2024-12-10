@@ -117,5 +117,45 @@ namespace BackEnd.Controllers
         {
             return _context.HoSoDaNops.Any(e => e.IdHoSoDaNop == id);
         }
+
+        //Update trạng thái cv
+        [HttpPost("UpdateTrangThai")]
+        public async Task<IActionResult> UpdateTrangThai(int idHoSo, string trangThai)
+        {
+            try
+            {
+                var hoSo = await _context.HoSoDaNops.FirstOrDefaultAsync(h => h.IdHoSoDaNop == idHoSo);
+                if (hoSo == null)
+                {
+                    return NotFound(new { Success = false, Message = "Không tìm thấy hồ sơ." });
+                }
+
+             
+                hoSo.TrangThai = trangThai;
+                await _context.SaveChangesAsync();
+
+                return Ok(new { Success = true, Message = "Cập nhật trạng thái thành công." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Success = false, Message = $"Lỗi server: {ex.Message}" });
+            }
+        }
+
+        // DemCVUngTuyenMoi
+        [HttpGet("DemCVUngTuyenMoi")]
+        public IActionResult GetPendingCVCount()
+        {
+            int pendingCVCount = _context.HoSoDaNops.Count(cv => cv.TrangThai == "Chờ duyệt");
+            return Ok(new { PendingCVCount = pendingCVCount });
+        }
+
+        // DemCVDaTiepNhan
+        [HttpGet("DemCVDaTiepNhan")]
+        public IActionResult GetApprovedCVCount()
+        {
+            int approvedCVCount = _context.HoSoDaNops.Count(cv => cv.TrangThai == "Đã duyệt");
+            return Ok(new { ApprovedCVCount = approvedCVCount });
+        }
     }
 }

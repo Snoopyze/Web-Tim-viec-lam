@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DbQlcvContext>(option => option.UseSqlServer(
 builder.Configuration.GetConnectionString("dbQLCV")));
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

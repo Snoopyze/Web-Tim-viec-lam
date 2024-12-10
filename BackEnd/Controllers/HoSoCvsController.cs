@@ -117,5 +117,58 @@ namespace BackEnd.Controllers
         {
             return _context.HoSoCvs.Any(e => e.IdCv == id);
         }
+
+        // GET danhsach hoso
+        [HttpGet("GetDSHoSoDaNop")]
+        public async Task<IActionResult> GetDSHoSoDaNop()
+        {
+           try {
+                var data = (from uv in _context.UngViens
+                            join hs in _context.HoSoCvs on uv.IdUngVien equals hs.IdUngVien
+                            join hsd in _context.HoSoDaNops on hs.IdUngVien equals hsd.IdUngVien
+                            select new
+                            {
+                                AnhHoSo = uv.AnhHoSo,
+                                HoTen = uv.HoTen,
+                                id_HoSoDaNop = hsd.IdHoSoDaNop,
+                                Email = uv.Email,
+                                Sdt = uv.SoDienThoai,
+                                thoiGianNop = hsd.ThoiGianNop,
+                                trangThai = hsd.TrangThai,
+                            });
+
+                return Ok(await data.ToListAsync());
+
+            } catch (Exception ex) {
+                return StatusCode(500, $"Lỗi server: {ex.Message}");
+            }
+        }
+
+        // GET Ho so cv chi tiết
+        [HttpGet("GetHoSoChiTiet")]
+        public async Task<IActionResult> GetHoSoChiTiet()
+        {
+            try
+            {
+                var data = (from uv in _context.UngViens
+                            join hs in _context.HoSoCvs on uv.IdUngVien equals hs.IdUngVien
+                            join hsd in _context.HoSoDaNops on hs.IdUngVien equals hsd.IdUngVien
+                            select new
+                            {
+                                id_UngVien = uv.IdUngVien,
+                                HoTen = uv.HoTen,
+                                tenFile = hs.TenFile,
+                                
+                            });
+
+                return Ok(await data.ToListAsync());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Lỗi server: {ex.Message}");
+            }
+        }
+
     }
 }
