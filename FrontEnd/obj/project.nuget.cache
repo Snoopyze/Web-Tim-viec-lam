@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lpEcYKO4k1I=",
+  "dgSpecHash": "VrvxUdMY5KE=",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
+  "projectFilePath": "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

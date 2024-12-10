@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj": {}
+    "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj": {}
   },
   "projects": {
-    "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj": {
+    "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj",
+        "projectPath": "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\BackEnd\\obj\\",
+        "outputPath": "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",

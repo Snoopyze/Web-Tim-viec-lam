@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NVGOQ9H+gio=",
+  "dgSpecHash": "VVr4j5FdfqY=",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj",
+  "projectFilePath": "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

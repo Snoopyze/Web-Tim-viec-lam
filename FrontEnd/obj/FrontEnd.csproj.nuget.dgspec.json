@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj": {}
+    "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj": {}
   },
   "projects": {
-    "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj": {
+    "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
+        "projectUniqueName": "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
         "projectName": "FrontEnd",
-        "projectPath": "D:\\VisualStudio\\WebNC\\CuoiKy\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
+        "projectPath": "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\FrontEnd\\FrontEnd.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
         "outputPath": "D:\\VisualStudio\\WebNC\\cuoiKy\\Web-Tim-viec-lam\\FrontEnd\\obj\\",
         "projectStyle": "PackageReference",
