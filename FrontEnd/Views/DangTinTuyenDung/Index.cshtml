@@ -2,8 +2,8 @@
 @{
     ViewData["Title"] = "Đăng tin";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    <link rel="stylesheet" href="./css/dangTinTD.css" />
-    <script src="https://cdn.tiny.cloud/1/mh9fs76vs2l3ftbj6kotow1psnx2q6k1aa2tjbd3b34c16bl/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+            <link rel="stylesheet" href="./css/dangTinTD.css" />
+            <script src="https://cdn.tiny.cloud/1/mh9fs76vs2l3ftbj6kotow1psnx2q6k1aa2tjbd3b34c16bl/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
    
 
 }
@@ -15,7 +15,7 @@
             </div>
             <div class="breadcrumb-button">
                 <button class="me-2 text-green bg-lightgreen">Lưu nháp</button>
-                <button class="text-white bg-green">Lưu & Đăng tin</button>
+                <button class="text-white bg-green" id="dangTin">Lưu & Đăng tin</button>
             </div>
         </div>
      </div>
@@ -46,12 +46,12 @@
                             </div>
                             <div class="specialization-selected mt-1">
                                 <span class="noted">Chọn đúng <strong>"Vị trí chuyên môn" </strong> giúp phân loại Job, tiếp cận ứng viên chính xác hơn và nâng cao Chất lượng CV ứng tuyển.</span>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" id="specializationSelect">
                                     <option selected>Chọn vị trí chuyên môn</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    
+                                    
                                 </select>
+                                
                             </div>
                         </div>
                       
@@ -60,11 +60,13 @@
                                 <h6 class="title">Kinh nghiệm <span class="text-red">*</span></h6>
                             </div>
                             <div class="rank-selected">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Chưa có kinh nghiệm</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                <select class="form-select" aria-label="Default select example" id="kinhNghiem">
+                                    
+                                    <option value="1">1 năm</option>
+                                    <option value="2">2 năm</option>
+                                    <option value="3">3 năm</option>
+                                    <option value="4">4 năm</option>
+                                    <option value="5">Trên 5 năm</option>
                                 </select>
                             </div>
                         </div>
@@ -84,8 +86,8 @@
                             <div class="job-des-title">
                                 <h6 class="title mb-0">Mô tả công việc <span class="text-red">*</span></h6>
                             </div>
-                            <div class="job-des-content mt-1">
-                                <textarea class="" style="width: 100%">
+                            <div class="job-des-content mt-1" >
+                                <textarea class="" style="width: 100%" id="moTaCongViec">
                                    
                                 </textarea>
                             </div>
@@ -95,7 +97,7 @@
                                 <h6 class="title mb-0">Yêu cầu ứng viên <span class="text-red">*</span></h6>
                             </div>
                             <div class="job-des-content mt-1">
-                                <textarea>
+                                <textarea id="yeuCauUngVien">
 
                                 </textarea>
                             </div>
@@ -106,7 +108,7 @@
                                 <h6 class="title mb-0">Quyền lợi ứng viên <span class="text-red">*</span></h6>
                             </div>
                             <div class="job-des-content mt-1">
-                                <textarea>
+                                <textarea id="quyenLoiUngVien">
 
                                 </textarea>
                             </div>
@@ -130,11 +132,10 @@
                             </div>
                             <div class="job-type-content mt-1">
                                 <div class="job-type-selected">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Toàn thời gian</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select class="form-select" aria-label="Default select example" id="loaiCongViec">
+                                        <option value="1">Toàn thời gian</option>
+                                        <option value="2">Part time</option>
+                                        
                                     </select>
                                 </div>
                             </div>
@@ -148,16 +149,15 @@
                                 <div class="salary-content mt-1">
                                     <div class="salary-input">
                                         <div class="salary-input-group input-group">
-                                            <input type="text" class="salary-min form-control mt-0 border-end-0" placeholder="0">
+                                            <input type="text" class="salary-min form-control mt-0 border-end-0" placeholder="0" id="mucLuongTu">
                                             <span class="input-group-text">&#8722</span>
-                                            <input type="text" class="salary-min form-control mt-0 border-start-0" placeholder="0">
+                                            <input type="text" class="salary-min form-control mt-0 border-start-0" placeholder="0" id="mucLuongDen">
                                         </div>
                                         <div class="currency">
-                                            <select class="form-select mt-0" aria-label="Default select example">
-                                                <option selected>VND</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                            <select class="form-select mt-0" aria-label="Default select example" id="loaiTienTe">
+                                                <option value="1">VND</option>
+                                                <option value="2">$</option>
+                                                
                                             </select>
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@
                                 </div>
                                 <div class="job-des-content mt-1">
                                      <div class="input-group flex-nowrap">
-                                        <input type="date" class="form-control">
+                                        <input type="date" class="form-control" id="hanNhanHoSo">
                                     </div>
                                 </div>
                                
@@ -205,11 +205,9 @@
                                     <span>Khu vực 1:</span>
                                 </div>
                                 <div>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" aria-label="Default select example" id="thanhPho">
                                         <option selected>Chọn Tỉnh/ Thành</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        
                                     </select>
                                 </div>
                                 <hr />
@@ -217,17 +215,15 @@
                             <div class="row">
                                 <div class="col-6 detail-info-form">
                                     <div>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select class="form-select" aria-label="Default select example" id="quanHuyen">
                                             <option selected>Chọn Quận/ Huyện</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-6 quantity-form">
                                     <div class="input-group flex-nowrap">
-                                        <input type="text" class="form-control" placeholder="Nhập địa điểm làm việc cụ thể">
+                                        <input type="text" class="form-control" placeholder="Nhập địa điểm làm việc cụ thể" id="chiTietDiaDiemLamViec">
                                     </div>
                                 </div>
                             </div>
@@ -238,8 +234,8 @@
                                 <h6 class="title mb-0">Giới tính</h6>
                             </div>
                             <div class="gender-content mt-1">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Không yêu cầu</option>
+                                <select class="form-select" aria-label="Default select example" id="gioiTinh">
+                                    
                                     <option value="1">Nam</option>
                                     <option value="2">Nữ</option>
                                     <option value="3">Khác</option>
@@ -258,14 +254,15 @@
                                             <span>Từ: </span>
                                          </div>
                                         <div class="date-selected">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Thứ 2</option>
-                                                <option value="1">Thứ 3</option>
-                                                <option value="2">Thứ 4</option>
-                                                <option value="3">Thứ 5</option>
-                                                <option value="4">Thứ 6</option>
-                                                <option value="5">Thứ 7</option>
-                                                <option value="6">Chủ nhật</option>
+                                            <select class="form-select" aria-label="Default select example" id="ngayLamViecTu">
+                                               
+                                                <option value="1">Thứ 2</option>
+                                                <option value="2">Thứ 3</option>
+                                                <option value="3">Thứ 4</option>
+                                                <option value="4">Thứ 5</option>
+                                                <option value="5">Thứ 6</option>
+                                                <option value="6">Thứ 7</option>
+                                                <option value="7">Chủ nhật</option>
                                             </select>
                                         </div>
                                     </div>
@@ -275,14 +272,15 @@
                                             <span>Đến: </span>
                                         </div>
                                         <div class="date-selected">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Thứ 2</option>
-                                                <option value="1">Thứ 3</option>
-                                                <option value="2">Thứ 4</option>
-                                                <option value="3">Thứ 5</option>
-                                                <option value="4">Thứ 6</option>
-                                                <option value="5">Thứ 7</option>
-                                                <option value="6">Chủ nhật</option>
+                                            <select class="form-select" aria-label="Default select example" id="ngayLamViecDen">
+                                                
+                                                <option value="1">Thứ 2</option>
+                                                <option value="2">Thứ 3</option>
+                                                <option value="3">Thứ 4</option>
+                                                <option value="4">Thứ 5</option>
+                                                <option value="5">Thứ 6</option>
+                                                <option value="6">Thứ 7</option>
+                                                <option value="7">Chủ nhật</option>
                                             </select>
                                         </div>
                                     </div>
@@ -317,7 +315,7 @@
                                     <h6 class="title mb-0">Họ và tên người nhận <span class="text-red">*</span></h6>
                                 </div>
                                 <div>
-                                    <input type="text" class="form-control" placeholder="Nhập họ và tên người nhận">
+                                    <input type="text" class="form-control" placeholder="Nhập họ và tên người nhận" id="tenNguoiNhan">
                                 </div>
                             </div>
                             <div class="col-6 receive-info-form">
@@ -325,7 +323,7 @@
                                     <h6 class="title mb-0">Số điện thoại <span class="text-red">*</span></h6>
                                 </div>
                                 <div>
-                                    <input type="tel" class="form-control" placeholder="Nhập số điện thoại">
+                                    <input type="tel" class="form-control" placeholder="Nhập số điện thoại" id="soDienThoai">
                                 </div>
                             </div>
                         </div>
@@ -335,7 +333,7 @@
                                 <h6 class="title">Email nhận hồ sơ <span class="text-red">*</span></h6>
                             </div>
                             <div class="receive-email-input">
-                                <input type="email" class="form-control" placeholder="Nhập email">
+                                <input type="email" class="form-control" placeholder="Nhập email" id="emailNhanHoSo">
                             </div>
                         </div>
                     </div>
@@ -374,4 +372,240 @@
       
     </div>
 </div>
-<script src="./js/dangTinTD.js"></script>
+ <script>
+    const btnDecrease = document.querySelector(".btn-decrease")
+    const btnIncrease = document.querySelector(".btn-increase")
+    const quantity = document.querySelector("#quantity")
+    console.log(btnDecrease);
+    console.log(btnIncrease);
+    console.log(quantity);
+
+    btnDecrease.addEventListener("click", function () {
+        let currValue = parseInt(quantity.value)
+        if (currValue > 1) {
+            quantity.value = currValue - 1;
+        }
+
+    })
+
+    btnIncrease.addEventListener("click", function () {
+        let currValue = parseInt(quantity.value);
+        quantity.value = currValue + 1;
+    })
+
+ </script>
+<script>
+    // URL của API backend (sửa HTTPS nếu không cần thiết khi chạy cục bộ)
+    const apiURL_ViTriChuyenMons = 'https://localhost:7208/api/ViTriChuyenMons';
+
+    // Hàm lấy dữ liệu từ API và thêm vào select
+    async function populateSpecializationSelect() {
+        try {
+            const response = await fetch(apiURL_ViTriChuyenMons); // Gửi yêu cầu GET đến API
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json(); // Chuyển đổi phản hồi thành JSON
+
+            // Lấy thẻ <select> từ DOM
+            const selectElement = document.getElementById('specializationSelect');
+
+            // Xóa tất cả các option hiện có (trừ option mặc định)
+            selectElement.innerHTML = '<option selected>Chọn vị trí chuyên môn</option>';
+
+            // Thêm các option vào select
+            data.forEach((item) => {
+                const option = document.createElement('option'); // Tạo thẻ <option>
+                option.value = item.idViTriChuyenMon; // Gán giá trị value
+                option.textContent = item.tenViTriChuyenMon; // Gán nội dung hiển thị
+                selectElement.appendChild(option); // Thêm vào select
+            });
+        } catch (error) {
+            console.error('Error fetching or populating specialization options:', error);
+        }
+    }
+
+    // Gọi hàm khi trang tải xong
+    document.addEventListener('DOMContentLoaded', populateSpecializationSelect);
+</script>
+
+
+
+<script>
+    // URL API
+    const apiURL_ThanhPhoes = 'https://localhost:7208/api/ThanhPhoes';
+    const apiURL_QuanHuyens = 'https://localhost:7208/api/QuanHuyens';
+
+    // Biến lưu trữ danh sách quận/huyện sau khi tải
+    let allQuanHuyen = [];
+
+    // Hàm lấy danh sách thành phố và hiển thị
+    async function loadThanhPho() {
+        try {
+            const response = await fetch(apiURL_ThanhPhoes); // Gửi yêu cầu GET
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+            const data = await response.json(); // Chuyển đổi JSON
+            const selectThanhPho = document.getElementById('thanhPho');
+            selectThanhPho.innerHTML = '<option selected>Chọn thành phố</option>'; // Xóa các option cũ
+
+            // Thêm các option vào select thành phố
+            data.forEach((item) => {
+                const option = document.createElement('option');
+                option.value = item.idThanhPho; // Gán giá trị ID
+                option.textContent = item.tenThanhPho; // Gán nội dung tên thành phố
+                selectThanhPho.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error fetching ThanhPho data:', error);
+        }
+    }
+
+    // Hàm lấy toàn bộ danh sách quận/huyện và lưu vào biến
+    async function loadAllQuanHuyen() {
+        try {
+            const response = await fetch(apiURL_QuanHuyens); // Gửi yêu cầu GET
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+            allQuanHuyen = await response.json(); // Lưu toàn bộ quận/huyện vào biến
+        } catch (error) {
+            console.error('Error fetching QuanHuyen data:', error);
+        }
+    }
+
+    // Hàm hiển thị quận/huyện dựa trên thành phố đã chọn
+    function filterQuanHuyenByThanhPho(thanhPhoId) {
+        const selectQuanHuyen = document.getElementById('quanHuyen');
+        selectQuanHuyen.innerHTML = '<option selected>Chọn Quận/ Huyện</option>'; // Xóa các option cũ
+
+        // Lọc danh sách quận/huyện theo ID thành phố
+        const filteredQuanHuyen = allQuanHuyen.filter((item) => item.idThanhPho === parseInt(thanhPhoId));
+
+        // Thêm các option vào select quận/huyện
+        filteredQuanHuyen.forEach((item) => {
+            const option = document.createElement('option');
+            option.value = item.idQuanHuyen; // Gán giá trị ID
+            option.textContent = item.tenQuanHuyen; // Gán nội dung tên quận/huyện
+            selectQuanHuyen.appendChild(option);
+        });
+
+        selectQuanHuyen.disabled = filteredQuanHuyen.length === 0; // Vô hiệu hóa nếu không có quận/huyện
+    }
+
+    // Xử lý sự kiện khi chọn thành phố
+    document.getElementById('thanhPho').addEventListener('change', (event) => {
+        const selectedThanhPhoId = event.target.value; // Lấy ID thành phố đã chọn
+        const selectQuanHuyen = document.getElementById('quanHuyen');
+
+        if (selectedThanhPhoId !== 'Chọn thành phố') {
+            filterQuanHuyenByThanhPho(selectedThanhPhoId); // Lọc và hiển thị quận/huyện
+        } else {
+            selectQuanHuyen.innerHTML = '<option selected>Chọn Quận/ Huyện</option>'; // Reset danh sách quận/huyện
+            selectQuanHuyen.disabled = true; // Vô hiệu hóa select quận/huyện
+        }
+    });
+
+    // Gọi các hàm khi trang tải xong
+    document.addEventListener('DOMContentLoaded', async () => {
+        await loadThanhPho(); // Tải danh sách thành phố
+        await loadAllQuanHuyen(); // Tải toàn bộ quận/huyện
+    });
+
+
+
+</script>
+
+
+
+<script>
+
+    function getUserIdFromSession() {
+        // Lấy id người dùng từ sessionStorage
+        const userId = 1; // Đặt mặc định hoặc lấy từ session
+        if (!userId) {
+            console.error("Không tìm thấy ID người dùng trong session.");
+            return null;
+        }
+        return userId;
+    }
+
+    document.getElementById('dangTin').addEventListener('click', function () {
+        // Lấy các giá trị text của các select
+        const TieuDeTinText = document.getElementById('fname').value;
+        const kinhNghiemText = document.getElementById('kinhNghiem').options[document.getElementById('kinhNghiem').selectedIndex].text;
+        const MoTaCongViecText = document.getElementById('moTaCongViec').value;
+        const YeuCauUngVienText = document.getElementById('yeuCauUngVien').value;
+        const QuyenLoiUngVienText = document.getElementById('quyenLoiUngVien').value;
+        const CachThucUngTuyenText = "Ứng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.";
+        const LoaiCongViecText = document.getElementById('loaiCongViec').options[document.getElementById('loaiCongViec').selectedIndex].text;
+        const MucLuongTuText = document.getElementById('mucLuongTu').value;
+        const MucLuongDenText = document.getElementById('mucLuongDen').value;
+        const LoaiTienTeText = document.getElementById('loaiTienTe').options[document.getElementById('loaiTienTe').selectedIndex].text;
+        const HanNopHoSoText = document.getElementById('hanNhanHoSo').value;
+        const SoLuongUngTuyenText = document.getElementById('quantity').value;
+        const DiaDiemLamViecCuTheText = document.getElementById('thanhPho').options[document.getElementById('thanhPho').selectedIndex].text;
+        const GioiTinhText = document.getElementById('gioiTinh').options[document.getElementById('gioiTinh').selectedIndex].text;
+        const ThoiGianLamViecTuThuText = document.getElementById('ngayLamViecTu').options[document.getElementById('ngayLamViecTu').selectedIndex].text;
+        const ThoiGianLamViecDenThuText = document.getElementById('ngayLamViecDen').options[document.getElementById('ngayLamViecDen').selectedIndex].text;
+        const ThoiGianLamViecTuGioText = document.getElementById('appt').value;
+        const ThoiGianLamViecDenGioText = document.getElementById('appt').value;
+    
+
+        // Lấy dữ liệu từ các trường trong form
+        const jobPostData = {
+            TieuDeTins: TieuDeTinText,
+            KinhNghiems: kinhNghiemText,
+            MoTaCongViecs: MoTaCongViecText,
+            YeuCauUngViens: YeuCauUngVienText,
+            QuyenLoiUngViens: QuyenLoiUngVienText,
+            CachThucUngTuyens: CachThucUngTuyenText,
+            LoaiCongViecs: LoaiCongViecText,
+            MucLuongTus: MucLuongTuText,
+            MucLuongTois: MucLuongDenText,
+            LoaiTienTes: LoaiTienTeText,
+            HanNopHoSos: HanNopHoSoText, // Ensure the date format is correct
+            SoLuongUngTuyens: SoLuongUngTuyenText,
+            DiaDiemLamViecCuThes: DiaDiemLamViecCuTheText,
+            GioiTinhs: GioiTinhText,
+            ThoiGianLamViecTuThus: ThoiGianLamViecTuThuText, // Ensure correct format
+            ThoiGianLamViecDenThus: ThoiGianLamViecDenThuText, // Ensure correct format
+            ThoiGianLamViecTuGios: ThoiGianLamViecTuGioText, // Time only
+            ThoiGianLamViecDenGios: ThoiGianLamViecDenGioText, // Time only
+            HoTenNguoiNhans: document.getElementById('tenNguoiNhan').value,
+            SoDienThoaiNguoiNhans: document.getElementById('soDienThoai').value,
+            EmailNguoiNhans: document.getElementById('emailNhanHoSo').value,
+            ViTriChuyenMons: document.getElementById('specializationSelect').value,
+            ChiTietDiaDiemLamViecs: document.getElementById('chiTietDiaDiemLamViec').value,
+            IdNhaTuyenDungs: getUserIdFromSession() // Lấy ID người dùng từ session
+        };
+
+        // Kiểm tra dữ liệu trước khi gửi đi
+        console.log("Dữ liệu chuẩn bị gửi đi: ", jobPostData);
+
+        // Gửi request POST đến API AddContent
+        fetch('https://localhost:7208/api/ChiTietTuyenDungs/AddContent', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jobPostData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert(data.message || "Đăng tin thành công!");
+            })
+            .catch(error => {
+                console.error('Có lỗi xảy ra:', error);
+                alert('Đã xảy ra lỗi khi đăng tin.');
+            });
+    });
+
+
+</script>
+
