@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BackEnd.Models;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace BackEnd.Controllers
 {
@@ -39,6 +40,63 @@ namespace BackEnd.Controllers
             }
 
             return congTy;
+        }
+        [HttpGet("GetDsCongTy/{id}")]
+        public async Task<ActionResult<List<CongTy>>> GetFollowedCompanies(int id)
+        {
+            var followedCompaniesIds = await _context.TheoDoiCongTies
+                .Where(t => t.IdUngVien == id)
+                .Select(t => t.IdCongTy)
+                .ToListAsync();
+
+            // Lấy thông tin các công ty từ bảng công ty
+            var followedCompanies = await _context.CongTies
+                .Where(c => followedCompaniesIds.Contains(c.IdCongTy))
+                .ToListAsync();
+
+            if (followedCompanies == null || followedCompanies.Count == 0)
+            {
+                return NotFound("Không có công ty nào được theo dõi.");
+            }
+
+            return Ok(followedCompanies);
+        }
+
+        [HttpGet("GetDsCongTyBySearch/{search}")]
+        public async Task<ActionResult<IEnumerable<object>>> GetSearchCongTy(string search)
+        {
+            if (string.IsNullOrEmpty(search))
+            { 
+                return BadRequest("Search parameter is required.");
+            }
+
+            // Chuyển search về chữ thường
+            var searchLower = search.ToLower();
+            bool isNumericSearch = int.TryParse(search, out int searchId);
+
+
+            var companies = await (from c in _context.CongTies
+                                   where c.TenCongTy.ToLower().Contains(searchLower) ||    // Tìm theo tên công ty
+                                         c.MoTaCongTy.ToLower().Contains(searchLower) ||  // Tìm theo mô tả công ty
+                                         (isNumericSearch && c.IdCongTy == searchId)     // Tìm theo ID công ty (nếu search là số)
+                                   select new
+                                   {
+                                       IdCongTy = c.IdCongTy,
+                                       TenCongTy = c.TenCongTy,
+                                       LogoUrl = c.LogoUrl,
+                                       WebsiteUrl = c.WebsiteUrl,
+                                       SoLuongNguoiTheoDoi = c.SoLuongNguoiTheoDoi,
+                                       QuyMoCongTy = c.QuyMoCongTy,
+                                       MoTaCongTy = c.MoTaCongTy,
+                                       Email = c.Email
+                                   }).ToListAsync();
+
+            if (companies == null || !companies.Any())
+            {
+                return NotFound("No companies match your search criteria.");
+            }
+
+            return Ok(companies);
         }
 
         // PUT: api/CongTies/5

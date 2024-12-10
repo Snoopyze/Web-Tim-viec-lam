@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutForUser.cshtml";
 }
+
 @section title
 {
     <title>CÔNG TY TNHH THƯƠNG MẠI ĐIỆN TỬ GOBUY VIỆT NAM</title>
@@ -9,11 +10,12 @@
 
 @section linkCss
 {
-    <link rel="stylesheet" href="../css/chiTietCongTy.css">
+    <link rel="stylesheet" href="~/css/chiTietCongTy.css">
 
 }
 
 <div id="main">
+    @model ChiTietCongTyViewModel
     <div id="breadcrumb" class="breadcrumb-detail-company">
         <div class="container">
             <ul class="nav d-flex">
@@ -21,7 +23,7 @@
                     <a href="@Url.ActionLink("Index", "DanhSachCongTy")" class="text-highlight bold">Danh sách công ty > </a>
                 </li>
 
-                <li class="nav-item"> Thông tin công ty & tin tuyển dụng từ CÔNG TY TNHH THƯƠNG MẠI ĐIỆN TỬ GOBUY VIỆT NAM</li>
+                <li class="nav-item"> Thông tin công ty & tin tuyển dụng từ @Model.CongTy.TenCongTy</li>
             </ul>
         </div>
     </div>
@@ -29,16 +31,16 @@
         <div class="container">
             <div class="company-cover-inner">
                 <div class="cover-wrapper">
-                    <img src="../img/company_cover_1.webp" alt="" class="img-responsive cover-img">
+                    <img src="~/img/company_cover_1.webp" alt="" class="img-responsive cover-img">
                 </div>
                 <div class="company-logo">
                     <div class="company-image-logo">
-                        <img src="../img/cong-ty-tnhh-thuong-mai-dien-tu-gobuy-viet-nam-102d3ae352ccaf762941e1fd9a5cddea-66e1788f4e63b.webp" alt="" class="img-responsive">
+                        <img src="~/img/@Model.CongTy.LogoUrl" alt="" class="img-responsive">
                     </div>
                 </div>
                 <div class="company-detail-overview">
                     <div class="box-detail">
-                        <h5 class="company-detail-name text-highlight">CÔNG TY TNHH THƯƠNG MẠI ĐIỆN TỬ GOBUY VIỆT NAM</h5>
+                        <h5 class="company-detail-name text-highlight">@Model.CongTy.TenCongTy</h5>
                         <div class="company-subdetail">
                             <div class="company-content__title--label"></div>
                             <div class="company-subdetail-info">
@@ -51,18 +53,28 @@
                                 <span class="company-subdetail-info-icon">
                                     <i class="fa-solid fa-users"></i>
                                 </span>
-                                <span class="company-subdetail-info-text">17 người theo dõi</span>
+                                <span class="company-subdetail-info-text">@Model.CongTy.SoLuongNguoiTheoDoi người theo dõi</span>
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="box-follow">
-                        <a href="" class="btn btn-follow">
-                            <span>
-                                <i class="fa-regular fa-plus"></i>
-                            </span>Theo dõi công ty
-                        </a>
+                    @if (Model.IsFollow)
+                    {
+                        <form method="post" asp-action="UnfollowCompany">
+                            <input type="hidden" name="ungVienId" value="1" />
+                            <input type="hidden" name="congTyId" value="@Model.CongTy.IdCongTy" />
+                            <button type="submit" class="btn btn-danger">Hủy theo dõi</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" asp-action="FollowCompany">
+                            <input type="hidden" name="ungVienId" value="1" />
+                            <input type="hidden" name="congTyId" value="@Model.CongTy.IdCongTy" />
+                            <button type="submit" class="btn btn-primary">Theo dõi</button>
+                        </form>
+                    }
                     </div>
                 </div>
             </div>
@@ -78,11 +90,7 @@
                             <div class="box-body">
                                 <div class="company-info__content">
                                     <p>Thành lập vào năm 2024, hướng tới mục tiêu trở thành một trong những công ty Internet hàng đầu tại Việt Nam, với hai dự án Solaso và GoJob.</p>
-                                    <p>Thành lập vào năm 2024, hướng tới mục tiêu trở thành một trong những công ty Internet hàng đầu tại Việt Nam, với hai dự án Solaso và GoJob.</p>
-                                    <p>Thành lập vào năm 2024, hướng tới mục tiêu trở thành một trong những công ty Internet hàng đầu tại Việt Nam, với hai dự án Solaso và GoJob.</p>
-                                    <p>Thành lập vào năm 2024, hướng tới mục tiêu trở thành một trong những công ty Internet hàng đầu tại Việt Nam, với hai dự án Solaso và GoJob.</p>
-                                    <p>Thành lập vào năm 2024, hướng tới mục tiêu trở thành một trong những công ty Internet hàng đầu tại Việt Nam, với hai dự án Solaso và GoJob.</p>
-                                    <p>Thành lập vào năm 2024, hướng tới mục tiêu trở thành một trong những công ty Internet hàng đầu tại Việt Nam, với hai dự án Solaso và GoJob.</p>
+
                                 </div>
                             </div>
                         </div>
@@ -113,11 +121,10 @@
                                     </div>
                                     <select id="select-cities" class="form-control select2-hidden-accessible">
                                         <option value="0">Tất cả tỉnh/thành phố</option>
-                                        <option class="" value="">HCM</option>
-                                        <option class="" value="">HCM</option>
-                                        <option class="" value="">HCM</option>
-                                        <option class="" value="">HCM</option>
-
+                                        @foreach(var it in Model.City)
+                                        {
+                                            <option value="@it.Id">@it.Name</option>
+                                        }
                                     </select>
 
                                 </div>
@@ -130,95 +137,47 @@
                             </div>
                             <div class="job-detail__related-jobs--content">
                                 <!-- START CONTAINER-JOB-ITEM -->
-                                <div class="job-item d-flex g-15">
-                                    <div class="job-item__ava flex-1">
-                                        <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
-                                    </div>
-                                    <div class="job-item__body">
-                                        <div class="job-item__body__content">
-                                            <div class="title-block d-flex">
-                                                <div class="title-left flex 2">
-                                                    <h6 class="font-weight-6 mb-1 ">Kế toán kho và Thanh toán - Đi làm ngay</h6>
-                                                    <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
-                                                </div>
-                                                <div class="title-right text-green font-weight-6 flex 1">9-11 triệu</div>
+                                
+                                @foreach(var item in Model.ChiTietTuyenDungs)
+                                {
+                                    @if (item != null)
+                                    {
+                                        <div class="job-item d-flex g-15">
+                                            <div class="job-item__ava flex-1">
+                                                <img src="~/img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
                                             </div>
-                                            <div class="info d-flex justify-content-between">
-                                                <div class="lable-content d-flex g-15">
-                                                    <div class="lable-content-item">Hà Nội</div>
-                                                    <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
-                                                    <div class="lable-content-item">Cập nhật 4 giờ trước</div>
-                                                </div>
-                                                <div class="icon">
-                                                    <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
-                                                    <a href="" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
-                                                </div>
+                                            <div class="job-item__body">
+                                                <div class="job-item__body__content">
+                                                    <div class="title-block d-flex">
+                                                        <div class="title-left flex 2">
+                                                            <h6 class="font-weight-6 mb-1 ">@item.TieuDeTin - Đi làm ngay</h6>
+                                                            <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
+                                                        </div>
+                                                        <div class="title-right text-green font-weight-6 flex 1">@item.MucLuongTu - @item.MucLuongToi</div>
+                                                    </div>
+                                                    <div class="info d-flex justify-content-between">
+                                                        <div class="lable-content d-flex g-15">
+                                                            <div class="lable-content-item">@item.DiaDiemLamViecCuThe</div>
+                                                            <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
+                                                            <div class="lable-content-item">Cập nhật 4 giờ trước</div>
+                                                        </div>
+                                                        <div class="icon">
+                                                            <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
+                                                            <a href="" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
+                                                        </div>
 
+                                                    </div>
+
+                                                </div>
                                             </div>
-
                                         </div>
-                                    </div>
-                                </div>
+                                    }
+                                }
+                                
+                                               
                                 <!-- END CONTAINER-JOB-ITEM -->
                                 <!-- START CONTAINER-JOB-ITEM -->
-                                <div class="job-item d-flex g-15">
-                                    <div class="job-item__ava flex-1">
-                                        <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
-                                    </div>
-                                    <div class="job-item__body">
-                                        <div class="job-item__body__content">
-                                            <div class="title-block d-flex">
-                                                <div class="title-left flex 2">
-                                                    <h6 class="font-weight-6 mb-1 ">Kế toán kho và Thanh toán - Đi làm ngay</h6>
-                                                    <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
-                                                </div>
-                                                <div class="title-right text-green font-weight-6 flex 1">9-11 triệu</div>
-                                            </div>
-                                            <div class="info d-flex justify-content-between">
-                                                <div class="lable-content d-flex g-15">
-                                                    <div class="lable-content-item">Hà Nội</div>
-                                                    <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
-                                                    <div class="lable-content-item">Cập nhật 4 giờ trước</div>
-                                                </div>
-                                                <div class="icon">
-                                                    <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
-                                                    <a href="" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END CONTAINER-JOB-ITEM -->
-                                <!-- START CONTAINER-JOB-ITEM -->
-                                <div class="job-item d-flex g-15">
-                                    <div class="job-item__ava flex-1">
-                                        <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
-                                    </div>
-                                    <div class="job-item__body">
-                                        <div class="job-item__body__content">
-                                            <div class="title-block d-flex">
-                                                <div class="title-left flex 2">
-                                                    <h6 class="font-weight-6 mb-1 ">Kế toán kho và Thanh toán - Đi làm ngay</h6>
-                                                    <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
-                                                </div>
-                                                <div class="title-right text-green font-weight-6 flex 1">9-11 triệu</div>
-                                            </div>
-                                            <div class="info d-flex justify-content-between">
-                                                <div class="lable-content d-flex g-15">
-                                                    <div class="lable-content-item">Hà Nội</div>
-                                                    <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
-                                                    <div class="lable-content-item">Cập nhật 4 giờ trước</div>
-                                                </div>
-                                                <div class="icon">
-                                                    <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
-                                                    <a href="" class="btn-save-job"><i class="bi bi-heart font-weight-6"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <!-- END CONTAINER-JOB-ITEM -->
 
                             </div>
@@ -256,7 +215,7 @@
                         <div class="box-body">
                             <p>Sao chép đường dẫn</p>
                             <div class="box-copy">
-                                <input readonly="" type="text" value="http://www.topcv.vn/cong-ty/cong-ty-tnhh-thuong-mai-dien-tu-gobuy-viet-nam/188323.html" class="url-copy">
+                                <input readonly="" type="text" value="@Model.CongTy.WebsiteUrl" class="url-copy">
                                 <div class="btn-copy">
                                     <button class="btn-copy-url"><i class="fa-regular fa-copy"></i></button>
                                 </div>

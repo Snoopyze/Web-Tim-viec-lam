@@ -10,31 +10,31 @@
 
 @section linkCss
 {
-    <link rel="stylesheet" href="../css/caiDatThongTinCaNhan.css">
+    <link rel="stylesheet" href="~/css/caiDatThongTinCaNhan.css">
 
 }
 
 
 @section linkJs
 {
-    <link rel="stylesheet" href="../js/caiDatThongTinCaNhan.js">
+    <link rel="stylesheet" href="~/js/caiDatThongTinCaNhan.js">
 
 }
-
+@model UngVien
  <div class="info_container">
     <!-- Left Panel -->
     <div class="left-panel">
       <h2>Cài đặt thông tin cá nhân</h2>
       <p class="required">(*) Các thông tin bắt buộc</p>
-      <form>
+        <form method="post" asp-action="UpdateInfo" asp-route-id=1>
         <label for="fullName">Họ và tên *</label>
-        <input type="text" id="fullName" placeholder="Ẩn Hồ" value="Ẩn Hồ">
+        <input type="text" id="fullName" name="fullname" placeholder="Nhập Tên" value="@Model.HoTen">
 
         <label for="phone">Số điện thoại</label>
-        <input type="text" id="phone" placeholder="Nhập số điện thoại">
+        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" value="@Model.SoDienThoai">
 
         <label for="email">Email</label>
-        <input type="email" id="email" value="baovip991@gmail.com" disabled>
+        <input type="email" id="email" name="email" value="@Model.Email" disabled>
 
         <button type="submit" class="btn-save">Lưu</button>
       </form>
@@ -45,10 +45,10 @@
         <div class="right-panel">
             <!-- Thông tin người dùng -->
             <div class="user-info">
-                <div class="avatar"><img src="../img/default-avatar.fc9c40ba.png" alt=""></div>
+                <div class="avatar"><img src="~/img/default-avatar.fc9c40ba.png" alt=""></div>
                 <div class="user-details">
                 <p>Chào bạn trở lại</p>
-                <p ><strong class="name">Ẩn Hồ</strong></p>
+                <p ><strong class="name">@Model.HoTen</strong></p>
                 <div class="action-buttons">
                     <button class="btn-verify"><strong>Tài khoản đã xác thực</strong></button>
                     <button class="btn-upgrade"><strong>Nâng cấp tài khoản</strong></button>

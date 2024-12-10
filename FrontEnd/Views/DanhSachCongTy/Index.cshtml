@@ -9,8 +9,13 @@
 
 @section linkCss
 {
-    <link rel="stylesheet" href="../css/danhSachCongTy.css">
+    <link rel="stylesheet" href="~/css/danhSachCongTy.css">
 
+}
+
+@{
+    var SearchTerm = ViewBag.Search as String;
+    var cty = ViewBag.Jobs as List<Dictionary<string, object>>;
 }
 <div id="main">
     <div class="company">
@@ -19,22 +24,23 @@
                 <div class="box-search">
                     <ul class="nav header">
                         <li class="nav-item">
-                            <a href="" class="nav-link active">Danh sách công ty</a>
+                            <a href="javascript:void(0);" class="nav-link active" id="companyListTab">Danh sách công ty</a>
                         </li>
-                        <li class="nav-item"><a href="" class="nav-link">Công ty đã lưu</a></li>
+                        <li class="nav-item"> 
+                            <a href="javascript:void(0);" class="nav-link" id="savedCompanyListTab" >Công ty đã lưu</a>
+                        </li>
                     </ul>
                     <div class="caption">
                         <h3 class="text-green">Khám phá 1000+ công ty nổi bật</h3>
                         <p class="description">Tra cứu thông tin công ty và tìm kiếm nơi làm việc tốt nhất dành cho bạn</p>
                     </div>
-                    <form action="" class="form-search border-hover">
+                    <form action="@Url.Action("Index","DanhSachCongTy")" method="GET" class="form-search border-hover">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="keyword" class="form-control" name="keyword" placeholder="Nhập tên công ty">
-                        <button class="btn btn-search btn-search-company btn-primary-hover">Tìm kiếm</button>
+                        <input value="@SearchTerm" type="text"  id="keyword" class="form-control" name="keyword" placeholder="Nhập tên công ty">
+                        <button type="submit" class="btn btn-search btn-search-company btn-primary-hover" id="find" >Tìm kiếm</button>
                     </form>
                 </div>
-                <div class="box-img"><img src="../img/company-billBoard.webp" alt=""></div>
-
+                <div class="box-img"><img src="~/img/company-billBoard.webp" alt=""></div>
             </div>
         </div>
         <div class="featured-companies">
@@ -42,86 +48,140 @@
                 <h4>DANH SÁCH CÁC CÔNG TY NỔI BẬT</h4>
             </div>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="box-company item-hover">
-                            <div class="company-banner">
-                                <a href="@Url.ActionLink("Index", "ChiTietCongTy")">
-                                    <div class="cover-warper">
-                                        <img src="../img/cong-ty-tnhh-glodival-95051c94e7df2a248382cb7034a90f9c-660d0c235a956.webp" alt="">
+                @model FrontEnd.Controllers.CompanyViewModel
+                <div class="row" id="all" >
+                    @foreach (var company in Model.AllCompanies)
+                    {
+                        <div class="col-md-4 col-sm-6">
+                            <div class="box-company item-hover">
+                                <div class="company-banner">
+                                    <a href="@Url.Action("Index", "ChiTietCongTy", new { id = company.IdCongTy })">
+                                        <div class="cover-warper">
+                                            <img src="~/img/banner.jpg" alt="@company.TenCongTy">
+                                        </div>
+                                    </a>
+                                    <div class="company-logo">
+                                        <a href="@Url.Action("Index", "ChiTietCongTy", new { id = company.IdCongTy })">
+                                            <img src="~/img/@company.LogoUrl" alt="@company.TenCongTy" class="img-fluid">
+                                        </a>
                                     </div>
-                                </a>
-                                <div class="company-logo"><a href="@Url.ActionLink("Index", "ChiTietCongTy")"><img src="../img/cong-ty-tnhh-glodival-121ca3da8aa8d312b77c04fd91e0bf73-660d0c2d12985.webp" alt="" class="img-fluid"></a></div>
-                            </div>
-                            <div class="company-info">
-                                <div class="font-weight-6"><a href="@Url.ActionLink("Index", "ChiTietCongTy")">CÔNG TY TNHH GLODIVAL</a></div>
-                                <div class="company-description">
-                                    <p>" Được thành lập từ năm 2019, Công ty TNHH Glodival đã và đang dần trở thành một trong những Doanh nghiệp có uy tín trong lĩnh vực Du Lịch, Digital Marketing. Với sự đồng tâm từ cấp quản lý tận tụy, giàu kinh nghiệm đến đội ngũ nhân viên trẻ chuyên môn cao, đầy nhiệt huyết, Glodival dần khẳng định được vị trí của mình trên thị trường, trở thành..."</p>
+                                </div>
+                                <div class="company-info">
+                                    <div class="font-weight-6">
+                                        <a href="@Url.Action("Index", "ChiTietCongTy", new { id = company.IdCongTy })">
+                                            @company.TenCongTy
+                                        </a>
+                                    </div>
+                                    <div class="company-description">
+                                        <p>@company.MoTaCongTy</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="box-company item-hover">
-                            <div class="company-banner">
-                                <a href="@Url.ActionLink("Index", "ChiTietCongTy")">
-                                    <div class="cover-warper">
-                                        <img src="../img/cong-ty-tnhh-glodival-95051c94e7df2a248382cb7034a90f9c-660d0c235a956.webp" alt="">
-                                    </div>
-                                </a>
-                                <div class="company-logo"><a href="@Url.ActionLink("Index", "ChiTietCongTy")"><img src="../img/cong-ty-tnhh-glodival-121ca3da8aa8d312b77c04fd91e0bf73-660d0c2d12985.webp" alt="" class="img-fluid"></a></div>
-                            </div>
-                            <div class="company-info">
-                                <div class="font-weight-6"><a href="@Url.ActionLink("Index", "ChiTietCongTy")">CÔNG TY TNHH GLODIVAL</a></div>
-                                <div class="company-description">
-                                    <p>" Được thành lập từ năm 2019, Công ty TNHH Glodival đã và đang dần trở thành một trong những Doanh nghiệp có uy tín trong lĩnh vực Du Lịch, Digital Marketing. Với sự đồng tâm từ cấp quản lý tận tụy, giàu kinh nghiệm đến đội ngũ nhân viên trẻ chuyên môn cao, đầy nhiệt huyết, Glodival dần khẳng định được vị trí của mình trên thị trường, trở thành..."</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="box-company item-hover">
-                            <div class="company-banner">
-                                <a href="@Url.ActionLink("Index", "ChiTietCongTy")">
-                                    <div class="cover-warper">
-                                        <img src="../img/cong-ty-tnhh-glodival-95051c94e7df2a248382cb7034a90f9c-660d0c235a956.webp" alt="">
-                                    </div>
-                                </a>
-                                <div class="company-logo"><a href="@Url.ActionLink("Index", "ChiTietCongTy")"><img src="../img/cong-ty-tnhh-glodival-121ca3da8aa8d312b77c04fd91e0bf73-660d0c2d12985.webp" alt="" class="img-fluid"></a></div>
-                            </div>
-                            <div class="company-info">
-                                <div class="font-weight-6"><a href="@Url.ActionLink("Index", "ChiTietCongTy")">CÔNG TY TNHH GLODIVAL</a></div>
-                                <div class="company-description">
-                                    <p>" Được thành lập từ năm 2019, Công ty TNHH Glodival đã và đang dần trở thành một trong những Doanh nghiệp có uy tín trong lĩnh vực Du Lịch, Digital Marketing. Với sự đồng tâm từ cấp quản lý tận tụy, giàu kinh nghiệm đến đội ngũ nhân viên trẻ chuyên môn cao, đầy nhiệt huyết, Glodival dần khẳng định được vị trí của mình trên thị trường, trở thành..."</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="box-company item-hover">
-                            <div class="company-banner">
-                                <a href="@Url.ActionLink("Index", "ChiTietCongTy")">
-                                    <div class="cover-warper">
-                                        <img src="../img/cong-ty-tnhh-glodival-95051c94e7df2a248382cb7034a90f9c-660d0c235a956.webp" alt="">
-                                    </div>
-                                </a>
-                                <div class="company-logo"><a href="@Url.ActionLink("Index", "ChiTietCongTy")"><img src="../img/cong-ty-tnhh-glodival-121ca3da8aa8d312b77c04fd91e0bf73-660d0c2d12985.webp" alt="" class="img-fluid"></a></div>
-                            </div>
-                            <div class="company-info">
-                                <div class="font-weight-6"><a href="@Url.ActionLink("Index", "ChiTietCongTy")">CÔNG TY TNHH GLODIVAL</a></div>
-                                <div class="company-description">
-                                    <p>" Được thành lập từ năm 2019, Công ty TNHH Glodival đã và đang dần trở thành một trong những Doanh nghiệp có uy tín trong lĩnh vực Du Lịch, Digital Marketing. Với sự đồng tâm từ cấp quản lý tận tụy, giàu kinh nghiệm đến đội ngũ nhân viên trẻ chuyên môn cao, đầy nhiệt huyết, Glodival dần khẳng định được vị trí của mình trên thị trường, trở thành..."</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    }
                 </div>
-
+                <div class="row" id="result" style="display:none">
+                    @foreach (var company in Model.SearchCompanies)
+                    {
+                        <div class="col-md-4 col-sm-6">
+                            <div class="box-company item-hover">
+                                <div class="company-banner">
+                                    <a href="@Url.Action("Index", "ChiTietCongTy", new { id = company.IdCongTy })">
+                                        <div class="cover-warper">
+                                            <img src="~/img/banner.jpg" alt="@company.TenCongTy">
+                                        </div>
+                                    </a>
+                                    <div class="company-logo">
+                                        <a href="@Url.Action("Index", "ChiTietCongTy", new { id = company.IdCongTy })">
+                                            <img src="~/img/@(company.LogoUrl)" alt="@company.TenCongTy" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="company-info">
+                                    <div class="font-weight-6">
+                                        <a href="@Url.Action("Index", "ChiTietCongTy", new {id = company.IdCongTy })">
+                                            @company.TenCongTy
+                                        </a>
+                                    </div>
+                                    <div class="company-description">
+                                        <p>@company.MoTaCongTy</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="row" id="followed" style="display:none">
+                    @foreach (var company in Model.FollowedCompanies)
+                    {
+                        <div class="col-md-4 col-sm-6">
+                            <div class="box-company item-hover">
+                                <div class="company-banner">
+                                    <a href="@Url.Action("Index", "ChiTietCongTy", new { id = company.IdCongTy })">
+                                        <div class="cover-warper">
+                                            <img src="~/img/banner.jpg" alt="@company.TenCongTy">
+                                        </div>
+                                    </a>
+                                    <div class="company-logo">
+                                        <a href="@Url.Action("Index", "ChiTietCongTy", new { id = company.IdCongTy })">
+                                            <img src="~/img/@company.LogoUrl" alt="@company.TenCongTy" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="company-info">
+                                    <div class="font-weight-6">
+                                        <a href="@Url.Action("Index", "ChiTietCongTy", new { id = company.IdCongTy })">
+                                            @company.TenCongTy
+                                        </a>
+                                    </div>
+                                    <div class="company-description">
+                                        <p>@company.MoTaCongTy</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    const companyListTab = document.getElementById('companyListTab');
+    const savedCompanyListTab = document.getElementById('savedCompanyListTab');
+    const allCompaniesDiv = document.getElementById('all');
+    const followedCompaniesDiv = document.getElementById('followed');
+    const findButton = document.getElementById('find');
+    const findResult = document.getElementById('result');
+
+    // Xử lý khi click tab "Danh sách công ty"
+    companyListTab.addEventListener('click', function () {
+        allCompaniesDiv.style.display = 'flex';
+        followedCompaniesDiv.style.display = 'none';
+        findResult.style.display = 'none';
+
+        companyListTab.classList.add('active');
+        savedCompanyListTab.classList.remove('active');
+    });
+
+    // Xử lý khi click nút tìm kiếm
+    findButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Ngăn form submit để kiểm soát giao diện
+        findResult.style.display = 'flex';
+        allCompaniesDiv.style.display = 'none';
+        followedCompaniesDiv.style.display = 'none';
+        companyListTab.classList.remove('active');
+        savedCompanyListTab.classList.remove('active');
+    });
+
+    // Xử lý khi click tab "Công ty đã lưu"
+    savedCompanyListTab.addEventListener('click', function () {
+        followedCompaniesDiv.style.display = 'flex';
+        allCompaniesDiv.style.display = 'none';
+        findResult.style.display = 'none';
+
+        savedCompanyListTab.classList.add('active');
+        companyListTab.classList.remove('active');
+    });
+</script>
+

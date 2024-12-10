@@ -96,7 +96,47 @@ namespace BackEnd.Controllers
 
             return CreatedAtAction("GetTheoDoiCongTy", new { id = theoDoiCongTy.IdTheoDoiCongTy }, theoDoiCongTy);
         }
+        [HttpGet("IsFollowed/{ungVienId}/{congTyId}")]
+        public async Task<ActionResult<bool>> IsFollowed(int ungVienId, int congTyId)
+        {
+            var follow = await _context.TheoDoiCongTies
+                .FirstOrDefaultAsync(t => t.IdUngVien == ungVienId && t.IdCongTy == congTyId);
 
+            return follow != null;
+        }
+
+        // API theo dõi công ty
+        [HttpPost("FollowCompany")]
+        public async Task<ActionResult> FollowCompany([FromBody] FollowRequest request)
+        {
+            var follow = new TheoDoiCongTy
+            {
+                IdUngVien = request.UngVienId,
+                IdCongTy = request.CongTyId,
+                ThoiGianTheoGioi = DateTime.Now
+            };
+
+            _context.TheoDoiCongTies.Add(follow);
+            await _context.SaveChangesAsync();
+            return Ok("Followed successfully");
+        }
+
+        // API hủy theo dõi công ty
+        [HttpDelete("UnfollowCompany")]
+        public async Task<ActionResult> UnfollowCompany([FromQuery] int ungVienId, [FromQuery] int congTyId)
+        {
+            var follow = await _context.TheoDoiCongTies
+                .FirstOrDefaultAsync(t => t.IdUngVien == ungVienId && t.IdCongTy == congTyId);
+
+            if (follow == null)
+            {
+                return NotFound("Follow record not found");
+            }
+
+            _context.TheoDoiCongTies.Remove(follow);
+            await _context.SaveChangesAsync();
+            return Ok("Unfollowed successfully");
+        }
         // DELETE: api/TheoDoiCongTies/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTheoDoiCongTy(int id)
@@ -117,5 +157,10 @@ namespace BackEnd.Controllers
         {
             return _context.TheoDoiCongTies.Any(e => e.IdTheoDoiCongTy == id);
         }
+    }
+    public class FollowRequest
+    {
+        public int UngVienId { get; set; }
+        public int CongTyId { get; set; }
     }
 }
