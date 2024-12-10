@@ -218,6 +218,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackEnd.Controllers.ChiTietTuyenDungsController",
+    "Method": "AddContent",
+    "RelativePath": "api/ChiTietTuyenDungs/AddContent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BackEnd.Controllers.ChiTietTuyenDungsController\u002BAddContentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BackEnd.Models.ChiTietTuyenDung",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "BackEnd.Controllers.ChungChisController",
     "Method": "GetChungChis",
     "RelativePath": "api/ChungChis",
@@ -2065,6 +2091,27 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.NhaTuyenDungsController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/NhaTuyenDungs/changepassword/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "BackEnd.Controllers.NhaTuyenDungsController\u002BChangePasswordRequest",
         "IsRequired": true
       }
     ],

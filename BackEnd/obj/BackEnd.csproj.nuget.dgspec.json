@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\BackEnd\\BackEnd.csproj": {}
+    "H:\\124HKI24_25\\DOANLWNC\\WebTimViecLam\\WebTimViecLam\\BackEnd\\BackEnd.csproj": {}
   },
   "projects": {
-    "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\BackEnd\\BackEnd.csproj": {
+    "H:\\124HKI24_25\\DOANLWNC\\WebTimViecLam\\WebTimViecLam\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "H:\\124HKI24_25\\DOANLWNC\\WebTimViecLam\\WebTimViecLam\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\BackEnd\\BackEnd.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\Kì 124-224 (Năm 3)\\Web Nang Cao\\WebsiteTimViecLam\\BackEnd\\obj\\",
+        "projectPath": "H:\\124HKI24_25\\DOANLWNC\\WebTimViecLam\\WebTimViecLam\\BackEnd\\BackEnd.csproj",
+        "packagesPath": "C:\\Users\\Anh Minh\\.nuget\\packages\\",
+        "outputPath": "H:\\124HKI24_25\\DOANLWNC\\WebTimViecLam\\WebTimViecLam\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anh Minh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

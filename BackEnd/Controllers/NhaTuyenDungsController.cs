@@ -117,5 +117,55 @@ namespace BackEnd.Controllers
         {
             return _context.NhaTuyenDungs.Any(e => e.IdNhaTuyenDung == id);
         }
+
+        [HttpPut("changepassword/{id}")]
+        public async Task<IActionResult> ChangePassword(int id, [FromBody] ChangePasswordRequest request)
+        {
+            var nhaTuyenDung = await _context.NhaTuyenDungs.FindAsync(id);
+
+            if (nhaTuyenDung == null)
+            {
+                return NotFound(new { message = "Nhà tuyển dụng không tồn tại." });
+            }
+
+            // Kiểm tra mật khẩu hiện tại
+            if (nhaTuyenDung.MatKhau != request.CurrentPassword)
+            {
+                return BadRequest(new { message = "Mật khẩu hiện tại không chính xác." });
+            }
+
+            // Kiểm tra mật khẩu mới và mật khẩu xác nhận
+            if (request.NewPassword != request.ConfirmPassword)
+            {
+                return BadRequest(new { message = "Mật khẩu mới và mật khẩu xác nhận không khớp." });
+            }
+
+            // Cập nhật mật khẩu mới
+            nhaTuyenDung.MatKhau = request.NewPassword;
+
+            _context.Entry(nhaTuyenDung).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Lỗi khi cập nhật mật khẩu." });
+            }
+
+            return Ok(new { message = "Mật khẩu đã được thay đổi thành công." });
+        }
+
+        public class ChangePasswordRequest
+        {
+            public string CurrentPassword { get; set; }
+            public string NewPassword { get; set; }
+            public string ConfirmPassword { get; set; }
+        }
+
+
+
+
     }
 }

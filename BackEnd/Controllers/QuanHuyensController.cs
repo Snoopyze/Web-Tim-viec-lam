@@ -117,5 +117,13 @@ namespace BackEnd.Controllers
         {
             return _context.QuanHuyens.Any(e => e.IdQuanHuyen == id);
         }
+
+
+
+
+        
+     
+
+
     }
 }
