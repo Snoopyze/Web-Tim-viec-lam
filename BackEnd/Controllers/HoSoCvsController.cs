@@ -26,7 +26,22 @@ namespace BackEnd.Controllers
         {
             return await _context.HoSoCvs.ToListAsync();
         }
+        [HttpGet("GetDsHoSo/{idUngVien}")]
+        public async Task<ActionResult<IEnumerable<HoSoCv>>> GetHoSoCVByUngVien(int idUngVien)
+        {
+            // Truy vấn danh sách hồ sơ của ứng viên
+            var hoSoCVs = await _context.HoSoCvs
+                .Where(c => c.IdUngVien == idUngVien)
+                .ToListAsync();
 
+            // Nếu không tìm thấy
+            if (!hoSoCVs.Any())
+            {
+                return NotFound(new { Message = "Không tìm thấy hồ sơ nào cho ứng viên này." });
+            }
+
+            return Ok(hoSoCVs);
+        }
         // GET: api/HoSoCvs/5
         [HttpGet("{id}")]
         public async Task<ActionResult<HoSoCv>> GetHoSoCv(int id)

@@ -8,17 +8,24 @@
 
 @section linkCss
 {
-    <link rel="stylesheet" href="../css/chiTietViecLam.css">
+    <link rel="stylesheet" href="~/css/chiTietViecLam.css">
 }
 
 @section linkCss2
 {
-    <link rel="stylesheet" href="../css/viecLam.css">
+    <link rel="stylesheet" href="~/css/viecLam.css">
 }
 
 @section linkJs
 {
-    <script src="../js/chiTietViecLam.js"></script>
+    <script src="~/js/chiTietViecLam.js"></script>
+}
+@{
+    var jobs = ViewBag.JobDetails as List<Dictionary<string, object>>;
+    if ((jobs != null && jobs.Any()))
+    {
+        var job = jobs.First();
+    }
 }
 <div id="main">
     <!-- SEARCH JOB -->
@@ -172,16 +179,21 @@
             </div>
         </div>
     </div>
+
     <!-- JOB DETAIL -->
     <div class="job-detail">
         <div class="container">
-            <div class="job-detail__header mb-2 ">
-                <a href="" class="text-green font-weight-6"> Trang chủ</a>
-                <i class="bi bi-chevron-right"></i>
-                <a href="" class="text-green font-weight-6"> Tìm việc làm <span class="name-job">Kiểm toán viên</span></a>
-                <i class="bi bi-chevron-right"></i>
-                <span class="title-job d-block mt-1">Tuyển Kiểm Toán Viên Điều Hành / Trưởng Nhóm Kiểm Toán - Từ 3 Năm Kinh Nghiệm - Thu Nhập Đến 30tr - Quận 3, Thành Phố Hồ Chí Minh</span>
-            </div>
+            @if ((jobs != null && jobs.Any()))
+            {
+            var job = jobs.First();
+                <div class="job-detail__header mb-2 ">
+                    <a href="" class="text-green font-weight-6"> Trang chủ</a>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="" class="text-green font-weight-6"> Tìm việc làm <span class="name-job">Kiểm toán viên</span></a>
+                    <i class="bi bi-chevron-right"></i>
+                    <span class="title-job d-block mt-1">@job["tieuDeTin"]</span>
+                </div>
+            }
             <div class="job-detail__body d-flex g-15">
                 <div class="job-detail__body-left">
                     <div id="header-job-info" class="job-detail__box--left d-flex g-15 mb-4">

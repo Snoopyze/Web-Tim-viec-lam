@@ -41,6 +41,40 @@ namespace BackEnd.Controllers
             return ungVien;
         }
 
+        [HttpGet("getallthongtin/{id}")]
+        public async Task<IActionResult> getallthongtin(int id)
+        {
+            var ungVien = await _context.UngViens
+                .Include(u => u.HoSoCvs)
+                .ThenInclude(h => h.HoatDongs)
+                .Include(u => u.HoSoCvs)
+                .ThenInclude(h => h.ChungChis)
+                .Include(u => u.HoSoCvs)
+                .ThenInclude(h => h.KyNangs)
+                .Include(u => u.HoSoCvs)
+                .ThenInclude(h => h.KinhNghiemLamViecs)
+                .Include(u => u.HoSoCvs)
+                .ThenInclude(h => h.DuAns)
+                .Include(u => u.HoSoCvs)
+                .ThenInclude(h => h.SoThiches)
+                .Include(u => u.HoSoCvs)
+                .ThenInclude(h => h.ThongTinCaNhans)
+                .FirstOrDefaultAsync(u => u.IdUngVien == id);
+
+            if (ungVien == null)
+            {
+                return NotFound();
+            }
+
+            var options = new System.Text.Json.JsonSerializerOptions
+            {
+                ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve,
+                WriteIndented = true
+            };
+
+            return new JsonResult(ungVien, options);
+        }
+
         // PUT: api/UngViens/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

@@ -156,32 +156,6 @@
   },
   {
     "ContainingType": "BackEnd.Controllers.ChiTietTuyenDungsController",
-    "Method": "GetChiTietTuyenDung",
-    "RelativePath": "api/ChiTietTuyenDungs/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BackEnd.Models.ChiTietTuyenDung",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ChiTietTuyenDungsController",
     "Method": "PutChiTietTuyenDung",
     "RelativePath": "api/ChiTietTuyenDungs/{id}",
     "HttpMethod": "PUT",
@@ -216,6 +190,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ChiTietTuyenDungsController",
+    "Method": "GetSearchResults",
+    "RelativePath": "api/ChiTietTuyenDungs/{search}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BackEnd.Controllers.ChungChisController",
@@ -1306,6 +1306,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.HoSoCvsController",
+    "Method": "GetHoSoCVByUngVien",
+    "RelativePath": "api/HoSoCvs/GetDsHoSo/{idUngVien}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUngVien",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BackEnd.Models.HoSoCv, BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BackEnd.Controllers.HoSoDaNopsController",
@@ -2931,6 +2957,22 @@
     "Method": "DeleteUngVien",
     "RelativePath": "api/UngViens/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.UngViensController",
+    "Method": "getallthongtin",
+    "RelativePath": "api/UngViens/getallthongtin/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

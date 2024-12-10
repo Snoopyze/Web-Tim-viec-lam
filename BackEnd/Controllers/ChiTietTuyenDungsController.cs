@@ -28,6 +28,7 @@ namespace BackEnd.Controllers
                                     join c in _context.CongTies on nt.IdCongTy equals c.IdCongTy
                                     select new
                                     {
+                                        id = ct.IdChiTietTuyenDung,
                                         TieuDeTin = ct.TieuDeTin,
                                         TenCongTy = c.TenCongTy,
                                         LogoUrl = c.LogoUrl,
@@ -40,21 +41,50 @@ namespace BackEnd.Controllers
             return Ok(tuyenDungs);
         }
 
-        
+
 
         // GET: api/ChiTietTuyenDungs/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ChiTietTuyenDung>> GetChiTietTuyenDung(int id)
+        [HttpGet("{search}")]
+        public async Task<ActionResult<IEnumerable<object>>> GetSearchResults(string search)
         {
-            var chiTietTuyenDung = await _context.ChiTietTuyenDungs.FindAsync(id);
+            // Chuyển đổi từ khóa tìm kiếm thành chữ thường để tìm kiếm không phân biệt hoa thường
+            var searchLower = search.ToLower();
+            // Kiểm tra xem từ khóa có phải là số (ID) hay không
+            bool isNumericSearch = int.TryParse(search, out int searchId);
 
-            if (chiTietTuyenDung == null)
+            var tuyenDungs = await (from ct in _context.ChiTietTuyenDungs
+                                    join nt in _context.NhaTuyenDungs on ct.IdNhaTuyenDung equals nt.IdNhaTuyenDung
+                                    join c in _context.CongTies on nt.IdCongTy equals c.IdCongTy
+                                    where (ct.TieuDeTin.ToLower().Contains(searchLower) ||
+                                           c.TenCongTy.ToLower().Contains(searchLower) ||
+                                           ct.MucLuongTu.ToString().Contains(searchLower) ||
+                                           ct.MucLuongToi.ToString().Contains(searchLower) ||
+                                           ct.DiaDiemLamViecCuThe.ToLower().Contains(searchLower) ||
+                                           (isNumericSearch && ct.IdChiTietTuyenDung == searchId))
+                                           
+                                    select new
+                                    {
+                                        TieuDeTin = ct.TieuDeTin,
+                                        TenCongTy = c.TenCongTy,
+                                        LogoUrl = c.LogoUrl,
+                                        MucLuongTu = ct.MucLuongTu,
+                                        HanUngTuyen = (ct.HanNopHoSo.ToDateTime(TimeOnly.MinValue) - DateTime.Now.Date).Days,
+                                        MucLuongToi = ct.MucLuongToi,
+                                        DiaDiemLamViecCuThe = ct.DiaDiemLamViecCuThe,
+                                        KinhNghiemLamViec = ct.KinhNghiem,
+                                        MoTaCV = ct.MoTaCongViec,
+                                        QuyenLoi = ct.QuyenLoiUngVien,
+                                        cachthuc = ct.CachThucUngTuyen
+                                    }).ToListAsync();
+
+            if (tuyenDungs == null || tuyenDungs.Count == 0)
             {
-                return NotFound();
+                return NotFound("No results found.");
             }
 
-            return chiTietTuyenDung;
+            return Ok(tuyenDungs);
         }
+
 
         // PUT: api/ChiTietTuyenDungs/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

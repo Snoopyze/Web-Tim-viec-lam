@@ -659,3 +659,21 @@ input[type="checkbox"]:checked::before {
 #list-feature-job .btn-feature-jobs-next{
     margin-left: 11px;
 }
+.box-smart-item {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+    .box-smart-item:hover {
+        background-color: #0056b3;
+    }
+
+    .box-smart-item.active {
+        background-color: #28a745; /* Màu xanh lá cây khi được chọn */
+        color: #fff;
+    }

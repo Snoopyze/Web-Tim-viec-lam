@@ -20,16 +20,34 @@ namespace FrontEnd.Controllers
             _logger = logger;
             _httpClient = httpClient;
         }
-
-        public async Task<IActionResult> Index() // Sử dụng Task<IActionResult> và async
+        public async Task<IActionResult> Index(string search) // Thêm tham số search
         {
-            var jobs = await GetJobsFromApi(); // Sử dụng await để đợi kết quả từ API
-            var cities = await GetCitiesFromApi();
+            List<Dictionary<string, object>> jobs;
+
+            if (!string.IsNullOrEmpty(search)) // Kiểm tra nếu có từ khóa tìm kiếm
+            {
+                jobs = await SearchJobsFromApi(search); // Gọi API tìm kiếm
+            }
+            else
+            {
+                jobs = await GetJobsFromApi(); // Lấy toàn bộ công việc nếu không có từ khóa
+            }
+
+            var cities = await GetCitiesFromApi(); // Lấy danh sách thành phố
             ViewBag.Jobs = jobs; // Truyền danh sách công việc vào ViewBag
-            ViewBag.CiTies = cities;
+            ViewBag.CiTies = cities; // Truyền danh sách thành phố vào ViewBag
+            ViewBag.Search = search; // Truyền từ khóa tìm kiếm vào ViewBag
+
+            return View(); // Trả về dữ liệu cho view
+        }
 
 
-            return View(); // Trả về dữ liệu jobs cho view
+        private async Task<List<Dictionary<string, object>>> SearchJobsFromApi(string searchTerm)
+        {
+            // Gọi API với từ khóa tìm kiếm
+            var response = await _httpClient.GetStringAsync($"{apiUrl}/{searchTerm}");
+            var jobs = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(response);
+            return jobs;
         }
 
         private async Task<List<Dictionary<string, object>>> GetCitiesFromApi()

@@ -10,6 +10,9 @@
 {
     <link rel="stylesheet" href="../css/viecLamIT.css">
 }
+@{
+    var searchTerm = ViewBag.Search as string;
+}
 
 <div class="main">
     <div class="container">
@@ -30,43 +33,53 @@
             </div>
         </div>
         <div class="box-search">
-            <form id="frm-search-job" method="GET" class="d-flex">
+            <form id="frm-search-job" method="GET" class="d-flex" action="@Url.Action("Index", "ViecLamIT")">
                 <div class="form-group input-data border-hover">
                     <i class=" text-green fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="keyword" name="keyword" placeholder="Tên công việc, vị trí bạn muốn ứng tuyển...">
+                    <input type="text" id="keyword" name="search" value="@searchTerm" placeholder="Tên công việc, vị trí bạn muốn ứng tuyển...">
                 </div>
                 <div class="form-group border-hover category input-data">
-                    <i class=" text-green bi bi-building-fill"></i>
-                    <select name="company-filed" id="company-field-advanced">
+                    <i class="text-green bi bi-building-fill"></i>
+                    <select name="company-field" id="company-field-advanced">
                         <option value="">Tất cả lĩnh vực</option>
-                        <option value="">IT phần mềm</option>
-                        <option value="">IT phần mềm</option>
-                        <option value="">IT phần mềm</option>
-                        <option value="">IT phần mềm</option>
+                        @if (ViewBag.nhomnghe != null)
+                        {
+                            foreach (var nghe in ViewBag.nhomnghe)
+                            {
+                                var linhvuc = nghe as Dictionary<string, object>;
+                                <option value="@nghe["idNhomNghe"]">@nghe["tenNhomNghe"]</option>
+                            }
+                        }
                     </select>
                 </div>
 
+
                 <div class="form-group border-hover category input-data">
-                    <i class=" text-green fa-solid fa-chalkboard-user"></i>
-                    <select name="position" id="position">
+                    <i class="text-green bi bi-building-fill"></i>
+                    <select name="company-field" id="company-field-advanced">
                         <option value="">Tất cả cấp bậc</option>
-                        <option value="">IT phần mềm</option>
-                        <option value="">IT phần mềm</option>
-                        <option value="">IT phần mềm</option>
-                        <option value="">IT phần mềm</option>
+                        @if (ViewBag.nghe != null)
+                        {
+                            foreach (var nghe in ViewBag.nghe)
+                            {
+                                var capbac = nghe as Dictionary<string, object>;
+                                <option value="@nghe["idNghe"]">@nghe["tenNghe"]</option>
+                            }
+                        }
                     </select>
                 </div>
 
                 <div class="form-group border-hover category input-data">
-                    <i class=" text-green fa-solid fa-money-bill"></i>
+                    <i class="text-green fa-solid fa-money-bill"></i>
                     <select name="position" id="position">
                         <option value="">Tất cả mức lương</option>
-                        <option value="">IT phần mềm</option>
-                        <option value="">IT phần mềm</option>
-                        <option value="">IT phần mềm</option>
-                        <option value="">IT phần mềm</option>
+                        <option value="1">Dưới 10 triệu</option>
+                        <option value="2">10 triệu - 20 triệu</option>
+                        <option value="3">20 triệu - 30 triệu</option>
+                        <option value="4">Trên 30 triệu</option>
                     </select>
                 </div>
+
                 <div class="form-group ">
                     <button type="submit" class="btn btn-search-job d-flex g-10 align-items-center font-weight-6">
                         <i class=" fa-solid fa-magnifying-glass"></i> Tìm kiếm

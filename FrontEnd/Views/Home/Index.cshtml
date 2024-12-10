@@ -8,13 +8,18 @@
 
 @section linkCss
 {
-    <link rel="stylesheet" href="./css/viecLam.css">
+    <link rel="stylesheet" href="~/css/viecLam.css">
 }
 
 @section linkJs
 {
-    <script src="../js/viecLam.js"></script>
+    <script src="~/js/viecLam.js"></script>
 
+}
+@{
+    var jobs = ViewBag.Jobs as List<Dictionary<string, object>>;
+    var cities = ViewBag.CiTies as List<Dictionary<string, object>>;
+    var searchTerm = ViewBag.Search as string;
 }
 
 
@@ -26,7 +31,7 @@
         </div>
         <div class="header-content">
             <div class="header-content__search">
-                <form id="frm-search-job" method="GET">
+                <form id="frm-search-job" method="GET" action="@Url.Action("Index", "Home")">
                     <div class="group-search d-flex">
                         <div class="frm-box-category d-flex g-10 " onclick="handleClickListJob()">
                             <i class="fa-solid fa-list d-flex align-items-center"></i>
@@ -34,7 +39,7 @@
                         </div>
                         <div class="colum-divider"></div>
                         <div class="item-search">
-                            <input class="form-controlui-autocomplete-input" name="" placeholder="Vị trí tuyển dụng, tên công ty">
+                            <input class="form-controlui-autocomplete-input" name="search" value="@searchTerm" placeholder="Vị trí tuyển dụng, tên công ty">
                         </div>
                         <div class="colum-divider"></div>
                         <div class="item-filter d-flex align-items-center">
@@ -45,7 +50,7 @@
             
                                     @if (ViewBag.CiTies != null)
                                     {
-                                        @foreach (var city in ViewBag.CiTies as List<Dictionary<string, object>>)
+                                        @foreach (var city in cities)
                                         {
                                             var cityName = city.ContainsKey("tenThanhPho") ? city["tenThanhPho"].ToString() : "Không tên";
                                             var cityId = city.ContainsKey("idThanhPho") ? city["idThanhPho"].ToString() : "0";
@@ -62,7 +67,7 @@
 
                         <div class="colum-divider"></div>
                         <div class="btn-search align-items-center d-flex">
-                            <button class="d-flex align-items-center justify-content-center"><i class="bi bi-search"></i>Tìm kiếm </button>
+                            <button type="submit" class="d-flex align-items-center justify-content-center"><i class="bi bi-search"></i>Tìm kiếm </button>
                         </div>
                     </div>
 
@@ -335,10 +340,8 @@
                     <i class="bi bi-filter"></i>
                     Lọc theo:
                 </div>
-                <select name="" id="filter-feature-job">
+                <select name="" id="filter-feature-job" onchange="handleFilterChange()">
                     <option value="cities">Địa điểm</option>
-                    <option value="salary">Mức lương</option>
-                    <option value="experience">Kinh nghiệm</option>
                     <option value="categoriesJob">Ngành nghề</option>
                 </select>
             </div>
@@ -347,28 +350,8 @@
                     <button class="prev-location btn-slick-arrow">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                    <div class="box-smart-list-location d-flex align-items-center g-10">
-                        <div class="box-smart-item active">Ngẫu nhiên</div>
-                        <div class="box-smart-item ">Hà Nội</div>
-                        <div class="box-smart-item ">Thành phố Hồ Chí Minh</div>
-                        <div class="box-smart-item ">Miền Bắc</div>
-                        <div class="box-smart-item ">Miền Nam</div>
-                        <div class="box-smart-item ">Miền Nam</div>
-
-                        <div class="box-smart-item ">Miền Nam</div>
-                        <div class="box-smart-item ">Miền Nam</div>
-
-                        <div class="box-smart-item ">Miền Nam</div>
-
-                        <div class="box-smart-item ">Miền Nam</div>
-
-                        <div class="box-smart-item ">Miền Nam</div>
-
-                        <div class="box-smart-item ">Miền Nam</div>
-                        <div class="box-smart-item ">Miền Nam</div>
-
-                        <div class="box-smart-item ">Miền Nam</div>
-
+                    <div class="box-smart-list-location d-flex align-items-center g-10" id="filter-result">
+                        <!-- Nội dung động sẽ được chèn ở đây -->
                     </div>
                     <button class="next-location btn-slick-arrow">
                         <i class="fa-solid fa-chevron-right"></i>
@@ -376,17 +359,84 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            const data = {
+                cities: [],
+                categoriesJob: []
+            };
+
+            // Hàm lấy dữ liệu từ API
+            async function fetchData() {
+                try {
+                    const [citiesResponse, categoriesResponse] = await Promise.all([
+                        fetch('https://localhost:7208/api/ThanhPhoes'),
+                        fetch('https://localhost:7208/api/Nghes')
+                    ]);
+
+                    if (!citiesResponse.ok || !categoriesResponse.ok) {
+                        throw new Error('Lỗi khi lấy dữ liệu từ API');
+                    }
+
+                    // Lưu dữ liệu trả về vào biến `data`
+                    data.cities = await citiesResponse.json();
+                    data.categoriesJob = await categoriesResponse.json();
+
+                    handleFilterChange(); // Gọi hàm để hiển thị nội dung ngay khi dữ liệu được tải
+                } catch (error) {
+                    console.error('Lỗi khi gọi API:', error);
+                }
+            }
+
+            // Hàm xử lý thay đổi khi người dùng chọn trong dropdown
+            function handleFilterChange() {
+                const selectedValue = document.getElementById('filter-feature-job').value;
+                const filterResult = document.getElementById('filter-result');
+                filterResult.innerHTML = ''; // Xóa nội dung cũ
+
+                const items = data[selectedValue] || [];
+
+                // Tạo nút tương ứng với mỗi item
+                items.forEach(item => {
+                    const button = document.createElement('div');
+                    button.className = 'box-smart-item';
+
+                    // Tùy thuộc vào loại dữ liệu (Địa điểm hoặc Ngành nghề), hiển thị trường phù hợp
+                    if (selectedValue === 'cities') {
+                        button.textContent = item.tenThanhPho ;
+                    } else if (selectedValue === 'categoriesJob') {
+                        button.textContent =  item.tenNghe ;
+                    }
+                        // Gán sự kiện onclick
+                    button.onclick = () => {
+                        // Bỏ lớp 'active' khỏi tất cả các nút
+                        const buttons = document.querySelectorAll('.box-smart-item');
+                        buttons.forEach(btn => btn.classList.remove('active'));
+
+                        // Thêm lớp 'active' vào nút được nhấp
+                        button.classList.add('active');
+
+                       
+                    };
+
+                    // Thêm nút vào danh sách
+                    filterResult.appendChild(button);
+                });
+            }
+
+            // Gọi hàm lấy dữ liệu khi trang được tải
+            fetchData();
+        </script>
+
         <!-- List job -->
         <div class="wrapper-feature-jobs">
             <div class="box-feature-job-container">
-
                 <div class="row row-cols-3 feature-job">
-                    @if (ViewBag.Jobs != null)
+                    @if (jobs != null && jobs.Any())
                     {
-                        var jobs = (List<Dictionary<string, object>>)ViewBag.Jobs; // Chuyển ViewBag.Jobs sang kiểu danh sách Dictionary
-                        foreach (var job in jobs)
+                        @foreach (var job in jobs)
                         {
-                    <a href="@Url.Action("Index", "ChiTietViecLam")" class="feature-job-item col">
+                            <a href="@Url.Action("Index", "ChiTietViecLam")" class="feature-job-item col">
                         <div class="avatar-company">
                             <img src="../img/@(job.ContainsKey("logoUrl") ? job["logoUrl"] : "default-logo.png")" alt="Logo">
                         </div>
@@ -405,7 +455,7 @@
                     {
             <p>Không có dữ liệu công việc.</p>
                     }
-</div>
+        </div>
                 
                 <div class="feature-job-page d-flex align-items-center justify-content-center mt-8">
                     <button class="btn-feature-jobs-pre btn-slick-arrow">
