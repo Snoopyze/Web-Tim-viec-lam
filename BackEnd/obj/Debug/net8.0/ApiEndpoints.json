@@ -218,6 +218,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackEnd.Controllers.ChiTietTuyenDungsController",
+    "Method": "getCongTyByIdNTD",
+    "RelativePath": "api/ChiTietTuyenDungs/Diadiemlamviec{idCTDC}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCTDC",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BackEnd.Controllers.ChungChisController",
     "Method": "GetChungChis",
     "RelativePath": "api/ChungChis",
@@ -464,8 +480,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "congTy",
-        "Type": "BackEnd.Models.CongTy",
+        "Name": "ctyDAO",
+        "Type": "BackEnd.Entity.CongTyDAO",
         "IsRequired": true
       }
     ],
@@ -538,6 +554,22 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.CongTiesController",
+    "Method": "getCongTyByIdNTD",
+    "RelativePath": "api/CongTies/CongTy{idNTD}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idNTD",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -1308,6 +1340,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackEnd.Controllers.HoSoCvsController",
+    "Method": "GetHoSoCvByIDUngVien",
+    "RelativePath": "api/HoSoCvs/{idUV}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUV",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BackEnd.Models.HoSoCv",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "BackEnd.Controllers.HoSoDaNopsController",
     "Method": "GetHoSoDaNops",
     "RelativePath": "api/HoSoDaNops",
@@ -1410,6 +1468,22 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.HoSoDaNopsController",
+    "Method": "GetAllApplyJobs",
+    "RelativePath": "api/HoSoDaNops/UngVien/{idUV}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUV",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -1744,6 +1818,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackEnd.Controllers.LuuTinTuyenDungsController",
+    "Method": "GetAllSavedJobsByCandidateId",
+    "RelativePath": "api/LuuTinTuyenDungs/ungvien/{idUngVien}/congty",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUngVien",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BackEnd.Controllers.NghesController",
     "Method": "GetNghes",
     "RelativePath": "api/Nghes",
@@ -1990,8 +2080,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "nhaTuyenDung",
-        "Type": "BackEnd.Models.NhaTuyenDung",
+        "Name": "nhaTuyenDungDto",
+        "Type": "BackEnd.Entity.NhaTuyenDungDTO",
         "IsRequired": true
       }
     ],
@@ -2173,6 +2263,22 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.NhomNghesController",
+    "Method": "getNhomNghe",
+    "RelativePath": "api/NhomNghes/ViTriChuyenMon/{idVTCM}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idVTCM",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -2855,7 +2961,7 @@
   },
   {
     "ContainingType": "BackEnd.Controllers.UngViensController",
-    "Method": "PostUngVien",
+    "Method": "PostNhaTuyenDung",
     "RelativePath": "api/UngViens",
     "HttpMethod": "POST",
     "IsController": true,
@@ -2863,7 +2969,7 @@
     "Parameters": [
       {
         "Name": "ungVien",
-        "Type": "BackEnd.Models.UngVien",
+        "Type": "BackEnd.Entity.UngVienDAO",
         "IsRequired": true
       }
     ],

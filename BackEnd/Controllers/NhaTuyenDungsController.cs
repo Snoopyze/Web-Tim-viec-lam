@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BackEnd.Models;
+using BackEnd.Entity;
 
 namespace BackEnd.Controllers
 {
@@ -14,7 +15,7 @@ namespace BackEnd.Controllers
     public class NhaTuyenDungsController : ControllerBase
     {
         private readonly DbQlcvContext _context;
-
+        private static object lockObject = new object();
         public NhaTuyenDungsController(DbQlcvContext context)
         {
             _context = context;
@@ -75,23 +76,30 @@ namespace BackEnd.Controllers
         // POST: api/NhaTuyenDungs
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<NhaTuyenDung>> PostNhaTuyenDung(NhaTuyenDung nhaTuyenDung)
+        public async Task<ActionResult<NhaTuyenDung>> PostNhaTuyenDung(NhaTuyenDungDTO nhaTuyenDungDto)
         {
+            // Tạo đối tượng NhaTuyenDung từ DTO
+            var nhaTuyenDung = new NhaTuyenDung
+            {
+                IdNhaTuyenDung = GenerateUniqueId(), 
+                Email = nhaTuyenDungDto.Email,
+                SoDienThoai = nhaTuyenDungDto.SoDienThoai,
+                MatKhau = nhaTuyenDungDto.MatKhau,
+                AnhHoSoUrl = nhaTuyenDungDto.AnhHoSoUrl,
+                HoTen = nhaTuyenDungDto.HoTen,
+                GioiTinh = nhaTuyenDungDto.GioiTinh,
+                IdCongTy = nhaTuyenDungDto.IdCongTy
+            }; 
+
             _context.NhaTuyenDungs.Add(nhaTuyenDung);
+
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (NhaTuyenDungExists(nhaTuyenDung.IdNhaTuyenDung))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
+                
             }
 
             return CreatedAtAction("GetNhaTuyenDung", new { id = nhaTuyenDung.IdNhaTuyenDung }, nhaTuyenDung);
@@ -117,5 +125,15 @@ namespace BackEnd.Controllers
         {
             return _context.NhaTuyenDungs.Any(e => e.IdNhaTuyenDung == id);
         }
+
+        public static int GenerateUniqueId()
+        {
+            lock (lockObject) // Đảm bảo thread-safe
+            {
+                long milliseconds = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+                return (int)(milliseconds % int.MaxValue);
+            }
+        }
+
     }
 }

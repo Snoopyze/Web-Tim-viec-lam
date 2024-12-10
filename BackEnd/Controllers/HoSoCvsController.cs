@@ -117,5 +117,19 @@ namespace BackEnd.Controllers
         {
             return _context.HoSoCvs.Any(e => e.IdCv == id);
         }
+
+        // GET: api/HoSoCvs/5
+        [HttpGet("{idUV}")]
+        public async Task<ActionResult<HoSoCv>> GetHoSoCvByIDUngVien(int idUV)
+        {
+            var hoSoCv = await _context.HoSoCvs.FindAsync(idUV);
+
+            if (hoSoCv == null)
+            {
+                return NotFound();
+            }
+
+            return hoSoCv;
+        }
     }
 }

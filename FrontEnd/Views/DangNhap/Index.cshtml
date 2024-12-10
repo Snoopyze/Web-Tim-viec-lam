@@ -16,44 +16,41 @@
     <link rel="stylesheet" href="./css/viecLam.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/dangnhap.css">
-
-    <title>Upload CV | Top CV</title>
+    <title>Chào mừng bạn đã quay trở lại | Topcv.vn</title>
 </head>
 <body>
+    @{var email = Context.Session.GetString("email") ?? "";}
     <div class="main">
         <div class="login-box">
             <h2>Chào mừng bạn đã quay trở lại</h2>
             <p>Cùng xây dựng một hồ sơ nổi bật và nhận được các cơ hội sự nghiệp lý tưởng</p>
-            <form>
+            <form action="@Url.Action("Index", "DangNhap")">
                 <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Email">
+                    <label for="email">Email</label> 
+                    <input type="email" id="email" placeholder="Email" name="email" required value="@email">
                 </div>
                 <div class="input-group">
                     <label for="password">Mật khẩu</label>
-                    <input type="password" id="password" placeholder="Mật khẩu">
+                    <input type="password" id="password" placeholder="Mật khẩu" name="matKhau" required>
                 </div>
-
                 <!-- Thêm radio buttons -->
                 <div class="input-group">
                     <div class="radio-group">
                         <div class="item">
-                            <input type="radio" name="user-type" value="candidate" checked>
+                            <input type="radio" name="userType" value="candidate" checked>
                             <label>
                                 Ứng cử viên
                             </label>
                         </div>
                         <div class="item">
-                            <input type="radio" name="user-type" value="recruiter" checked>
+                            <input type="radio" name="userType" value="recruiter" >
                             <label>
                                 Nhà tuyển dụng
                             </label>
                         </div>
-
-
                     </div>
                 </div>
-
+                <div class="error">@ViewBag.Error</div>
                 <a href="#" class="forgot-password">Quên mật khẩu</a>
                 <button type="submit" class="btn">Đăng nhập</button>
             </form>

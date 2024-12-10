@@ -17,6 +17,11 @@ body {
     background-color: #fff;
   }
 
+.error{
+    color: red !important; 
+    font-size: 12px;
+}
+
 .flex-1{
     flex: 1;
 }

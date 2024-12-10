@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BackEnd.Models;
+using Microsoft.CodeAnalysis.Elfie.Model.Strings;
+using BackEnd.Entity;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 namespace BackEnd.Controllers
 {
@@ -13,6 +16,7 @@ namespace BackEnd.Controllers
     [ApiController]
     public class CongTiesController : ControllerBase
     {
+        private static object lockObject = new object();
         private readonly DbQlcvContext _context;
 
         public CongTiesController(DbQlcvContext context)
@@ -75,26 +79,50 @@ namespace BackEnd.Controllers
         // POST: api/CongTies
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CongTy>> PostCongTy(CongTy congTy)
+        public async Task<ActionResult<CongTy>> PostCongTy(CongTyDAO ctyDAO)
         {
-            _context.CongTies.Add(congTy);
+            // Kiểm tra dữ liệu đầu vào (validation cơ bản)
+            if (ctyDAO == null)
+            {
+                return BadRequest("Dữ liệu không hợp lệ.");
+            }
+            int idCty = GenerateUniqueId(); 
+
+            // Chuyển đổi dữ liệu từ DTO (Data Transfer Object) sang Entity
+            var congTy = new CongTy
+            {
+                IdCongTy = idCty, 
+                LogoUrl = ctyDAO.LogoUrl,
+                TenCongTy = ctyDAO.TenCongTy,
+                MaSoThue = ctyDAO.MaSoThue,
+                WebsiteUrl = ctyDAO.WebsiteUrl,
+                SoLuongNguoiTheoDoi = ctyDAO.SoLuongNguoiTheoDoi,
+                QuyMoCongTy = ctyDAO.QuyMoCongTy,
+                MoTaCongTy = ctyDAO.MoTaCongTy,
+                Email = ctyDAO.Email,
+            };
+
             try
             {
+                _context.CongTies.Add(congTy);
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (CongTyExists(congTy.IdCongTy))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return CreatedAtAction("GetCongTy", new { id = congTy.IdCongTy }, congTy);
+
+                return CreatedAtAction("GetCongTy", new { id = congTy.IdCongTy }, congTy);
+            }
+            catch (DbUpdateException dbEx)
+            {
+                Console.WriteLine($"Lỗi khi lưu vào cơ sở dữ liệu: {dbEx.Message}");
+                Console.WriteLine($"StackTrace: {dbEx.StackTrace}");
+                return StatusCode(500, $"Lỗi: {dbEx.InnerException?.Message ?? dbEx.Message}");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi không mong muốn: {ex.Message}");
+
+                return StatusCode(500, "Đã xảy ra lỗi không mong muốn. Vui lòng thử lại sau.");
+            }
         }
 
         // DELETE: api/CongTies/5
@@ -117,5 +145,40 @@ namespace BackEnd.Controllers
         {
             return _context.CongTies.Any(e => e.IdCongTy == id);
         }
+
+        //Từ id ntd => lay ra cty 
+
+        [HttpGet("CongTy{idNTD}")]
+        public async Task<IActionResult> getCongTyByIdNTD(int idNTD)
+        {
+
+            var nhaTuyenDung = await _context.NhaTuyenDungs
+                               .FirstOrDefaultAsync(ntd => ntd.IdNhaTuyenDung == idNTD);
+            if (nhaTuyenDung != null)
+            {
+                var congTy = await _context.CongTies
+                   .FirstOrDefaultAsync(ntd => ntd.IdCongTy == nhaTuyenDung.IdCongTy);
+
+                if (congTy != null)
+                    return Ok(congTy);
+                else
+                    return NotFound();
+            }
+
+            else
+                return NotFound();
+        }
+
+
+        public static int GenerateUniqueId()
+        {
+            lock (lockObject) 
+            {
+                long milliseconds = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+                return (int)(milliseconds % int.MaxValue); 
+            }
+        }
+
+
     }
 }

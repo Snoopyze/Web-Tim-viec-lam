@@ -117,5 +117,61 @@ namespace BackEnd.Controllers
         {
             return _context.HoSoDaNops.Any(e => e.IdHoSoDaNop == id);
         }
+
+        [HttpGet("UngVien/{idUV}")]
+            public async Task<IActionResult> GetAllApplyJobs(int idUV)
+            {
+                var applyJobs = await _context.HoSoDaNops
+                    .Where(l => l.IdUngVien == idUV)
+                    .ToListAsync();
+                var cv = await _context.HoSoCvs
+                    .FirstOrDefaultAsync(c => c.IdUngVien == idUV); 
+                if (!applyJobs.Any())
+                {
+                    return NotFound("Ứng viên chưa nộp tin tuyển dụng nào.");
+                }
+
+                var result = new List<object>();
+
+                foreach (var job in applyJobs)
+                {
+                //chi tiêt tuyen dung
+                    var jobDetail = await _context.ChiTietTuyenDungs
+                        .FirstOrDefaultAsync(c => c.IdChiTietTuyenDung == job.IdChiTietTuyenDung);
+                   
+
+                if (jobDetail == null) continue;
+
+                    var recruiter = await _context.NhaTuyenDungs
+                        .FirstOrDefaultAsync(n => n.IdNhaTuyenDung == jobDetail.IdNhaTuyenDung);
+
+                    if (recruiter == null) continue;
+
+                    var company = await _context.CongTies
+                        .FirstOrDefaultAsync(c => c.IdCongTy == recruiter.IdCongTy);
+
+                    if (company == null) continue;
+
+                // Thêm vào kết quả
+                result.Add(new
+                {
+                    idChiTietTuyenDung = jobDetail.IdChiTietTuyenDung,
+                    tieuDeTin = jobDetail.TieuDeTin,
+                    tenCongTy = company.TenCongTy,
+                    thoiGianNop = job.ThoiGianNop,
+                    diaDiemLamViec = jobDetail.DiaDiemLamViecCuThe,
+                    mucLuongTu = jobDetail.MucLuongTu,
+                    mucLuongToi = jobDetail.MucLuongToi,
+                    idCongTy = company.IdCongTy,
+                    logoUrl = company.LogoUrl,
+                    trangThai = job.TrangThai, 
+                    cvUrl = cv.FileUrl
+                });
+                }
+
+                return Ok(result);
+            }
+
+        }
+
     }
-}

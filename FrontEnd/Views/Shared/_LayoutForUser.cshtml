@@ -17,9 +17,16 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/common.css">
 
+
     @RenderSection("linkCss", required: true)
     @RenderSection("linkCss2", required: false)
 </head>
+@{
+    var userName = Context.Session.GetString("UserName") ?? "";
+    var email = Context.Session.GetString("Email") ?? "";
+    var id = Context.Session.GetInt32("Id") ?? 0;
+
+}
 <body>
     <header>
         <nav class="d-flex justify-content-lg-between">
@@ -101,9 +108,9 @@
                                 <div class="drop-menu__info d-flex">
                                     <img src="../img/avatar-default.jpg" alt="">
                                     <div class="caption">
-                                        <div class="name text-green font-weight-6">Đào Hoàng Minh Hằng</div>
-                                        <div>Mã ứng viên <b class="idUser">0123556</b></div>
-                                        <div class="mail">daohoangminhhang24@gmail.com</div>
+                                        <div class="name text-green font-weight-6">@userName</div>
+                                        <div>Mã ứng viên <b class="idUser">@id</b></div>
+                                        <div class="mail">@email</div>
                                     </div>
                                 </div>
                                 <li><a href="@Url.ActionLink("Index", "CaiDatThongTinCaNhan")"><i class="bi bi-pencil-square"></i>Cài đặt thông tin cá nhân</a></li>

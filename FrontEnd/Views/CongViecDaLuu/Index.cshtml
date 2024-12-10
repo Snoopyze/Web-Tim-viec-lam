@@ -1,4 +1,5 @@
-﻿@{
+﻿@*ViewBag.data*@
+@{
     Layout = "~/Views/Shared/_LayoutForUser.cshtml";
 }
 @section title
@@ -7,12 +8,18 @@
 
 
 }
-
 @section linkCss
 {
     <link rel="stylesheet" href="../css/viecLamDaLuu.css">
 
 }
+@{
+    List<FrontEnd.Models.SaveJobs> jobs = ViewBag.list;
+}
+@{
+    DateTime utcNow = DateTime.UtcNow;
+}
+
 <div id="main">
     <div class="container" id="box-save-job">
         <div class="box-white">
@@ -29,45 +36,58 @@
                 </div>
             </div>
             <!-- LIST TRỐNG -->
-            <div class="empty hidden">
-                <img src="https://static.topcv.vn/v4/image/empty.png" alt="Empty">
-                <p>Bạn chưa lưu công việc nào!</p>
-                <a href="" class="btn-seatch-job btn-primary-hover">Tìm việc ngay</a>
-            </div>
-            <!-- END -->
-            <div class="box-job-total">Danh sách <b> 1 </b>việc làm đã lưu</div>
-
-            <div class="job-detail__related-jobs--content">
-                <!-- START CONTAINER-JOB-ITEM -->
-                <div class="job-item d-flex g-15">
-                    <div class="job-item__ava flex-1">
-                        <img src="../img/cong-ty-tnhh-streamcast-asia-viet-nam-62c4f53430d3a.webp" alt="">
-                    </div>
-                    <div class="job-item__body">
-                        <div class="job-item__body__content">
-                            <div class="title-block d-flex">
-                                <div class="title-left flex 2">
-                                    <h6 class="font-weight-6 mb-1 ">Kế toán kho và Thanh toán - Đi làm ngay</h6>
-                                    <div class="company-name">Công ty TNHH Dịch vụ thang máy unieco nhật bản</div>
-                                </div>
-                                <div class="title-right text-green font-weight-6 flex 1">9 - 11 triệu</div>
-                            </div>
-                            <div class="info d-flex justify-content-between">
-                                <div class="lable-content d-flex g-15">
-                                    <div class="lable-content-item">Hà Nội</div>
-                                    <div class="lable-content-item">Còn <b> 10 </b> ngày để ứng tuyển</div>
-                                    <div class="lable-content-item">Cập nhật 4 giờ trước</div>
-                                </div>
-                                <div class="icon">
-                                    <a class="job-detail__information-detail--actions-button btn-apply-job">Ứng tuyển</a>
-                                    <a href="" class="btn-unsave job-detail__information-detail--actions-button"><i class="fa-solid fa-trash me-2"></i>Bỏ lưu</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
+            <!-- LIST TRỐNG -->
+            <!-- Kiểm tra nếu Model là null hoặc không có công việc nào -->
+            @if (jobs == null)
+            {
+                <div class="empty">
+                    <img src="https://static.topcv.vn/v4/image/empty.png" alt="Empty">
+                    <p>Bạn chưa lưu công việc nào!</p>
+                    <a href="@Url.Action("Index","Home")" class="btn-seatch-job btn-primary-hover">Tìm việc ngay</a>
                 </div>
+            }
+            else
+            {
+                <!-- Nếu có công việc đã lưu, hiển thị danh sách -->
+                <div class="box-job-total">Danh sách <b>@jobs.ToList().Count()</b> việc làm đã lưu</div>
+
+                <div class="job-detail__related-jobs--content">
+                    <!-- START CONTAINER-JOB-ITEM -->
+                    @foreach (var job in jobs)
+                    {
+                        <div class="job-item d-flex g-15">
+                            <div class="job-item__ava flex-1">
+                                <img src="../img/@job.logoURl" alt="">
+                            </div>
+                            <div class="job-item__body">
+                                <div class="job-item__body__content">
+                                    <div class="title-block d-flex">
+                                        <div class="title-left">
+                                            <h6 class="font-weight-6 mb-1">@job.tieuDeTin</h6>
+                                            <div class="company-name">@job.tenCongTy</div>
+                                        </div>
+                                        <div class="title-right text-green font-weight-6">@job.mucLuongTu - @job.mucLuongToi</div>
+                                    </div>
+                                    <div class="mb-2"> Đã lưu: @job.thoiGianLuuTin</div>
+                                    <div class="info d-flex justify-content-between">
+                                        <div class="lable-content d-flex g-15">
+                                            <div class="lable-content-item">@job.diaDiemLamViec</div>
+                                            <div class="lable-content-item">Còn <b>@(Math.Max(0, job.hanNopHoSo.Subtract(DateTime.UtcNow).Days))</b> ngày để ứng tuyển</div>
+                                        </div>
+                                        <div class="icon">
+                                            <a class="job-detail__information-detail--actions-button btn-apply-job" href="@Url.Action("Index", "ChiTietViecLam", new { idChiTietTuyenDung = job.idChiTietTuyenDung})">Ứng tuyển</a>
+                                            <a href="@Url.Action("BoLuu", "CongViecDaLuu", new { idLuuTin = job.idLuuTin})" class="btn-unsave job-detail__information-detail--actions-button">
+                                                <i class="fa-solid fa-trash me-2"></i>Bỏ lưu
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <!-- END CONTAINER-JOB-ITEM -->
+                </div>
+            }
                 <!-- END CONTAINER-JOB-ITEM -->
             </div>
 

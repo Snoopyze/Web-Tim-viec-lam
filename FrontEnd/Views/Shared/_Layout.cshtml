@@ -15,6 +15,9 @@
    
 </head>
 <body>
+@{
+    var userName = Context.Session.GetString("UserName") ?? "";
+}
     <header class="header gap-3 align-items-center d-flex fixed-top">
         <div class="header__icon">
             <i class="bi bi-list text-white"></i>
@@ -63,7 +66,7 @@
             </div>
             <div class="sidebar__user-info d-flex flex-column">
                 <span class="sidebar__user-name">
-                    <a href="#">Nguyen Hoang Anh</a>
+                    <a href="#">@userName</a>
                 </span>
                 <span class="sidebar__user-role">
                     Employer

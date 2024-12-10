@@ -117,5 +117,34 @@ namespace BackEnd.Controllers
         {
             return _context.NhomNghes.Any(e => e.IdNhomNghe == id);
         }
+
+        [HttpGet("ViTriChuyenMon/{idVTCM}")]
+        public async Task<IActionResult> getNhomNghe(int idVTCM)
+        {
+
+            var vtcm = await _context.ViTriChuyenMons
+                               .FirstOrDefaultAsync(n => n.IdViTriChuyenMon == idVTCM);
+            if (vtcm != null)
+            {
+                var nghe = await _context.Nghes
+                   .FirstOrDefaultAsync(n => n.IdNghe == vtcm.IdNghe);
+
+                if (nghe != null)
+                {
+                    var nhomNghe = await _context.NhomNghes
+                  .FirstOrDefaultAsync(n => n.IdNhomNghe == nghe.IdNhomNghe);
+                    if (nhomNghe != null)
+                    {
+                        return Ok(nhomNghe);
+                    }
+                    else { return NotFound(); }
+
+
+                }
+                return NotFound();
+            }
+            return NotFound();
+
+        }
     }
 }

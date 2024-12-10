@@ -27,7 +27,7 @@ body {
     font-family: "Inter",sans-serif !important;
 }
 
-    body > div {
+body > div {
         margin: 2% auto 0;
         max-width: 800px;
     }

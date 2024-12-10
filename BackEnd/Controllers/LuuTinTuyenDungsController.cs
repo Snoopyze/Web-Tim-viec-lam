@@ -117,5 +117,57 @@ namespace BackEnd.Controllers
         {
             return _context.LuuTinTuyenDungs.Any(e => e.IdLuuTinTuyenDung == id);
         }
+
+        [HttpGet("ungvien/{idUngVien}/congty")]
+        public async Task<IActionResult> GetAllSavedJobsByCandidateId(int idUngVien)
+        {
+            var savedJobs = await _context.LuuTinTuyenDungs
+                .Where(l => l.IdUngVien == idUngVien)
+                .ToListAsync();
+
+            if (!savedJobs.Any())
+            {
+                return NotFound("Ứng viên chưa lưu tin tuyển dụng nào.");
+            }
+
+            var result = new List<object>();
+
+            foreach (var savedJob in savedJobs)
+            {
+                var jobDetail = await _context.ChiTietTuyenDungs
+                    .FirstOrDefaultAsync(c => c.IdChiTietTuyenDung == savedJob.IdChiTietTuyenDung);
+
+                if (jobDetail == null) continue;
+
+                var recruiter = await _context.NhaTuyenDungs
+                    .FirstOrDefaultAsync(n => n.IdNhaTuyenDung == jobDetail.IdNhaTuyenDung);
+
+                if (recruiter == null) continue;
+
+                var company = await _context.CongTies
+                    .FirstOrDefaultAsync(c => c.IdCongTy == recruiter.IdCongTy);
+
+                if (company == null) continue;
+
+                // Thêm vào kết quả
+                result.Add(new
+                {
+                    idChiTietTuyenDung = jobDetail.IdChiTietTuyenDung,
+                    idLuuTin = savedJob.IdLuuTinTuyenDung,
+                    tieuDeTin = jobDetail.TieuDeTin,
+                    tenCongTy = company.TenCongTy,
+                    thoiGianLuuTin = savedJob.ThoiGianLuuTin,
+                    diaDiemLamViec = jobDetail.DiaDiemLamViecCuThe,
+                    mucLuongTu = jobDetail.MucLuongTu,
+                    mucLuongToi = jobDetail.MucLuongToi,
+                    hanNopHoSo = jobDetail.HanNopHoSo, 
+                    idCongTy = company.IdCongTy, 
+                    logoUrl = company.LogoUrl
+                });
+            }
+
+            return Ok(result);
+        }
+
     }
 }

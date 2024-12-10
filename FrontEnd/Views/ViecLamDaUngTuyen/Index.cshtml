@@ -7,7 +7,9 @@
     <title>Công việc đã ứng tuyển</title>
 
 }
-
+@{
+    List<FrontEnd.Models.ApplyJobs> jobs = ViewBag.listApplyJobs;
+}
 @section linkCss
 {
     <link rel="stylesheet" href="../css/viecLamDaUngTuyen.css">
@@ -25,59 +27,65 @@
                 </div>
                 <div class="box-group-body">
                     <!-- DANH SÁCH TRỐNG -->
-                    <div class="empty-job hidden">
-                        <div class="image-empty">
-                            <img src="https://static.topcv.vn/v4/image/history-apply/empty.png" alt="empty apply">
+                    @if (jobs == null)
+                    {
+                        <div class="empty-job ">
+                            <div class="image-empty">
+                                <img src="https://static.topcv.vn/v4/image/history-apply/empty.png" alt="empty apply">
+                            </div>
+                            <h3 class="title">Bạn chưa ứng tuyển công việc nào!</h3>
+                            <div class="caption">
+                                <p>Bạn chưa ứng tuyển công việc nào!</p>
+                                <p>Bắt đầu sự nghiệp mơ ước với hàng nghìn việc làm chất lượng tại TopCV</p>
+                            </div>
+                            <div class="btn-action">
+                                <a href="@Url.ActionLink("Index", "Home")" target="_blank" class="btn btn-primary btn-primary-hover">Tìm việc ngay</a>
+                            </div>
                         </div>
-                        <h3 class="title">Bạn chưa ứng tuyển công việc nào!</h3>
-                        <div class="caption">
-                            <p>Bạn chưa ứng tuyển công việc nào!</p>
-                            <p>Bắt đầu sự nghiệp mơ ước với hàng nghìn việc làm chất lượng tại TopCV</p>
-                        </div>
-                        <div class="btn-action">
-                            <a href="@Url.ActionLink("Index", "Home")" target="_blank" class="btn btn-primary btn-primary-hover">Tìm việc ngay</a>
-                        </div>
-                    </div>
-                    <!-- END DANH SÁCH TRỐNG -->
-                    <!-- LIST JOB UWNSG TUYEERN -->
+                        <!-- END DANH SÁCH TRỐNG -->
+                    
+                   }
+            else
+            {
                     <div class="feed-jobs">
+                    
+                        @foreach(var job in jobs){
                         <!-- START -->
                         <div class="job-item bg-highlight">
                             <div class="d-flex">
                                 <div class="company-logo">
-                                    <img src="https://cdn-new.topcv.vn/unsafe/https://static.topcv.vn/company_logos/cong-ty-tnhh-marketing-metas-group-62b17f143c6a1f505bb8fddc8ace5b88-66e3b581a3747.jpg" style="max-height: 100%;">
+                                    <img src="@job.logoUrl" style="max-height: 100%;">
                                 </div>
                                 <div class="company-info">
                                     <div class="title-block">
                                         <div class="job-title">
-                                            <a href="@Url.ActionLink("Index", "ChiTietViecLam")" class="transform-job-title">Nữ Admin Tiếng Hàn Tại Hà Nội [Thu Nhập 12-18 Triệu/ Tháng + Thưởng...] Đi Làm Ngay</a>
+                                            <a href="" class="transform-job-title">@job.tieuDeTin</a>
                                         </div>
-                                        <div class="title-salary">15 - 20 triệu</div>
+                                        <div class="title-salary">@job.mucLuongTu - @job.mucLuongToi</div>
 
                                     </div>
                                     <div class="company-name text-gray">
                                         <!-- chi tiết công ty -->
-                                        <a href="@Url.ActionLink("Index", "ChiTietCongTy")" class="text-gray">CÔNG TY TNHH MARKETING METAS GROUP</a>
+                                        <a href="" class="text-gray">@job.tenCongTy</a>
 
                                     </div>
                                     <div class="job-applies-meta">
                                         <span class="cv-date">
                                             Thời gian ứng tuyển:
-                                            07-12-2024 18:54
+                                            @job.thoiGianNop
                                         </span>
                                     </div>
                                     <div class="box-footer-history">
                                         <p class="cv-apply-caption">
-                                            CV đã ứng tuyển
                                             <!-- mẫu cv lấy để ứng tuyển -->
-                                            <a href="" class="text-hightlight text-green">CV TopCV</a>
+                                                <a href="@job.cvUrl" class="text-hightlight text-green"> CV đã ứng tuyển</a>
                                         </p>
 
                                     </div>
                                     <div class="box-cv-apply-status">
                                         <div class="cv-apply-status-text">
                                             <span class="applied">
-                                                Đã ứng tuyển (07-12-2024 18:54)
+                                                @job.trangThai
                                             </span>
                                         </div>
                                     </div>
@@ -85,142 +93,11 @@
                             </div>
                         </div>
                         <!-- END -->
-                        <!-- START -->
-                        <div class="job-item bg-highlight">
-                            <div class="d-flex">
-                                <div class="company-logo">
-                                    <img src="https://cdn-new.topcv.vn/unsafe/https://static.topcv.vn/company_logos/cong-ty-tnhh-marketing-metas-group-62b17f143c6a1f505bb8fddc8ace5b88-66e3b581a3747.jpg" style="max-height: 100%;">
-                                </div>
-                                <div class="company-info">
-                                    <div class="title-block">
-                                        <div class="job-title">
-                                            <a href="@Url.ActionLink("Index", "ChiTietViecLam")" class="transform-job-title">Nữ Admin Tiếng Hàn Tại Hà Nội [Thu Nhập 12-18 Triệu/ Tháng + Thưởng...] Đi Làm Ngay</a>
-                                        </div>
-                                        <div class="title-salary">15 - 20 triệu</div>
-
-                                    </div>
-                                    <div class="company-name text-gray">
-                                        <!-- chi tiết công ty -->
-                                        <a href="@Url.ActionLink("Index", "ChiTietCongTy")" class="text-gray">CÔNG TY TNHH MARKETING METAS GROUP</a>
-
-                                    </div>
-                                    <div class="job-applies-meta">
-                                        <span class="cv-date">
-                                            Thời gian ứng tuyển:
-                                            07-12-2024 18:54
-                                        </span>
-                                    </div>
-                                    <div class="box-footer-history">
-                                        <p class="cv-apply-caption">
-                                            CV đã ứng tuyển
-                                            <!-- mẫu cv lấy để ứng tuyển -->
-                                            <a href="" class="text-hightlight text-green">CV TopCV</a>
-                                        </p>
-
-                                    </div>
-                                    <div class="box-cv-apply-status">
-                                        <div class="cv-apply-status-text">
-                                            <span class="applied">
-                                                Đã ứng tuyển (07-12-2024 18:54)
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END -->
-                        <!-- START -->
-                        <div class="job-item bg-highlight">
-                            <div class="d-flex">
-                                <div class="company-logo">
-                                    <img src="https://cdn-new.topcv.vn/unsafe/https://static.topcv.vn/company_logos/cong-ty-tnhh-marketing-metas-group-62b17f143c6a1f505bb8fddc8ace5b88-66e3b581a3747.jpg" style="max-height: 100%;">
-                                </div>
-                                <div class="company-info">
-                                    <div class="title-block">
-                                        <div class="job-title">
-                                            <a href="@Url.ActionLink("Index", "ChiTietViecLam")" class="transform-job-title">Nữ Admin Tiếng Hàn Tại Hà Nội [Thu Nhập 12-18 Triệu/ Tháng + Thưởng...] Đi Làm Ngay</a>
-                                        </div>
-                                        <div class="title-salary">15 - 20 triệu</div>
-
-                                    </div>
-                                    <div class="company-name text-gray">
-                                        <!-- chi tiết công ty -->
-                                        <a href="@Url.ActionLink("Index", "ChiTietCongTy")" class="text-gray">CÔNG TY TNHH MARKETING METAS GROUP</a>
-
-                                    </div>
-                                    <div class="job-applies-meta">
-                                        <span class="cv-date">
-                                            Thời gian ứng tuyển:
-                                            07-12-2024 18:54
-                                        </span>
-                                    </div>
-                                    <div class="box-footer-history">
-                                        <p class="cv-apply-caption">
-                                            CV đã ứng tuyển
-                                            <!-- mẫu cv lấy để ứng tuyển -->
-                                            <a href="" class="text-hightlight text-green">CV TopCV</a>
-                                        </p>
-
-                                    </div>
-                                    <div class="box-cv-apply-status">
-                                        <div class="cv-apply-status-text">
-                                            <span class="applied">
-                                                Đã ứng tuyển (07-12-2024 18:54)
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END -->
-                        <!-- START -->
-                        <div class="job-item bg-highlight">
-                            <div class="d-flex">
-                                <div class="company-logo">
-                                    <img src="https://cdn-new.topcv.vn/unsafe/https://static.topcv.vn/company_logos/cong-ty-tnhh-marketing-metas-group-62b17f143c6a1f505bb8fddc8ace5b88-66e3b581a3747.jpg" style="max-height: 100%;">
-                                </div>
-                                <div class="company-info">
-                                    <div class="title-block">
-                                        <div class="job-title">
-                                            <a href="@Url.ActionLink("Index", "ChiTietViecLam")" class="transform-job-title">Nữ Admin Tiếng Hàn Tại Hà Nội [Thu Nhập 12-18 Triệu/ Tháng + Thưởng...] Đi Làm Ngay</a>
-                                        </div>
-                                        <div class="title-salary">15 - 20 triệu</div>
-
-                                    </div>
-                                    <div class="company-name text-gray">
-                                        <!-- chi tiết công ty -->
-                                        <a href="@Url.ActionLink("Index", "ChiTietCongTy")" class="text-gray">CÔNG TY TNHH MARKETING METAS GROUP</a>
-
-                                    </div>
-                                    <div class="job-applies-meta">
-                                        <span class="cv-date">
-                                            Thời gian ứng tuyển:
-                                            07-12-2024 18:54
-                                        </span>
-                                    </div>
-                                    <div class="box-footer-history">
-                                        <p class="cv-apply-caption">
-                                            CV đã ứng tuyển
-                                            <!-- mẫu cv lấy để ứng tuyển -->
-                                            <a href="" class="text-hightlight text-green">CV TopCV</a>
-                                        </p>
-
-                                    </div>
-                                    <div class="box-cv-apply-status">
-                                        <div class="cv-apply-status-text">
-                                            <span class="applied">
-                                                Đã ứng tuyển (07-12-2024 18:54)
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END -->
-                    </div>
+                        } 
+                    <!-- LIST JOB UWNSG TUYEERN -->
+                        
+                    </div>}
                 </div>
-
-
             </div>
         </div>
     </div>

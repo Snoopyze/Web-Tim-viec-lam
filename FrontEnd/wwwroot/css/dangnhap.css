@@ -1,6 +1,11 @@
 
 /* Định dạng body và container */
-
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
 
 .main
 {display: flex;

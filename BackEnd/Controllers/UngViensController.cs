@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BackEnd.Models;
+using BackEnd.Entity;
 
 namespace BackEnd.Controllers
 {
@@ -13,6 +14,8 @@ namespace BackEnd.Controllers
     [ApiController]
     public class UngViensController : ControllerBase
     {
+        private static object lockObject = new object();
+
         private readonly DbQlcvContext _context;
 
         public UngViensController(DbQlcvContext context)
@@ -75,26 +78,33 @@ namespace BackEnd.Controllers
         // POST: api/UngViens
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<UngVien>> PostUngVien(UngVien ungVien)
+        public async Task<ActionResult<UngVien>> PostNhaTuyenDung(UngVienDAO ungVien)
         {
-            _context.UngViens.Add(ungVien);
+            // Tạo đối tượng NhaTuyenDung từ DTO
+            var uv = new UngVien
+            {
+                IdUngVien = GenerateUniqueId(),
+                Email = ungVien.Email, 
+                SoDienThoai = ungVien.SoDienThoai,
+                MatKhau = ungVien.MatKhau,
+                AnhHoSo = ungVien.AnhHoSo,
+                HoTen = ungVien.HoTen
+           
+
+            };
+
+            _context.UngViens.Add(uv);
+
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (UngVienExists(ungVien.IdUngVien))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
+
             }
 
-            return CreatedAtAction("GetUngVien", new { id = ungVien.IdUngVien }, ungVien);
+            return CreatedAtAction("GetUngVien", new { id = uv.IdUngVien }, ungVien);
         }
 
         // DELETE: api/UngViens/5
@@ -116,6 +126,15 @@ namespace BackEnd.Controllers
         private bool UngVienExists(int id)
         {
             return _context.UngViens.Any(e => e.IdUngVien == id);
+        }
+
+        public static int GenerateUniqueId()
+        {
+            lock (lockObject) // Đảm bảo thread-safe
+            {
+                long milliseconds = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+                return (int)(milliseconds % int.MaxValue);
+            }
         }
     }
 }

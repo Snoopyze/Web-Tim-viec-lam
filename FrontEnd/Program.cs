@@ -1,7 +1,8 @@
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession(); // Thêm dòng này để đăng ký dịch vụ Session
 
 var app = builder.Build();
 
@@ -18,10 +19,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Thêm middleware để sử dụng Session
+app.UseSession(); // Đặt dòng này trước app.UseAuthorization()
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=QuanLyCV_NhaTD}/{action=Index}/{id?}");
+    pattern: "{controller=DangNhap}/{action=Index}/{id?}");
 
 app.Run();

@@ -117,5 +117,48 @@ namespace BackEnd.Controllers
         {
             return _context.ChiTietTuyenDungs.Any(e => e.IdChiTietTuyenDung == id);
         }
+
+        [HttpGet("Diadiemlamviec{idCTDC}")]
+        public async Task<IActionResult> getCongTyByIdNTD(int idCTDC)
+        {
+
+            DiaChiChiTiet dcct = await _context.DiaChiChiTiets
+                               .FirstOrDefaultAsync(dc => dc.IdDiaChi == idCTDC);
+            String dchi = "";
+            if (dcct != null)
+            {
+                dchi += dcct.MoTaChiTiet;
+                var phuongXa = await _context.PhuongXas
+                   .FirstOrDefaultAsync(px => px.IdPhuongXa == dcct.IdPhuongXa);
+                if (phuongXa != null)
+                {
+                    dchi += ", " + phuongXa.TenPhuongXa;
+                    var quanHuyen = await _context.QuanHuyens
+                        .FirstOrDefaultAsync(px => px.IdQuanHuyen == phuongXa.IdQuanHuyen);
+                    if (quanHuyen != null)
+                    {
+                        dchi += ", " + quanHuyen.TenQuanHuyen;
+                        var tinh = await _context.ThanhPhos
+                        .FirstOrDefaultAsync(px => px.IdThanhPho == quanHuyen.IdThanhPho);
+                        if (tinh != null)
+                        {
+                            dchi += ", " + tinh.TenThanhPho;
+                            return Ok(dchi);
+                        }
+                        return Ok(dchi);
+                    }
+                    return Ok(dchi);
+                }
+                return Ok(dchi);
+
+            }
+
+            else
+                return NotFound();
+        }
+
+    
+
+
     }
 }
